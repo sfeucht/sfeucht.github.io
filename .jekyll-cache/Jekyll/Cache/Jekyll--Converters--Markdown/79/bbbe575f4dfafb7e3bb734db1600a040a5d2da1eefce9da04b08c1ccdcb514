@@ -1,0 +1,17 @@
+I"Ë<div class="content fade-in">
+  <p><img src="./images/narration-michaux.png" /></p>
+
+  <div class="content fade-in-slow">
+    <p class="centered"><i>Narration</i> - Henri Michaux (excerpt, 1927)
+<!-- https://asemics.com/henri-michaux-narration-excerpt-1927/ --></p>
+  </div>
+
+  <div class="content fade-in-slower">
+    <p class="centered small"><a href="begin-reading.html">begin reading -&gt;</a></p>
+  </div>
+
+  <!-- {: .code}
+this is some code -->
+
+</div>
+:ET

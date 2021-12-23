@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+{%- include head.html -%}
+
+<body>
+    
+    <header class="site-header" role="banner">
+        {%- if page.finished == true -%}
+        <h1>thank you for reading these comments.</h1>
+        {%- endif -%}
+
+        {%- if page.finished == false -%}
+        <h1>thank you for trying to read these comments.</h1>
+        {%- endif -%}
+    </header>
+    
+    <main>
+        <div class="content fade-in">
+            {{ content }}
+        </div>
+    </main>
+
+    
+    </body>
+</html>
