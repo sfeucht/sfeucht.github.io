@@ -3,12 +3,9 @@ permalink: /publications.html
 layout: page
 ---
 
-## publications
+<ol class="reverse">
+<li>test</li>
+<li>test2</li>
 
-<br/>
-
-These are my publications. Yay!
-
-<i>— Danny</i><br/>  
-
+</ol>
 

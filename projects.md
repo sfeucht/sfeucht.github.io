@@ -3,12 +3,20 @@ permalink: /projects.html
 layout: page
 ---
 
-## projects
+<!-- ## projects -->
 
-<br/>
+## project 1
+<a href="/rereading">link</a>
+describe here. 
+<br/>  
 
-These are my projects. Yay!
+## project 2
+more describe!
+<br/>  
 
-<i>— Danny</i><br/>  
+## project 3 
+
+project yay!
+<br/>  
 
 

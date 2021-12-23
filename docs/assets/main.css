@@ -427,6 +427,8 @@ input#mc-embedded-subscribe.button:hover { background-color: black; }
 
 div.commentbox { border-top: solid 2px #B8B8B8; margin: 4ex 0 2ex 0; padding-top: 1ex; font-size: large; }
 
+img { border-radius: 50%; }
+
 @media only screen { /* make keyframes that tell the start state and the end state of our object */ @-webkit-keyframes fadeIn { from { opacity: 0; }
     to { opacity: 1; } } @-moz-keyframes fadeIn { from { opacity: 0; }
     to { opacity: 1; } } @keyframes fadeIn { from { opacity: 0; }

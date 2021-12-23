@@ -1,5 +1,5 @@
 <header class="site-header" role="banner">
-    <h1> {{site.title}} </h1>
+    <a href="/index.html"><h1> {{site.title}} </h1> </a>
     {%- assign names = site.pageorder | split: " " -%}
     {%- for name in names -%}
         {%- assign filename = name | replace: names[0],"index" -%}

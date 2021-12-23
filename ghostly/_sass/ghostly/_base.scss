@@ -94,6 +94,11 @@ input.button#mc-embedded-subscribe:hover {background-color:black}
 // Commentbox
 div.commentbox {border-top: solid 2px $deemphasis;margin:4ex 0 2ex 0;padding-top:1ex;font-size:large}
 
+// sfeucht added
+img {
+    border-radius: 50%;
+}
+
 //Fade transitions -- important to apply only for screen media (& not for print)
 @media only screen {
     /* make keyframes that tell the start state and the end state of our object */
