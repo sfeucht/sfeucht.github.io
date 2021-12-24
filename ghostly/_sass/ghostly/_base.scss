@@ -34,7 +34,7 @@ a.nav {font-size: $navsize; text-transform: $navtransform}
 a, a:visited {text-decoration: none; color: $accent}
 a.nav, a.media, footer, footer a, footer a:visited, footer p {color: $deemphasis}
 a.current {text-decoration: $activenav;color: $linkcolor}
-a:hover, a.nav:hover, a.media:hover, footer a:hover {color: $linkcolor}
+a:hover, a.nav:hover, a.media:hover, footer a:hover {color: $accent}
 
 //ol:first-child,ul:first-child,
 // lists and list elements

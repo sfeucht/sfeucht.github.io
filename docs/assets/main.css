@@ -353,13 +353,13 @@ a.nav, a.media { padding: 0 0.5em 0 0.5em; }
 
 a.nav { font-size: large; text-transform: lowercase; }
 
-a, a:visited { text-decoration: none; color: #9DC384; }
+a, a:visited { text-decoration: none; color: #61948b; }
 
 a.nav, a.media, footer, footer a, footer a:visited, footer p { color: #B8B8B8; }
 
 a.current { text-decoration: overline; color: #666666; }
 
-a:hover, a.nav:hover, a.media:hover, footer a:hover { color: #666666; }
+a:hover, a.nav:hover, a.media:hover, footer a:hover { color: #61948b; }
 
 ol, ul { list-style-position: inside; }
 
