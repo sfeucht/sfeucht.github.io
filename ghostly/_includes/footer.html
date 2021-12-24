@@ -13,6 +13,8 @@
                     <a class="media" href="https://www.researchgate.net/profile/{{ site.researchgate_username }}">ResearchGate</a>
                 {%- when "googlescholar" -%}
                     <a class="media" href="https://scholar.google.com/citations?user={{ site.googlescholar_id }}">Google Scholar</a>
+                {%- when "linkedin" -%} 
+                    <a class="media" href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn</a>
             {%- endcase -%}
             {% if forloop.last == true %}
             <br/>

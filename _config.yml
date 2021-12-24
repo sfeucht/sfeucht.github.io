@@ -38,13 +38,14 @@ comment-post-fields: [entry.1132147459, entry.406821462, entry.726751318]
 # All others refer to files with the ".md" extension in your base directory
 pageorder: "home projects publications vita"
 # # The order to list social media in the footer, separated by single spaces
-socialorder: "email github researchgate"
+socialorder: "email linkedin github researchgate"
 
 # Contact and social media information ... comment out what you don't have
 email: sheridan_feucht@brown.edu
 # twitter_username: jmlilly
 github_username:  sfeucht
 researchgate_username: Sheridan-Feucht
+linkedin_username: sheridan-feucht
 # googlescholar_id: os-j4rIAAAAJ
 # # Find this from your Google Scholar address, after "user=" and before the "&"
 # # e.g. https://scholar.google.com/citations?user=os-j4rIAAAAJ&hl=en
