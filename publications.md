@@ -3,9 +3,16 @@ permalink: /publications.html
 layout: page
 ---
 
+<!-- Edwards, J. E., & Waters, L. K. (1984). Halo and leniency control in ratings as influenced by format, training, and rater characteristic differences. Managerial Psychology, 5(1), 1–16.
+
+
+Evans, A. C., Jr., Garbarino, J., Bocanegra, E., Kinscherff, R. T., & Márquez-Greene, N. (2019, August 8–11). Gun violence: An event on the power of community [Conference presentation]. APA 2019 Convention, Chicago, IL, United States. https://convention.apa.org/2019-video -->
+
+
+
+
 <ol class="reverse">
-<li>test</li>
-<li>test2</li>
-
+<li>Avram, R., Hemmatian, B., Feucht, S., Wey, A., Spitalnic, K., Garg, M., Eickhoff, C., Pavlick, E., Sandstede, B., & Sloman, S. (2021, July 27). Can computers tell a story? Discourse Structure in Computer-generated Text and Humans [Conference presentation]. 43rd Annual Meeting of the Cognitive Science Society, Vienna, Austria. <a href="https://doi.org/10.13140/RG.2.2.27724.54401">{doi: 10.13140/RG.2.2.27724.54401}</a> </li>
+<li>Feucht, S., Hemmatian, B., Avram, R., Wey, A., Spitalnic, K., Garg, M., Eickhoff, C., Pavlick, E., Sandstede, B., & Sloman, S. (2021, July 27). The Anatomy of Discourse: Linguistic Predictors of Narrative and Argument Quality Motivation [Conference presentation]. 43rd Annual Meeting of the Cognitive Science Society, Vienna, Austria. <a href="https://doi.org/10.13140/RG.2.2.33281.99687">{doi: 10.13140/RG.2.2.33281.99687}</a> </li>
+<li> Hemmatian, B., Feucht, S., Avram, R., Wey, A., Garg, M., Spitalnic, K., Eickhoff, C., Pavlick, E., Sandstede, B., & Sloman, S. (2021, November 10-11). A Novel Corpus of Discourse Structure in Humans and Computers. The 2nd Workshop on Computational Approaches to Discourse at EMNLP 2021, Punta Cana, Dominican Republic. <a href="https://www.researchgate.net/publication/356109874_A_Novel_Corpus_of_Discourse_Structure_in_Humans_and_Computers">{ResearchGate Link}</a></li>
 </ol>
-

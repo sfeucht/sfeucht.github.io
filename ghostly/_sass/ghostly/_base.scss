@@ -34,7 +34,8 @@ a.nav {font-size: $navsize; text-transform: $navtransform}
 a, a:visited {text-decoration: none; color: $accent}
 a.nav, a.media, footer, footer a, footer a:visited, footer p {color: $deemphasis}
 a.current {text-decoration: $activenav;color: $linkcolor}
-a:hover, a.nav:hover, a.media:hover, footer a:hover {color: $accent}
+a:hover {color: $deemphasis}
+a.nav:hover, a.media:hover, footer a:hover {color: $accent}
 
 //ol:first-child,ul:first-child,
 // lists and list elements
@@ -95,7 +96,7 @@ input.button#mc-embedded-subscribe:hover {background-color:black}
 div.commentbox {border-top: solid 2px $deemphasis;margin:4ex 0 2ex 0;padding-top:1ex;font-size:large}
 
 // sfeucht added
-img {
+img.portrait {
     border-radius: 50%;
 }
 
