@@ -18,6 +18,6 @@ A <a href="https://github.com/sfeucht/bart_horror">simple BART model</a> fine-tu
 <br/>
 
 ## jazz drumming
-I'm involved in jazz at Brown as a drummer, informally among friends as well as in the school-organized combos. You can find recordings of our school-organized concerts here: <a href="https://youtu.be/JvfSz8LrR24">summer 2021</a>
+I'm involved in jazz at Brown as a drummer, informally among friends as well as in the school-organized combos. You can find recordings of our school-organized concerts here: <a href="https://youtu.be/JvfSz8LrR24">07/21</a> | <a href="https://drive.google.com/file/d/1Dhr44ZMfLTedqXOIARVWz4jvFNhZoQLS/view?usp=sharing">10/21</a> | <a href="https://drive.google.com/file/d/1NvmZL6_B5DVr00QoXmJZAZtodsKdCLdw/view?usp=sharing">12/21</a>
 
 <!-- https://www.youtube.com/playlist?list=PL-oqOH5yhMjCcaJRYLG1deOG0hMl5EpYr -->
