@@ -8,11 +8,11 @@ layout: page
 
 {: .centered}
 {: .quote}
-I'm a third-year undergraduate student at Brown University studying Computer Science. I'm particularly interested in how computers interact with language. Apart than that, I'm interested in art and music (especially jazz). 
+I'm a third-year undergraduate student at Brown University studying Computer Science, with a focus on how computers interact with natural language. When I'm not working on language processing and understanding in machines, I also love to make music (especially jazz) and art.
 
 {: .centered}
 {: .quote}
-Feel free to take a look around at some of my personal and professional work, if you're interested. Or, take a look at my contact information below.
+Feel free to take a look around at some of my personal and professional work, or find my contact information below.
 
 
 
