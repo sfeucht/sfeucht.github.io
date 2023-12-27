@@ -80,6 +80,8 @@ params:
     url: "https://twitter.com/sheridan_feucht"
   - id: github
     name: sfeucht
+  - id: cv
+    url: "/sfeucht_cv.pdf"
 
 markup:
   goldmark:
