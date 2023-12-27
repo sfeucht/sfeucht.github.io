@@ -1,0 +1,55 @@
+{{ define "main" }}
+    <!-- <div class="homepage-content">
+        {{ .Content }}
+    </div> -->
+    <div class="about-me">
+    <img src="/legoland.jpg" alt="A picture of Sheridan next to a donkey at Legoland (a Lego donkey).">
+    <h1>Hi, I'm Sheridan. </h1> 
+    <p>I'm a first-year PhD student advised by <a href="https://baulab.info/">David Bau</a> and <a href="https://www.byronwallace.com/">Byron Wallace</a>
+    at Northeastern University as a Khoury Distinguished Fellow. Before that, I completed my B.S. in Computer Science at Brown University, where I worked with <a href="https://cs.brown.edu/people/epavlick/">Ellie Pavlick</a>
+    in the <a href="https://lunar.cs.brown.edu/">LUNAR Lab</a>.</p>
+    <p>I'm interested in <b>taking apart language models</b> in order to figure out how they work. Do neural models "understand" language like humans do? Check out my <a href="https://scholar.google.com/citations?user=4EobJQIAAAAJ&hl=en&oi=sra">Google Scholar</a> page to see an up-to-date list of my work so far.  </p>
+    </div>
+    <!-- <h1>Research</h1>
+    <ul>
+        <li>asdf</li>
+    </ul> -->
+
+    <!-- <h1>Other Things.</h1> -->
+    <br>
+    I'm also a jazz drummer, and I tinker in music-making and creative writing. 
+    In my undergrad, I played in small-group combos and was the drummer for an <a href="https://www.instagram.com/ems.femmes/">all-femme jazz/funk</a> <a href="https://www.browndailyherald.com/article/2023/02/a-sense-of-belonging-jazz-band-ems-femmes-showcases-musical-talent">group</a>. 
+    If you're a jazz musician in the Boston area who's interested in jamming, definitely reach out!
+
+    <!-- <script>
+        var theList = ["The Godfather (1972)", "The Shawshank Redemption (1994)", 'someNameA', 'someNameB', 'someNameC', 'someNameD', 'someNameE'];
+        var randomPick = theList[Math.floor(Math.random() * theList.length)];
+        document.getElementById('movieName').innerHTML = randomPick;
+    </script>
+    <h2 style="text-align:center">
+        Your Movie for Tonight is:<div id='movieName'></div>
+      </h2> -->
+
+    <!-- <a href="/sfeucht_resume.pdf">test</a> -->
+
+
+    <!-- {{ if .Site.Menus.main }}
+    <nav>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a>
+        {{ end }}
+    </nav>
+    {{ else }}
+        <nav></nav>
+    {{ end }} -->
+
+    <!-- <div class="articles h-feed">
+        {{ $pages := where (where site.RegularPages "Type" "in" site.Params.mainSections) "Params.hidden" "!=" true }}
+        {{ range (.Paginate $pages).Pages }}
+            {{ partial "post-summary.html" . }}
+        {{ end }}
+        {{ partial "pagination.html" . }}
+    </div> -->
+
+{{ end }}
