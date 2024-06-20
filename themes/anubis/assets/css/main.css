@@ -49,7 +49,17 @@ body {
     background: var(--bg-color);
 }
 
-
+/* extra */
+#about-me {
+    margin: 1em;
+}
+#pics-of-me {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px; /* Optional: add some space between the images */
+    /* height: 100vh; Optional: full height container */
+}
 
 article,
 aside,
@@ -285,20 +295,20 @@ header nav a {
 }
 
 /* Home Page */
-.about-me img {
+#about-me img {
     float: left;
-    width: 225px;
-    height: 300px;
+    /* width: 225px;
+    height: 300px; */
     background: #555;
-    border-radius: 0.5em;
+    border-radius: 0.25em;
   }
   
-.about-me h1 {
-    position: relative;
+#about-me h1 {
+    /* position: relative;
     top: 18px;
-    left: 15px;
+    left: 15px; */
     background: linear-gradient(180deg,rgba(255,255,255,0) 70%, var(--highlight-color) 30%);
-    display: inline;
+    display: inline-block;
 }
 
 .about-me p {
