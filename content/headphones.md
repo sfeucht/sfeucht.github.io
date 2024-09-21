@@ -14,4 +14,5 @@ A meandering list of tunes and tracks that I enjoy, updated ~monthly.
 - [06/2024] <a href="https://www.youtube.com/watch?v=0E5l2GHBxB8">Stal - C418</a> 
 - [07/2024] <a href="https://www.youtube.com/watch?v=Hvz0TOm0zgI">Only A Fool Would Say That - Steely Dan</a> 
 - [07/2024] <a href="https://www.youtube.com/watch?v=tnV7dTXlXxs">Ventura Highway - America</a> 
-- [08/2024] <a href="https://www.youtube.com/watch?v=re3MOe1SBOs">I Can't Help It - Michael Jackson</a>
+- [08/2024] <a href="https://www.youtube.com/watch?v=t4ywIPrewpg">Out on the Weekend - Neil Young</a>
+- [09/2024] <a href="https://www.youtube.com/watch?v=7ci7oJIkP2Q">Tangerine - Christian McBride Live Session</a>
