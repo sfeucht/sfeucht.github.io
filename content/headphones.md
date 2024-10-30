@@ -16,4 +16,4 @@ A meandering list of tunes and tracks that I enjoy, updated ~monthly.
 - [07/2024] <a href="https://www.youtube.com/watch?v=tnV7dTXlXxs">Ventura Highway - America</a> 
 - [08/2024] <a href="https://www.youtube.com/watch?v=t4ywIPrewpg">Out on the Weekend - Neil Young</a>
 - [09/2024] <a href="https://www.youtube.com/watch?v=7ci7oJIkP2Q">Tangerine - Christian McBride Live Session</a>
-- [10/2024] <a href="https://www.youtube.com/watch?v=ABQjT6gDKu0">Dissolved Girl - Massive Attack</a> and <a href="https://www.youtube.com/watch?v=OjgVxt-cm3Q">Brainfeeder - Flying Lotus</a>
+- [10/2024] <a href="https://www.youtube.com/watch?v=ABQjT6gDKu0">Dissolved Girl - Massive Attack</a> and <a href="https://www.youtube.com/watch?v=fS7XPtFTvb8">Beginners Falafel - Flying Lotus</a>
