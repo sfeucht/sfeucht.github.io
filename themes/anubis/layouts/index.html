@@ -25,12 +25,6 @@
         Check out my <a href="https://scholar.google.com/citations?user=4EobJQIAAAAJ&hl=en&oi=sra">Google Scholar</a> page 
         to see an up-to-date list of my work so far.  </p>
 
-    
-    <!-- <h1>Research</h1>
-    <ul>
-        <li>asdf</li>
-    </ul> -->
-
     <p>I'm also a jazz drummer, and I tinker in music-making and creative writing. 
     <!-- In my undergrad, I played in small-group combos and was the drummer for an <a href="https://www.browndailyherald.com/article/2023/02/a-sense-of-belonging-jazz-band-ems-femmes-showcases-musical-talent">all-femme jazz/funk group</a>.  -->
     I host jams sometimes—if you're a musician in the Boston area, definitely reach out.</p>
@@ -52,11 +46,11 @@
     </nav>
     {{ else }}
         <nav></nav>
-    {{ end }} -->
+    {{ end }} --> 
 
     <!-- <div class="articles h-feed">
         {{ $pages := where (where site.RegularPages "Type" "in" site.Params.mainSections) "Params.hidden" "!=" true }}
-        {{ range (.Paginate $pages).Pages }}
+        {{ range (.Paginate $pages).Pages }} //paginate: 10 
             {{ partial "post-summary.html" . }}
         {{ end }}
         {{ partial "pagination.html" . }}
