@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sheridan Feucht</title>
+    <link>http://localhost:1313/</link>
+    <description>Sheridan Feucht</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;&gt;Apache License 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
+&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/yuin/goldmark&#34;&gt;https://github.com/yuin/goldmark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/alecthomas/chroma&#34;&gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/muesli/smartcrop&#34;&gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;
+&lt;p&gt;Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.&lt;/p&gt;
+&lt;p&gt;Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p&gt;
+&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/books2024/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/books2024/</guid>
+      <description>&lt;h1 id=&#34;books-i-read-in-2024&#34; &gt;Books I Read in 2024
+&lt;span&gt;
+    &lt;a href=&#34;#books-i-read-in-2024&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Here are the books that I remember reading this year. I don&amp;rsquo;t set &amp;ldquo;reading goals&amp;rdquo; for myself, but this year a lot of interesting books fell into my lap. I even managed to have time to read many of them!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;East, West - Salman Rushdie&lt;/li&gt;
+&lt;li&gt;If This Is a Man - Primo Levi&lt;/li&gt;
+&lt;li&gt;How to Do Things with Words - JL Austin&lt;/li&gt;
+&lt;li&gt;Lolita - Vladimir Nabokov&lt;/li&gt;
+&lt;li&gt;Seeing Further - Esther Kinsky&lt;/li&gt;
+&lt;li&gt;The Empusium - Olga Tokarczuk&lt;/li&gt;
+&lt;li&gt;Childish Literature - Alejandro Zambra&lt;/li&gt;
+&lt;li&gt;The Ways of Paradise - Peter Cornell&lt;/li&gt;
+&lt;li&gt;Attached - Amir Levine and Rachel S. F. Heller&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- ### East, West - Salman Rushdie.
+
+My partner Adrian bought this from a bin in Harvard Square. I found it delightful, and will be looking for more Salman Rushdie in the future. 
+
+**If This Is a Man - Primo Levi.** Lent to me by my friend Raj. 
+
+**How to do things with words - JL Austin.** Lent to me by my advisor David. Makes me want to read Judith Butler. 
+
+**Lolita - Nabokov.** One of the best novels I&#39;ve read so far, ever. 
+
+**Seeing Further - Esther Kinsky.** Gift from my partner (first book from a Fitzcarraldo Editions subscription). 
+
+**The Empusium - Olga Tokarczuk.** 
+
+**Childish Literature - Alejandro Zambra.**
+
+**The Ways of Paradise - Peter Cornell.**
+
+**Attached - Amir Levine and Rachel S. F. Heller.**  --&gt;
+&lt;h2 id=&#34;unfinished&#34; &gt;Unfinished
+&lt;span&gt;
+    &lt;a href=&#34;#unfinished&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Here are some books I enjoyed this year but didn&amp;rsquo;t finish. I&amp;rsquo;m hoping to pick at least a few of them back up next year.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Art of Dramatic Writing - Lajos Egri&lt;/li&gt;
+&lt;li&gt;3 Shades of Blue: Miles Davis, John Coltrane, Bill Evans, and the Lost Empire of Cool - James Kaplan&lt;/li&gt;
+&lt;li&gt;The Enigma of Reason - Dan Sperber and Hugo Mercier&lt;/li&gt;
+&lt;li&gt;Psychology and the East - Carl Jung&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/headphones/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/headphones/</guid>
+      <description>&lt;h1&gt;Dan&#39;s Headphones&lt;/h1&gt;
+&lt;p&gt;A meandering list of tunes and tracks that I enjoy, updated ~monthly.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[11/2023] &lt;a href=&#34;https://www.youtube.com/watch?v=G2RFKpPZcow&#34;&gt;Hallucinations - Keith Jarrett Trio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[02/2024] &lt;a href=&#34;https://www.youtube.com/watch?v=svoGEnDX95c&#34;&gt;Invitation - Joe Henderson&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[03/2024] &lt;a href=&#34;https://www.youtube.com/watch?v=K63CD2pwjD0&#34;&gt;Wednesday Morning, 3 A.M. - Simon &amp;amp; Garfunkel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[04/2024] &lt;a href=&#34;https://www.youtube.com/watch?v=8NjUxjsnKgo&#34;&gt;Up Jumped Spring - Christian McBride Big Band&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[05/2024] &lt;a href=&#34;https://www.youtube.com/watch?v=EwS0ccjya_I&#34;&gt;Stretto From The Ghetto - Branford Marsalis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[06/2024] &lt;a href=&#34;https://www.youtube.com/watch?v=0E5l2GHBxB8&#34;&gt;Stal - C418&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[07/2024] &lt;a href=&#34;https://www.youtube.com/watch?v=Hvz0TOm0zgI&#34;&gt;Only A Fool Would Say That - Steely Dan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[07/2024] &lt;a href=&#34;https://www.youtube.com/watch?v=tnV7dTXlXxs&#34;&gt;Ventura Highway - America&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[08/2024] &lt;a href=&#34;https://www.youtube.com/watch?v=t4ywIPrewpg&#34;&gt;Out on the Weekend - Neil Young&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[09/2024] &lt;a href=&#34;https://www.youtube.com/watch?v=7ci7oJIkP2Q&#34;&gt;Tangerine - Christian McBride Live Session&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[10/2024] &lt;a href=&#34;https://www.youtube.com/watch?v=ABQjT6gDKu0&#34;&gt;Dissolved Girl - Massive Attack&lt;/a&gt; and &lt;a href=&#34;https://www.youtube.com/watch?v=fS7XPtFTvb8&#34;&gt;Beginners Falafel - Flying Lotus&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
