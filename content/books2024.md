@@ -4,7 +4,7 @@ disableComments: true
 
 # Books I Read in 2024
 
-Here are the books that I remember reading this year. I don't set "reading goals" for myself, but this year a lot of interesting books fell into my lap. I even managed to have time to read many of them! 
+Here are the books that I remember reading this year. I don't set reading goals for myself, but this year a lot of interesting books fell into my lap. I even managed to have time to read many of them! 
 
 - East, West - Salman Rushdie
 - If This Is a Man - Primo Levi
