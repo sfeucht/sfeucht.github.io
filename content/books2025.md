@@ -7,3 +7,4 @@ disableComments: true
 
 - (Jan) Love in the Time of Cholera - Gabriel García Márquez 
 - (Jan) Morning and Evening - Jon Fosse
+- (March) Pale Fire - Vladimir Nabokov
