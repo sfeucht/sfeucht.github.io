@@ -19,3 +19,4 @@ A meandering list of tunes and tracks that I enjoy, updated ~monthly.
 - [10/2024] <a href="https://www.youtube.com/watch?v=ABQjT6gDKu0">Dissolved Girl - Massive Attack</a> & <a href="https://www.youtube.com/watch?v=fS7XPtFTvb8">Beginners Falafel - Flying Lotus</a>
 - [01/2025] <a href="https://www.youtube.com/watch?v=WMDWPH4oKwo">Type Slowly - Pavement</a> & <a href="https://www.youtube.com/watch?v=K14qg9E9SoE">Slowly Typed - Pavement</a>
 - [02/2025] <a href="https://www.youtube.com/watch?v=9KE_I6d5m9E">Armando's Rhumba - Chick Corea</a>
+- [04/2025] <a href="https://www.youtube.com/watch?v=wiLIV3H0q-Y">Can't We Be Friends - Ella & Louis</a>
