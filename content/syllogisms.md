@@ -2,7 +2,7 @@
 disableComments: true
 ---
 
-# Are Syllogisms Central to Intelligence?
+# Syllogisms Are Not Central to Intelligence
 April 23, 2025 
 
 <!-- I'm worried that our understanding of reasoning as highly-educated, literate experts in code, mathematics, and logic is not representative of "natural" human reasoning.  -->
