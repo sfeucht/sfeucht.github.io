@@ -8,15 +8,15 @@ math: true
 April 23, 2025 
 
 <span style="color:gray">
-<i>(Logical reasoning is not fundamental to human intelligence. It's just a skill that some people in some cultures get very used to.)</i>
+<i>(I think that we overvalue logical reasoning when it comes to measuring "intelligence.")</i>
 </span>
 
 What do we mean by *intelligence* in the context of cognitive science and AI? One thing that often comes to mind is logical reasoning: deriving conclusions from a set of axioms and rules, or thinking through syllogisms like *"all cats are mammals, all mammals are warm-blooded, therefore all cats are warm-blooded."* 
 
-Until recently, I thought of structured reasoning tasks as central to human (and therefore machine) intelligence. It seemed almost obvious that a "truly" intelligent system would encode abstract notions of, e.g., [same versus different,](https://arxiv.org/abs/2310.09612) and that such a system would have absolutely no trouble with syllogistic tasks. I don't think this is an unpopular opinion: critics of LLMs assert that logical tasks are [essential to "true" general intelligence](https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and). Some go on to claim that this type of reasoning is fundamentally incompatible with probablistic next-token prediction. 
+Until recently, I thought of structured reasoning tasks as central to human (and by extension machine) intelligence. It seemed almost obvious that a "truly" intelligent system would encode abstract notions of, e.g., [same versus different,](https://arxiv.org/abs/2310.09612) and that such a system would have absolutely no trouble with syllogistic tasks. I don't think this is an unpopular opinion: critics of LLMs assert that logical tasks are [essential to "true" general intelligence](https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and). Some go on to claim that this type of reasoning is fundamentally incompatible with probablistic next-token prediction. 
 
 
-But I'm not sure that abstract logical reasoning is quite as fundamental to human intelligence as it seems. In his 1982 work *Orality and Literacy*, Walter Ong references a [book containing a series of interviews](https://dl1.cuni.cz/pluginfile.php/738180/mod_resource/content/0/Luria%20-%20Cognitive-development-its-cultural-and-social-foundations.pdf) by A.R. Luria, a Soviet neuropsychologist who interviewed low-educated populations of Uzbeks in the Uzbek SSR in 1931. The interviews were published over forty years later, in 1976, and reveal something interesting about logical reasoning.
+But I'm not sure that abstract logical reasoning is quite as fundamental to human intelligence as it seems. In his 1982 work *Orality and Literacy*, Walter Ong references a [book containing a series of interviews](https://dl1.cuni.cz/pluginfile.php/738180/mod_resource/content/0/Luria%20-%20Cognitive-development-its-cultural-and-social-foundations.pdf) by A.R. Luria, a Soviet neuropsychologist who interviewed low-educated populations of peasants in the Uzbek SSR in 1931. The interviews were published over forty years later, in 1976, and are very interesting to me.
 
 Here is one of the questions Luria asked people:
 
@@ -34,9 +34,9 @@ Strikingly, Luria found that illiterate respondents were very unlikely to simply
 > "Well, it's like this: our tsar isn't like yours, and yours isn't like ours. Your words can be answered only by someone who was there, and if a person wasn't there he can't say anything on the basis of your words." <br>
 
 
-Luria presents illiterate Uzbeks with many more logical puzzles, which they also seem to reject. When shown drawings of an axe, a saw, a hatchet, and a log, and asked to choose the odd one out, a 25-year-old illiterate respondent said: "They're all alike. The saw will saw the log and the hatchet will hop it into small pieces. If one of these has to go, I'd throw out the hatchet. It doesn't do as good a job as a saw." Literate respondents, on the other hand, would almost always discard the log, with the rationale that the three tools should be grouped together. 
+Luria presents illiterate Uzbeks with many more logical puzzles, which they also seem to reject. When shown drawings of an axe, a saw, a hatchet, and a log, and asked to choose the odd one out, a 25-year-old illiterate respondent said: "They're all alike. The saw will saw the log and the hatchet will chop it into small pieces. If one of these has to go, I'd throw out the hatchet. It doesn't do as good a job as a saw." Literate respondents, on the other hand, would almost always discard the log, with the rationale that the three tools should be grouped together. 
 
-There are a lot of hypotheses for why these people were so resistant to such logic-based tasks (e.g., Ong points out that interviewees who studied *writing* were more likely to accept and go along with syllogisms). But regardless of the underlying explanation for this behavior, the existence of these interview responses was thrilling to me. There is no reason to believe that regular people born in the Uzbek SSR and randomly selected for this study were any more or less "intelligent" than anyone else. Clearly, abstract reasoning tasks like deduction and categorization are *not* universal across humans—these Uzbek farmers were getting along just fine without much care for them. 
+Regardless of the underlying explanation for this behavior, I find these interview responses thrilling to read. There are a lot of hypotheses for why these people were so resistant to such logic-based tasks (e.g., Ong points out that peasants who had learned to write were more likely to entertain Luria's syllogisms), but there is no reason to believe that regular people born in the Uzbek SSR and randomly selected for this study were any more or less "intelligent" than individuals drawn from some other population. Clearly, abstract reasoning tasks like deduction and categorization are *not* universal across humans—and these Uzbek farmers were getting along just fine without much care for them!
 
 ### Some Sympathy 
 
@@ -47,7 +47,7 @@ To go back to the bear example, it's not that people *couldn't conceive* of the 
 >**Well, which of you is right?**<br>
 >"What the cock knows how to do, he does. What I know, I say, and nothing beyond that!"
 
-Reading the transcripts of these interviews, it seems to me that these questions are just frustratingly uninteresting to the interviewed subjects, who were not used to contrived tests of formal reasoning in classroom settings. It's not unreasonable to respond this way if you aren't used to separating a word problem from the world that it is embedded in (like a [closure](https://en.wikipedia.org/wiki/Closure_(computer_programming))). 
+Reading the transcripts of these interviews, it seems to me that these questions are just frustratingly uninteresting to the interviewed subjects, who were not used to contrived tests of formal reasoning in classroom settings. It's not unreasonable to respond this way if you aren't used to separating a word problem from the world that it is embedded in (sequestering it away in a little [closure](https://en.wikipedia.org/wiki/Closure_(computer_programming))). 
 
 Here's an example that might make you more sympathetic to the Uzbek nomads. What valid inference can you make based on the following statements ([Byrne, 1989](https://modeltheory.org/papers/1989suppression.pdf))?
 
@@ -57,10 +57,15 @@ https://modeltheory.org/papers/1989suppression.pdf -->
 > If Amy has an essay to write, she will study late in the library.
 <br> If the library is open, Amy will study late in the library. <br> Amy has an essay to write.
 
-Here you are supposed to reason logically within the confines of these three sentences, which translated into symbols, say: $P\rightarrow Q$, $M\rightarrow Q$, $P$. Operating logically, I know that I should conclude $Q$. But personally, I find it very hard to conclude that "Amy will study late in the library" without knowing whether the library is open. There is an obvious *modus ponens* here, but I just cannot make myself believe it. Others agree: 62% of respondents in Byrne's original study made the same "error" that I did. 
+Here you are supposed to reason logically within the confines of these three sentences, which translated into symbols, say: $P\rightarrow Q$, $M\rightarrow Q$, $P$. Operating logically, I know that I can conclude $Q$. But personally, I find it very hard to conclude that "Amy will study late in the library" without knowing whether the library is open. There is an obvious *modus ponens* here, but I just cannot make myself believe it. Others agree: 62% of respondents in Byrne's original study made the same "error" that I did. 
 
-So—if you agree with me that we can't conclude whether Amy will study late unless we know the closing hours of the library she plans to study at, then maybe you can understand the indignation of the 37-year-old Uzbek when asked whether bears in Novaya Zemlya are white. When situated in a real situation, it just doesn't make sense to reason in this way. We might be more used to suspending our disbelief when it comes to classic syllogisms, but once the reasoning hits a little closer to home, it's easier to see why Luria's interviewees respond the way they do. 
+So—if you agree with me that we can't conclude whether Amy will study late unless we know the closing hours of the library she plans to study at, then maybe you can understand the indignation of the 37-year-old Uzbek when asked whether bears in Novaya Zemlya are white. When situated in a real life scenario, it just doesn't make sense to reason in this way. Suspending all external world knowledge and understanding to complete a word problem just feels inane. We are used to suspending our disbelief when it comes to classic syllogisms, but once the reasoning hits a little closer to home, a lot of us end up reacting just like Luria's interviewees. 
 
-[conclusion] 
+## Quick Conclusion 
+
+So, is the skill of suspending disbelief in order to activate particular logical processes, given a particular type of question, a good indicator of general intelligence? Maybe our focus on "intelligence" is myopic in and of itself. In *Orality and Literacy*, Ong notes that people from oral cultures do not think of individuals as being "intelligent" in general. If someone is a good navigator, they are a good navigator. If they are a dancer or storyteller, they are lauded for those abilities. Why would you need some underlying g-factor to tie all of these traits together? (And in the case of IQ testing, why would shape rotation and syllogism questions be uniquely suited to measure that factor?)
+
+Ironically, I'm now suspicious of the word "intelligence" in AI research when it refers to these narrow abstract reasoning tasks. Not just because of pedantic nitpicking, not just because of the horrible history of IQ testing ([in which the Binet-Simon IQ test was leveraged by eugenecists to sterlize 60,000 people in the U.S.](https://en.wikipedia.org/wiki/Intelligence_quotient#IQ_testing_and_the_eugenics_movement_in_the_United_States)), but because I simply think it's a really narrow view of the human mind, which makes it unhelpful for our purposes as AI researchers. 
+
 <!-- 
 The word problems in this anecdote are clearly reminiscent of how we measure IQ in intelligence testing. One conclusion that you might draw from this is that if illiterate people are less good at  -->

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sheridan Feucht</title>
-    <link>http://localhost:1313/</link>
+    <link>//localhost:1313/</link>
     <description>Sheridan Feucht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://localhost:1313/about/</link>
+      <link>//localhost:1313/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>//localhost:1313/about/</guid>
       <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;&gt;Apache License 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
 &lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
 &lt;ul&gt;
@@ -35,10 +35,10 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/books2024/</link>
+      <link>//localhost:1313/books2024/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/books2024/</guid>
+      <guid>//localhost:1313/books2024/</guid>
       <description>&lt;h1 id=&#34;books-i-read-in-2024&#34; &gt;Books I Read in 2024
 &lt;span&gt;
     &lt;a href=&#34;#books-i-read-in-2024&#34;&gt;
@@ -94,10 +94,10 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
     
     <item>
       <title></title>
-      <link>http://localhost:1313/books2025/</link>
+      <link>//localhost:1313/books2025/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/books2025/</guid>
+      <guid>//localhost:1313/books2025/</guid>
       <description>&lt;h1 id=&#34;books-i-read-in-2025&#34; &gt;Books I Read in 2025
 &lt;span&gt;
     &lt;a href=&#34;#books-i-read-in-2025&#34;&gt;
@@ -114,10 +114,10 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
     
     <item>
       <title></title>
-      <link>http://localhost:1313/headphones/</link>
+      <link>//localhost:1313/headphones/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/headphones/</guid>
+      <guid>//localhost:1313/headphones/</guid>
       <description>&lt;h1&gt;Dan&#39;s Headphones&lt;/h1&gt;
 &lt;p&gt;A meandering list of tunes and tracks that I enjoy, updated ~monthly.&lt;/p&gt;
 &lt;ul&gt;
@@ -141,10 +141,10 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
     
     <item>
       <title></title>
-      <link>http://localhost:1313/syllogisms/</link>
+      <link>//localhost:1313/syllogisms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/syllogisms/</guid>
+      <guid>//localhost:1313/syllogisms/</guid>
       <description>&lt;h1 id=&#34;solving-syllogisms-is-not-intelligence&#34; &gt;Solving Syllogisms is Not Intelligence
 &lt;span&gt;
     &lt;a href=&#34;#solving-syllogisms-is-not-intelligence&#34;&gt;
@@ -153,11 +153,11 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
 &lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;April 23, 2025&lt;/p&gt;
 &lt;span style=&#34;color:gray&#34;&gt;
-&lt;i&gt;(Logical reasoning is not fundamental to human intelligence. It&#39;s just a skill that some people in some cultures get very used to.)&lt;/i&gt;
+&lt;i&gt;(I think that we overvalue logical reasoning when it comes to measuring &#34;intelligence.&#34;)&lt;/i&gt;
 &lt;/span&gt;
 &lt;p&gt;What do we mean by &lt;em&gt;intelligence&lt;/em&gt; in the context of cognitive science and AI? One thing that often comes to mind is logical reasoning: deriving conclusions from a set of axioms and rules, or thinking through syllogisms like &lt;em&gt;&amp;ldquo;all cats are mammals, all mammals are warm-blooded, therefore all cats are warm-blooded.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Until recently, I thought of structured reasoning tasks as central to human (and therefore machine) intelligence. It seemed almost obvious that a &amp;ldquo;truly&amp;rdquo; intelligent system would encode abstract notions of, e.g., &lt;a href=&#34;https://arxiv.org/abs/2310.09612&#34;&gt;same versus different,&lt;/a&gt; and that such a system would have absolutely no trouble with syllogistic tasks. I don&amp;rsquo;t think this is an unpopular opinion: critics of LLMs assert that logical tasks are &lt;a href=&#34;https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and&#34;&gt;essential to &amp;ldquo;true&amp;rdquo; general intelligence&lt;/a&gt;. Some go on to claim that this type of reasoning is fundamentally incompatible with probablistic next-token prediction.&lt;/p&gt;
-&lt;p&gt;But I&amp;rsquo;m not sure that abstract logical reasoning is quite as fundamental to human intelligence as it seems. In his 1982 work &lt;em&gt;Orality and Literacy&lt;/em&gt;, Walter Ong references a &lt;a href=&#34;https://dl1.cuni.cz/pluginfile.php/738180/mod_resource/content/0/Luria%20-%20Cognitive-development-its-cultural-and-social-foundations.pdf&#34;&gt;book containing a series of interviews&lt;/a&gt; by A.R. Luria, a Soviet neuropsychologist who interviewed low-educated populations of Uzbeks in the Uzbek SSR in 1931. The interviews were published over forty years later, in 1976, and reveal something interesting about logical reasoning.&lt;/p&gt;
+&lt;p&gt;Until recently, I thought of structured reasoning tasks as central to human (and by extension machine) intelligence. It seemed almost obvious that a &amp;ldquo;truly&amp;rdquo; intelligent system would encode abstract notions of, e.g., &lt;a href=&#34;https://arxiv.org/abs/2310.09612&#34;&gt;same versus different,&lt;/a&gt; and that such a system would have absolutely no trouble with syllogistic tasks. I don&amp;rsquo;t think this is an unpopular opinion: critics of LLMs assert that logical tasks are &lt;a href=&#34;https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and&#34;&gt;essential to &amp;ldquo;true&amp;rdquo; general intelligence&lt;/a&gt;. Some go on to claim that this type of reasoning is fundamentally incompatible with probablistic next-token prediction.&lt;/p&gt;
+&lt;p&gt;But I&amp;rsquo;m not sure that abstract logical reasoning is quite as fundamental to human intelligence as it seems. In his 1982 work &lt;em&gt;Orality and Literacy&lt;/em&gt;, Walter Ong references a &lt;a href=&#34;https://dl1.cuni.cz/pluginfile.php/738180/mod_resource/content/0/Luria%20-%20Cognitive-development-its-cultural-and-social-foundations.pdf&#34;&gt;book containing a series of interviews&lt;/a&gt; by A.R. Luria, a Soviet neuropsychologist who interviewed low-educated populations of peasants in the Uzbek SSR in 1931. The interviews were published over forty years later, in 1976, and are very interesting to me.&lt;/p&gt;
 &lt;p&gt;Here is one of the questions Luria asked people:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;In the Far North, where there is snow, all bears are white. Novaya Zemlya is in the far north and there is always snow there. What color are the bears?&lt;/strong&gt;&lt;/p&gt;
@@ -173,8 +173,8 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
 &lt;strong&gt;But what do my words imply? (The syllogism is repeated.)&lt;/strong&gt;&lt;br&gt;
 &amp;ldquo;Well, it&amp;rsquo;s like this: our tsar isn&amp;rsquo;t like yours, and yours isn&amp;rsquo;t like ours. Your words can be answered only by someone who was there, and if a person wasn&amp;rsquo;t there he can&amp;rsquo;t say anything on the basis of your words.&amp;rdquo; &lt;br&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Luria presents illiterate Uzbeks with many more logical puzzles, which they also seem to reject. When shown drawings of an axe, a saw, a hatchet, and a log, and asked to choose the odd one out, a 25-year-old illiterate respondent said: &amp;ldquo;They&amp;rsquo;re all alike. The saw will saw the log and the hatchet will hop it into small pieces. If one of these has to go, I&amp;rsquo;d throw out the hatchet. It doesn&amp;rsquo;t do as good a job as a saw.&amp;rdquo; Literate respondents, on the other hand, would almost always discard the log, with the rationale that the three tools should be grouped together.&lt;/p&gt;
-&lt;p&gt;There are a lot of hypotheses for why these people were so resistant to such logic-based tasks (e.g., Ong points out that interviewees who studied &lt;em&gt;writing&lt;/em&gt; were more likely to accept and go along with syllogisms). But regardless of the underlying explanation for this behavior, the existence of these interview responses was thrilling to me. There is no reason to believe that regular people born in the Uzbek SSR and randomly selected for this study were any more or less &amp;ldquo;intelligent&amp;rdquo; than anyone else. Clearly, abstract reasoning tasks like deduction and categorization are &lt;em&gt;not&lt;/em&gt; universal across humans—these Uzbek farmers were getting along just fine without much care for them.&lt;/p&gt;
+&lt;p&gt;Luria presents illiterate Uzbeks with many more logical puzzles, which they also seem to reject. When shown drawings of an axe, a saw, a hatchet, and a log, and asked to choose the odd one out, a 25-year-old illiterate respondent said: &amp;ldquo;They&amp;rsquo;re all alike. The saw will saw the log and the hatchet will chop it into small pieces. If one of these has to go, I&amp;rsquo;d throw out the hatchet. It doesn&amp;rsquo;t do as good a job as a saw.&amp;rdquo; Literate respondents, on the other hand, would almost always discard the log, with the rationale that the three tools should be grouped together.&lt;/p&gt;
+&lt;p&gt;Regardless of the underlying explanation for this behavior, I find these interview responses thrilling to read. There are a lot of hypotheses for why these people were so resistant to such logic-based tasks (e.g., Ong points out that peasants who had learned to write were more likely to entertain Luria&amp;rsquo;s syllogisms), but there is no reason to believe that regular people born in the Uzbek SSR and randomly selected for this study were any more or less &amp;ldquo;intelligent&amp;rdquo; than individuals drawn from some other population. Clearly, abstract reasoning tasks like deduction and categorization are &lt;em&gt;not&lt;/em&gt; universal across humans—and these Uzbek farmers were getting along just fine without much care for them!&lt;/p&gt;
 &lt;h3 id=&#34;some-sympathy&#34; &gt;Some Sympathy
 &lt;span&gt;
     &lt;a href=&#34;#some-sympathy&#34;&gt;
@@ -188,7 +188,7 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
 &lt;strong&gt;Well, which of you is right?&lt;/strong&gt;&lt;br&gt;
 &amp;ldquo;What the cock knows how to do, he does. What I know, I say, and nothing beyond that!&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Reading the transcripts of these interviews, it seems to me that these questions are just frustratingly uninteresting to the interviewed subjects, who were not used to contrived tests of formal reasoning in classroom settings. It&amp;rsquo;s not unreasonable to respond this way if you aren&amp;rsquo;t used to separating a word problem from the world that it is embedded in (like a &lt;a href=&#34;https://en.wikipedia.org/wiki/Closure_(computer_programming)&#34;&gt;closure&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Reading the transcripts of these interviews, it seems to me that these questions are just frustratingly uninteresting to the interviewed subjects, who were not used to contrived tests of formal reasoning in classroom settings. It&amp;rsquo;s not unreasonable to respond this way if you aren&amp;rsquo;t used to separating a word problem from the world that it is embedded in (sequestering it away in a little &lt;a href=&#34;https://en.wikipedia.org/wiki/Closure_(computer_programming)&#34;&gt;closure&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s an example that might make you more sympathetic to the Uzbek nomads. What valid inference can you make based on the following statements (&lt;a href=&#34;https://modeltheory.org/papers/1989suppression.pdf&#34;&gt;Byrne, 1989&lt;/a&gt;)?&lt;/p&gt;
 &lt;!-- http://repo.darmajaya.ac.id/4379/1/Computational%20logic%20and%20human%20thinking%20_%20how%20to%20be%20artificially%20intelligent%20%28%20PDFDrive%20%29.pdf
 https://modeltheory.org/papers/1989suppression.pdf --&gt;
@@ -196,9 +196,16 @@ https://modeltheory.org/papers/1989suppression.pdf --&gt;
 &lt;p&gt;If Amy has an essay to write, she will study late in the library.
 &lt;br&gt; If the library is open, Amy will study late in the library. &lt;br&gt; Amy has an essay to write.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Here you are supposed to reason logically within the confines of these three sentences, which translated into symbols, say: $P\rightarrow Q$, $M\rightarrow Q$, $P$. Operating logically, I know that I should conclude $Q$. But personally, I find it very hard to conclude that &amp;ldquo;Amy will study late in the library&amp;rdquo; without knowing whether the library is open. There is an obvious &lt;em&gt;modus ponens&lt;/em&gt; here, but I just cannot make myself believe it. Others agree: 62% of respondents in Byrne&amp;rsquo;s original study made the same &amp;ldquo;error&amp;rdquo; that I did.&lt;/p&gt;
-&lt;p&gt;So—if you agree with me that we can&amp;rsquo;t conclude whether Amy will study late unless we know the closing hours of the library she plans to study at, then maybe you can understand the indignation of the 37-year-old Uzbek when asked whether bears in Novaya Zemlya are white. When situated in a real situation, it just doesn&amp;rsquo;t make sense to reason in this way. We might be more used to suspending our disbelief when it comes to classic syllogisms, but once the reasoning hits a little closer to home, it&amp;rsquo;s easier to see why Luria&amp;rsquo;s interviewees respond the way they do.&lt;/p&gt;
-&lt;p&gt;[conclusion]&lt;/p&gt;
+&lt;p&gt;Here you are supposed to reason logically within the confines of these three sentences, which translated into symbols, say: $P\rightarrow Q$, $M\rightarrow Q$, $P$. Operating logically, I know that I can conclude $Q$. But personally, I find it very hard to conclude that &amp;ldquo;Amy will study late in the library&amp;rdquo; without knowing whether the library is open. There is an obvious &lt;em&gt;modus ponens&lt;/em&gt; here, but I just cannot make myself believe it. Others agree: 62% of respondents in Byrne&amp;rsquo;s original study made the same &amp;ldquo;error&amp;rdquo; that I did.&lt;/p&gt;
+&lt;p&gt;So—if you agree with me that we can&amp;rsquo;t conclude whether Amy will study late unless we know the closing hours of the library she plans to study at, then maybe you can understand the indignation of the 37-year-old Uzbek when asked whether bears in Novaya Zemlya are white. When situated in a real life scenario, it just doesn&amp;rsquo;t make sense to reason in this way. Suspending all external world knowledge and understanding to complete a word problem just feels inane. We are used to suspending our disbelief when it comes to classic syllogisms, but once the reasoning hits a little closer to home, a lot of us end up reacting just like Luria&amp;rsquo;s interviewees.&lt;/p&gt;
+&lt;h2 id=&#34;quick-conclusion&#34; &gt;Quick Conclusion
+&lt;span&gt;
+    &lt;a href=&#34;#quick-conclusion&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;So, is the skill of suspending disbelief in order to activate particular logical processes, given a particular type of question, a good indicator of general intelligence? Maybe our focus on &amp;ldquo;intelligence&amp;rdquo; is myopic in and of itself. In &lt;em&gt;Orality and Literacy&lt;/em&gt;, Ong notes that people from oral cultures do not think of individuals as being &amp;ldquo;intelligent&amp;rdquo; in general. If someone is a good navigator, they are a good navigator. If they are a dancer or storyteller, they are lauded for those abilities. Why would you need some underlying g-factor to tie all of these traits together? (And in the case of IQ testing, why would shape rotation and syllogism questions be uniquely suited to measure that factor?)&lt;/p&gt;
+&lt;p&gt;Ironically, I&amp;rsquo;m now suspicious of the word &amp;ldquo;intelligence&amp;rdquo; in AI research when it refers to these narrow abstract reasoning tasks. Not just because of pedantic nitpicking, not just because of the horrible history of IQ testing (&lt;a href=&#34;https://en.wikipedia.org/wiki/Intelligence_quotient#IQ_testing_and_the_eugenics_movement_in_the_United_States&#34;&gt;in which the Binet-Simon IQ test was leveraged by eugenecists to sterlize 60,000 people in the U.S.&lt;/a&gt;), but because I simply think it&amp;rsquo;s a really narrow view of the human mind, which makes it unhelpful for our purposes as AI researchers.&lt;/p&gt;
 &lt;!-- 
 The word problems in this anecdote are clearly reminiscent of how we measure IQ in intelligence testing. One conclusion that you might draw from this is that if illiterate people are less good at  --&gt;
 </description>
