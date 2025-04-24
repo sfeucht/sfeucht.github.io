@@ -145,83 +145,62 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/syllogisms/</guid>
-      <description>&lt;h1 id=&#34;syllogisms-are-not-central-to-intelligence&#34; &gt;Syllogisms Are Not Central to Intelligence
+      <description>&lt;h1 id=&#34;solving-syllogisms-is-not-intelligence&#34; &gt;Solving Syllogisms is Not Intelligence
 &lt;span&gt;
-    &lt;a href=&#34;#syllogisms-are-not-central-to-intelligence&#34;&gt;
+    &lt;a href=&#34;#solving-syllogisms-is-not-intelligence&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;April 23, 2025&lt;/p&gt;
-&lt;!-- I&#39;m worried that our understanding of reasoning as highly-educated, literate experts in code, mathematics, and logic is not representative of &#34;natural&#34; human reasoning.  --&gt;
-&lt;p&gt;When people think of &lt;em&gt;reasoning&lt;/em&gt; in the context of cognitive science and AI, the first thing that comes to mind is often logical deductive processes: deriving conclusions from a set of axioms and rules, or perhaps &amp;ldquo;solving&amp;rdquo; syllogisms (&lt;em&gt;all cats are mammals, all mammals are warm-blooded, therefore all cats are warm-blooded&lt;/em&gt;). These sort of abstract, highly logical tasks are &lt;a href=&#34;https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and&#34;&gt;taken to be essential to &amp;ldquo;true&amp;rdquo; general intelligence&lt;/a&gt; by many critics of LLMs (who then go on to claim that this type of reasoning is fundamentally incompatible with probabilistic next-token prediction).&lt;/p&gt;
-&lt;p&gt;I personally believed this until very recently. As an undergrad, I wrote a paper on whether DNNs learn abstract representations of logical relations &lt;a href=&#34;https://arxiv.org/abs/2310.09612&#34;&gt;like &lt;em&gt;same-different&lt;/em&gt;&lt;/a&gt;. The implicit assumption we made was that abstract relations underlie &amp;ldquo;true&amp;rdquo; intelligence, but now I&amp;rsquo;m not sure how true this assumption is.&lt;/p&gt;
-&lt;p&gt;In &lt;em&gt;Orality and Literacy&lt;/em&gt; (1982), Walter Ong references a &lt;a href=&#34;https://dl1.cuni.cz/pluginfile.php/738180/mod_resource/content/0/Luria%20-%20Cognitive-development-its-cultural-and-social-foundations.pdf&#34;&gt;book containing a series of interviews&lt;/a&gt; by A.R. Luria, a Soviet neuropsychologist who interviewed low-educated populations of Uzbeks in the Uzbek SSR in 1931. The interviews were published over forty years later, in 1976. Here is one of the questions Luria asked people:&lt;/p&gt;
+&lt;span style=&#34;color:gray&#34;&gt;
+&lt;i&gt;(Logical reasoning is not fundamental to human intelligence. It&#39;s just a skill that some people in some cultures get very used to.)&lt;/i&gt;
+&lt;/span&gt;
+&lt;p&gt;What do we mean by &lt;em&gt;intelligence&lt;/em&gt; in the context of cognitive science and AI? One thing that often comes to mind is logical reasoning: deriving conclusions from a set of axioms and rules, or thinking through syllogisms like &lt;em&gt;&amp;ldquo;all cats are mammals, all mammals are warm-blooded, therefore all cats are warm-blooded.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Until recently, I thought of structured reasoning tasks as central to human (and therefore machine) intelligence. It seemed almost obvious that a &amp;ldquo;truly&amp;rdquo; intelligent system would encode abstract notions of, e.g., &lt;a href=&#34;https://arxiv.org/abs/2310.09612&#34;&gt;same versus different,&lt;/a&gt; and that such a system would have absolutely no trouble with syllogistic tasks. I don&amp;rsquo;t think this is an unpopular opinion: critics of LLMs assert that logical tasks are &lt;a href=&#34;https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and&#34;&gt;essential to &amp;ldquo;true&amp;rdquo; general intelligence&lt;/a&gt;. Some go on to claim that this type of reasoning is fundamentally incompatible with probablistic next-token prediction.&lt;/p&gt;
+&lt;p&gt;But I&amp;rsquo;m not sure that abstract logical reasoning is quite as fundamental to human intelligence as it seems. In his 1982 work &lt;em&gt;Orality and Literacy&lt;/em&gt;, Walter Ong references a &lt;a href=&#34;https://dl1.cuni.cz/pluginfile.php/738180/mod_resource/content/0/Luria%20-%20Cognitive-development-its-cultural-and-social-foundations.pdf&#34;&gt;book containing a series of interviews&lt;/a&gt; by A.R. Luria, a Soviet neuropsychologist who interviewed low-educated populations of Uzbeks in the Uzbek SSR in 1931. The interviews were published over forty years later, in 1976, and reveal something interesting about logical reasoning.&lt;/p&gt;
+&lt;p&gt;Here is one of the questions Luria asked people:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;In the Far North, where there is snow, all bears are white. Novaya Zemlya is in the far north and there is always snow there. What color are the bears?&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;In the Far North, where there is snow, all bears are white. Novaya Zemlya is in the far north and there is always snow there. What color are the bears?&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Strikingly, Luria found that illiterate respondents were very unlikely to simply respond &amp;ldquo;white&amp;rdquo; to this question. They ignored the constraints of the syllogism, and reasoned based on their own personal experiences instead. Here is an example of an exchange with a 37-year-old from a remote Kashgar village &lt;a href=&#34;https://dl1.cuni.cz/pluginfile.php/738180/mod_resource/content/0/Luria%20-%20Cognitive-development-its-cultural-and-social-foundations.pdf&#34;&gt;(Luria, 1976, pp. 109)&lt;/a&gt;, who refused to accept the premise of the question:&lt;/p&gt;
+&lt;p&gt;Strikingly, Luria found that illiterate respondents were very unlikely to simply respond &amp;ldquo;white&amp;rdquo; to this question. They ignored the constraints of the syllogism, and reasoned based on their own personal experiences instead. Here is an example of an exchange with a 37-year-old from a remote Kashgar village &lt;a href=&#34;https://dl1.cuni.cz/pluginfile.php/738180/mod_resource/content/0/Luria%20-%20Cognitive-development-its-cultural-and-social-foundations.pdf&#34;&gt;(Luria, 1976, pp. 109)&lt;/a&gt;, who refused to accept the premise of the question.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;There are different sorts of bears.&amp;rdquo; &lt;br&gt;
-&lt;em&gt;&lt;strong&gt;The syllogism is repeated.&lt;/strong&gt;&lt;/em&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;In the Far North, where there is snow, all bears are white. Novaya Zemlya is in the far north and there is always snow there. What color are the bears?&lt;/strong&gt;&lt;br&gt;
+&amp;ldquo;There are different sorts of bears.&amp;rdquo; &lt;br&gt;
+&lt;strong&gt;(The syllogism is repeated.)&lt;/strong&gt; &lt;br&gt;
 &amp;ldquo;I don&amp;rsquo;t know. I&amp;rsquo;ve seen a black bear. I&amp;rsquo;ve never seen any others&amp;hellip; each locality has its own animals: if it&amp;rsquo;s white, they will be white; if it&amp;rsquo;s yellow, they will be yellow.&amp;rdquo; &lt;br&gt;
-&lt;em&gt;&lt;strong&gt;But what kind of bears are there in Novaya Zemlya?&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;But what kind of bears are there in Novaya Zemlya?&lt;/strong&gt;*&lt;br&gt;
 &amp;ldquo;We always speak only of what we see, we don&amp;rsquo;t talk about what we haven&amp;rsquo;t seen.&amp;quot;&lt;br&gt;
-&lt;em&gt;&lt;strong&gt;But what do my words imply? (The syllogism is repeated.)&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;But what do my words imply? (The syllogism is repeated.)&lt;/strong&gt;&lt;br&gt;
 &amp;ldquo;Well, it&amp;rsquo;s like this: our tsar isn&amp;rsquo;t like yours, and yours isn&amp;rsquo;t like ours. Your words can be answered only by someone who was there, and if a person wasn&amp;rsquo;t there he can&amp;rsquo;t say anything on the basis of your words.&amp;rdquo; &lt;br&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Luria also presents illiterate Uzbeks with other logical puzzles, which they also seem to reject. When shown drawings of an axe, a saw, a hatchet, and a log, and asked to choose the odd one out, a 25-year-old illiterate respondent said: &amp;ldquo;They&amp;rsquo;re all alike. The saw will saw the log and the hatchet will hop it into small pieces. If one of these has to go, I&amp;rsquo;d throw out the hatchet. It doesn&amp;rsquo;t do as good a job as a saw.&amp;rdquo; Literate respondents, on the other hand, would almost always discard the log, with the rationale that the first three objects belong together (as they are all tools).&lt;/p&gt;
-&lt;p&gt;There are a lot of hypotheses for why these people were so resistant to such logic-based tasks; for example, Ong points out that interviewees who studied &lt;em&gt;writing&lt;/em&gt; were more likely to accept and go along with syllogisms. But regardless of the exact reason for this resistance, these responses were very surprising to me. Clearly, abstract reasoning tasks like deduction and categorization are &lt;em&gt;not&lt;/em&gt; universal across humans—these Uzbek farmers were getting along just fine without much care for them.&lt;/p&gt;
+&lt;p&gt;Luria presents illiterate Uzbeks with many more logical puzzles, which they also seem to reject. When shown drawings of an axe, a saw, a hatchet, and a log, and asked to choose the odd one out, a 25-year-old illiterate respondent said: &amp;ldquo;They&amp;rsquo;re all alike. The saw will saw the log and the hatchet will hop it into small pieces. If one of these has to go, I&amp;rsquo;d throw out the hatchet. It doesn&amp;rsquo;t do as good a job as a saw.&amp;rdquo; Literate respondents, on the other hand, would almost always discard the log, with the rationale that the three tools should be grouped together.&lt;/p&gt;
+&lt;p&gt;There are a lot of hypotheses for why these people were so resistant to such logic-based tasks (e.g., Ong points out that interviewees who studied &lt;em&gt;writing&lt;/em&gt; were more likely to accept and go along with syllogisms). But regardless of the underlying explanation for this behavior, the existence of these interview responses was thrilling to me. There is no reason to believe that regular people born in the Uzbek SSR and randomly selected for this study were any more or less &amp;ldquo;intelligent&amp;rdquo; than anyone else. Clearly, abstract reasoning tasks like deduction and categorization are &lt;em&gt;not&lt;/em&gt; universal across humans—these Uzbek farmers were getting along just fine without much care for them.&lt;/p&gt;
 &lt;h3 id=&#34;some-sympathy&#34; &gt;Some Sympathy
 &lt;span&gt;
     &lt;a href=&#34;#some-sympathy&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;p&gt;To go back to the bear example, it&amp;rsquo;s not that people &lt;em&gt;couldn&amp;rsquo;t conceive&lt;/em&gt; of the abstract reasoning necessary to answer this problem &amp;ldquo;correctly.&amp;rdquo; [quote of guy being like to go by your words&amp;hellip;] To me, it seems like these questions just seemed uninteresting and pedantic to these interviewees, who were not used to contrived tests of formal logic/reasoning in classroom settings. It&amp;rsquo;s not unreasonable to have these types of objections if you aren&amp;rsquo;t used to sequestering these problems away from real world knowledge and implications.&lt;/p&gt;
-&lt;p&gt;Here&amp;rsquo;s an example that might make you more sympathetic to the Uzbek nomads.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://repo.darmajaya.ac.id/4379/1/Computational%20logic%20and%20human%20thinking%20_%20how%20to%20be%20artificially%20intelligent%20%28%20PDFDrive%20%29.pdf&#34;&gt;http://repo.darmajaya.ac.id/4379/1/Computational%20logic%20and%20human%20thinking%20_%20how%20to%20be%20artificially%20intelligent%20%28%20PDFDrive%20%29.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://modeltheory.org/papers/1989suppression.pdf&#34;&gt;https://modeltheory.org/papers/1989suppression.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;To go back to the bear example, it&amp;rsquo;s not that people &lt;em&gt;couldn&amp;rsquo;t conceive&lt;/em&gt; of the abstract reasoning necessary to answer this problem &amp;ldquo;correctly.&amp;rdquo; After more back-and-forth in the above conversation, another young Uzbek chimed in, who was clearly able to complete the syllogistic reasoning presented in the question.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;If Mary has an essay to write, she will study in the library.&lt;br&gt;Mary has an essay to write.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;But on the basis of my words—in the North, where there is always snow, the bears are white, can you gather what kind of bears there are in Novaya Zemlya?&lt;/strong&gt;&lt;br&gt;
+&amp;ldquo;If a man was sixty or eighty and had seen a white bear and had told about it, he could be believed, but I&amp;rsquo;ve never seen one and hence I can&amp;rsquo;t say. That&amp;rsquo;s my last word. Those who saw can tell, and those who didn&amp;rsquo;t see can&amp;rsquo;t say anything!&amp;rdquo; (At this point a young Uzbek volunteered, &amp;ldquo;From your words it means that bears there are white.&amp;rdquo;)&lt;br&gt;
+&lt;strong&gt;Well, which of you is right?&lt;/strong&gt;&lt;br&gt;
+&amp;ldquo;What the cock knows how to do, he does. What I know, I say, and nothing beyond that!&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Will she study in the library? Most people answer yes.&lt;/p&gt;
+&lt;p&gt;Reading the transcripts of these interviews, it seems to me that these questions are just frustratingly uninteresting to the interviewed subjects, who were not used to contrived tests of formal reasoning in classroom settings. It&amp;rsquo;s not unreasonable to respond this way if you aren&amp;rsquo;t used to separating a word problem from the world that it is embedded in (like a &lt;a href=&#34;https://en.wikipedia.org/wiki/Closure_(computer_programming)&#34;&gt;closure&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s an example that might make you more sympathetic to the Uzbek nomads. What valid inference can you make based on the following statements (&lt;a href=&#34;https://modeltheory.org/papers/1989suppression.pdf&#34;&gt;Byrne, 1989&lt;/a&gt;)?&lt;/p&gt;
+&lt;!-- http://repo.darmajaya.ac.id/4379/1/Computational%20logic%20and%20human%20thinking%20_%20how%20to%20be%20artificially%20intelligent%20%28%20PDFDrive%20%29.pdf
+https://modeltheory.org/papers/1989suppression.pdf --&gt;
 &lt;blockquote&gt;
-&lt;p&gt;If Mary has an essay to write, she will study in the library.
-&lt;br&gt; If the library is open, Mary will study in the library. &lt;br&gt; Mary has an upcoming exam.&lt;/p&gt;
+&lt;p&gt;If Amy has an essay to write, she will study late in the library.
+&lt;br&gt; If the library is open, Amy will study late in the library. &lt;br&gt; Amy has an essay to write.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;P -&amp;gt; Q, M -&amp;gt; Q, P
-clearly you can still conclude Q. &amp;ldquo;But the library might not be open!&amp;rdquo; yes, but now you sound just like the &amp;ldquo;But I&amp;rsquo;ve only seen black bears!&amp;rdquo; now that we are working with a less obviously-formalized and more familiar situation, you are not thinking logically, but thinking in terms of your model + understanding of the world, just like the Uzbek nomads. Does this mean  you are not intelligent or capable of abstract reasoning? No, it just means that you are not prioritizing that particular reading of these statements (because in real life they are somewhat superfluous.)&lt;/p&gt;
-&lt;p&gt;This also reminds me of a quite beautiful puzzle I saw on twitter.  Take a look.
-A few weeks ago I saw  puzzle on twitter &lt;a href=&#34;https://x.com/moebio/status/1901295095262982261&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;there was a lot of debate as to whether there exists a &amp;ldquo;right&amp;rdquo; answer here. just like in the above situation, people think that &amp;ldquo;objectively&amp;rdquo; (b) is the correct answer because it&amp;rsquo;s the most abstract or whatever, but why privilege this perspective above any other attribute? just because it&amp;rsquo;s more abstract? hm.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;The word problems in this anecdote are clearly reminiscent of how we measure IQ in intelligence testing. One conclusion that you might draw from this is that if illiterate people are less good at&lt;/p&gt;
-&lt;p&gt;A few weeks ago I saw  puzzle on twitter &lt;a href=&#34;https://x.com/moebio/status/1901295095262982261&#34;&gt;here&lt;/a&gt;. My question is &amp;ndash; why exactly do we privilege abstract reasoning&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://x.com/CodingFiend/status/1901334388354478159&#34;&gt;https://x.com/CodingFiend/status/1901334388354478159&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;As Ong points out, there is no reason to believe that a randomly-selected Uzbek nomad is any more or less &amp;ldquo;intelligent&amp;rdquo; than a literate from Moscow.&lt;/p&gt;
-&lt;p&gt;The fact that they just simply do not compute with people who have never been in a classroom sets off alarm bells for me. There is no reason to believe&lt;/p&gt;
-&lt;p&gt;Given these anecdotes, one might draw the erroneous conclusion that these illiterate farmers are simply&lt;/p&gt;
-&lt;!-- Ong uses the results of these interviews as evidence for his hypothesis that literacy, being trained to read and write, fundamentally changes the psychology of individuals and cultures. Regardless of whether this is true (I think you should read his original work if you are interested), I was wondering what exactly this means for evaluating the reasoning capabilities of LLMs.  --&gt;
-&lt;p&gt;One reaction to this would be like &amp;ldquo;these people are dumb&amp;rdquo; but I think that is the wrong perspective. Think about this example.&lt;/p&gt;
-&lt;p&gt;Give people an intuition for what it feels like to be the illiterate person &amp;ndash; [mary in the library page 33]
-[also the probabiltic intersection religion thing?]&lt;/p&gt;
-&lt;p&gt;So basicalliy what do we freaking by intelligence? food for thought.&lt;/p&gt;
-&lt;p&gt;[sherlock holmes example bookmark]&lt;/p&gt;
-&lt;h2 id=&#34;notes&#34; &gt;notes
-&lt;span&gt;
-    &lt;a href=&#34;#notes&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;abstract relations are not inherently human, they are a byproduct of writing&lt;/li&gt;
-&lt;li&gt;syllogisms have lots of implicit assumptions when used in actual reasoning - &amp;ldquo;syllogisms are truncated arguments&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;what is reasoning for? it is for understanding intuitions and explaining our behavior to others.&lt;/li&gt;
-&lt;li&gt;maybe talk about the left/right brain people making up reasons for why they do something in those corpus callosum experiments.&lt;/li&gt;
-&lt;li&gt;transluce o3 tripping over itself to explain how it got its answer when it doesnt really know itself&lt;/li&gt;
-&lt;li&gt;my experience saying some claim and then defending it like this is my claim now&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Here you are supposed to reason logically within the confines of these three sentences, which translated into symbols, say: $P\rightarrow Q$, $M\rightarrow Q$, $P$. Operating logically, I know that I should conclude $Q$. But personally, I find it very hard to conclude that &amp;ldquo;Amy will study late in the library&amp;rdquo; without knowing whether the library is open. There is an obvious &lt;em&gt;modus ponens&lt;/em&gt; here, but I just cannot make myself believe it. Others agree: 62% of respondents in Byrne&amp;rsquo;s original study made the same &amp;ldquo;error&amp;rdquo; that I did.&lt;/p&gt;
+&lt;p&gt;So—if you agree with me that we can&amp;rsquo;t conclude whether Amy will study late unless we know the closing hours of the library she plans to study at, then maybe you can understand the indignation of the 37-year-old Uzbek when asked whether bears in Novaya Zemlya are white. When situated in a real situation, it just doesn&amp;rsquo;t make sense to reason in this way. We might be more used to suspending our disbelief when it comes to classic syllogisms, but once the reasoning hits a little closer to home, it&amp;rsquo;s easier to see why Luria&amp;rsquo;s interviewees respond the way they do.&lt;/p&gt;
+&lt;p&gt;[conclusion]&lt;/p&gt;
+&lt;!-- 
+The word problems in this anecdote are clearly reminiscent of how we measure IQ in intelligence testing. One conclusion that you might draw from this is that if illiterate people are less good at  --&gt;
 </description>
     </item>
     
