@@ -67,6 +67,8 @@ params:
     login: hugo-theme-anubis
     pingback: true
   social:
+  - id: blog
+    url: "/blog"
   - id: twitter
     url: "https://twitter.com/sheridan_feucht"
   - id: bluesky
