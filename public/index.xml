@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sheridan Feucht</title>
-    <link>//localhost:1313/</link>
+    <link>http://localhost:1313/</link>
     <description>Sheridan Feucht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>//localhost:1313/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;&gt;Apache License 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
 &lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
 &lt;ul&gt;
@@ -35,27 +35,27 @@
     
     <item>
       <title></title>
-      <link>//localhost:1313/blog/</link>
+      <link>http://localhost:1313/blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/blog/</guid>
+      <guid>http://localhost:1313/blog/</guid>
       <description>&lt;h1 id=&#34;sheridans-blog&#34; &gt;Sheridan&amp;rsquo;s Blog
 &lt;span&gt;
     &lt;a href=&#34;#sheridans-blog&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;//localhost:1313/syllogisms&#34;&gt;Solving Syllogisms is Not Intelligence&lt;/a&gt; &lt;br&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/syllogisms&#34;&gt;Solving Syllogisms is Not Intelligence&lt;/a&gt; &lt;br&gt;
 April 24, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;(I think that we overvalue logical reasoning when it comes to measuring &amp;ldquo;intelligence.&amp;rdquo;)&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>//localhost:1313/books2024/</link>
+      <link>http://localhost:1313/books2024/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/books2024/</guid>
+      <guid>http://localhost:1313/books2024/</guid>
       <description>&lt;h1 id=&#34;books-i-read-in-2024&#34; &gt;Books I Read in 2024
 &lt;span&gt;
     &lt;a href=&#34;#books-i-read-in-2024&#34;&gt;
@@ -111,10 +111,10 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
     
     <item>
       <title></title>
-      <link>//localhost:1313/books2025/</link>
+      <link>http://localhost:1313/books2025/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/books2025/</guid>
+      <guid>http://localhost:1313/books2025/</guid>
       <description>&lt;h1 id=&#34;books-i-read-in-2025&#34; &gt;Books I Read in 2025
 &lt;span&gt;
     &lt;a href=&#34;#books-i-read-in-2025&#34;&gt;
@@ -131,10 +131,10 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
     
     <item>
       <title></title>
-      <link>//localhost:1313/headphones/</link>
+      <link>http://localhost:1313/headphones/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/headphones/</guid>
+      <guid>http://localhost:1313/headphones/</guid>
       <description>&lt;h1&gt;Dan&#39;s Headphones&lt;/h1&gt;
 &lt;p&gt;A meandering list of tunes and tracks that I enjoy, updated ~monthly.&lt;/p&gt;
 &lt;ul&gt;
@@ -158,17 +158,17 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
     
     <item>
       <title></title>
-      <link>//localhost:1313/manny/</link>
+      <link>http://localhost:1313/manny/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/manny/</guid>
-      <description>&lt;h1 id=&#34;fuck-it-manny-time&#34; &gt;Fuck it, Manny Time
+      <guid>http://localhost:1313/manny/</guid>
+      <description>&lt;h1 id=&#34;man-my-first-and-last-friend&#34; &gt;Man, My First and Last Friend
 &lt;span&gt;
-    &lt;a href=&#34;#fuck-it-manny-time&#34;&gt;
+    &lt;a href=&#34;#man-my-first-and-last-friend&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;span style=&#34;color:gray&#34;&gt; May 3, 2025 - A short story about high schoolers. Congrats if you found this page. &lt;/span&gt;&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;span style=&#34;color:gray&#34;&gt; May 3, 2025 - A short story about high schoolers. Congrats if you found this page. &lt;a href=&#34;http://localhost:1313/manny.pdf&#34;&gt;PDF Version&lt;/a&gt; &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Man (Manny) is a kid in my grade. How do I explain him to you? Well, first, he was born in 2001. This means, like me, he is sixteen years old. He mains Fox. His outward temperament is soft, but his insides are littered with naval mines. He is the only person I have ever loved. Oh, and just like me, he loves &lt;code&gt;MEME&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Yes, &lt;code&gt;MEME&lt;/code&gt;—that is a good place to start. Two years ago after Labour Day, I sat beneath a window of cold autumn light. I was fourteen at the time. A muffin wrapper filled with jelly beans lay on the laminate table. The jellies reminded me of &lt;code&gt;THE BEAN MEME&lt;/code&gt;, and I needed this fact to be known.&lt;br&gt;
 &lt;span class=&#34;indent&#34;&gt;“They’re just putting beans anywhere now, huh?” I quipped. I heard a snort behind me and turned to see the corners of Man’s mouth lift.&lt;br&gt;
@@ -210,10 +210,10 @@ BOTTOM TEXT
     
     <item>
       <title></title>
-      <link>//localhost:1313/syllogisms/</link>
+      <link>http://localhost:1313/syllogisms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/syllogisms/</guid>
+      <guid>http://localhost:1313/syllogisms/</guid>
       <description>&lt;h1 id=&#34;solving-syllogisms-is-not-intelligence&#34; &gt;Solving Syllogisms is Not Intelligence
 &lt;span&gt;
     &lt;a href=&#34;#solving-syllogisms-is-not-intelligence&#34;&gt;

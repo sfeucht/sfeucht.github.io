@@ -1,5 +1,5 @@
 # Man, My First and Last Friend
-<span style="color:gray"> May 3, 2025 - A short story about high schoolers. Congrats if you found this page. </span>
+<span style="color:gray"> May 3, 2025 - A short story about high schoolers. Congrats if you found this page. <a href="/manny.pdf">PDF Version</a> </span>
 
 Man (Manny) is a kid in my grade. How do I explain him to you? Well, first, he was born in 2001. This means, like me, he is sixteen years old. He mains Fox. His outward temperament is soft, but his insides are littered with naval mines. He is the only person I have ever loved. Oh, and just like me, he loves `MEME`. 
 
