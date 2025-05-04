@@ -1,4 +1,4 @@
-baseURL: 'https://sfeucht.github.io/'
+baseURL: '/'
 languageCode: 'en-us'
 title: 'Sheridan Feucht'
 theme:  'anubis'
