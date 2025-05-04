@@ -73,7 +73,6 @@ params:
   - id: cv
     url: "/sfeucht_cv.pdf"
 
-
 markup:
   goldmark:
     renderer:
