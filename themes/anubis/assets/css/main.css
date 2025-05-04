@@ -63,7 +63,7 @@ body {
 .indent::before {
     content: "\00a0\00a0\00a0\00a0\00a0\00a0";
     white-space: pre;
-  }
+}
 
 article,
 aside,
