@@ -20,3 +20,4 @@ A meandering list of tunes and tracks that I enjoy, updated ~monthly.
 - [01/2025] <a href="https://www.youtube.com/watch?v=WMDWPH4oKwo">Type Slowly - Pavement</a> & <a href="https://www.youtube.com/watch?v=K14qg9E9SoE">Slowly Typed - Pavement</a>
 - [02/2025] <a href="https://www.youtube.com/watch?v=9KE_I6d5m9E">Armando's Rhumba - Chick Corea</a>
 - [04/2025] <a href="https://www.youtube.com/watch?v=wiLIV3H0q-Y">Can't We Be Friends - Ella & Louis</a>
+- [06/2025] <a href="https://www.youtube.com/watch?v=Claf8E18eLs">You're Gonna Make Me Lonesome When You Go - Bob Dylan</a>
