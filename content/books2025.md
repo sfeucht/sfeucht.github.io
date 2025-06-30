@@ -9,3 +9,5 @@ disableComments: true
 - (Jan) Morning and Evening - Jon Fosse
 - (March) Pale Fire - Vladimir Nabokov
 - (April) Orality and Literacy - Walter Ong
+- (May) Syntactic Structures - Noam Chomsky 
+- (June) How to Write About Contemporary Art - Gilda Williams
