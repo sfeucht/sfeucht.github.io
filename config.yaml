@@ -62,6 +62,8 @@ params:
     login: hugo-theme-anubis
     pingback: true
   social:
+  - id: research
+    url: "/research"
   - id: blog
     url: "/blog"
   - id: twitter
