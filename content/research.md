@@ -9,19 +9,18 @@ disableComments: true
     }
     
     .paper {
-        background-color: #3a3a3a;
-        border: 1px solid #ffffff;
+        /* background-color: #3a3a3a; */
+        border: 1px solid #676767ff;
         padding: 15px 20px;
         margin-bottom: 20px;
-        border-radius: 4px;
+        border-radius: 2px;
         counter-increment: item;
         position: relative;
     }
     
     .paper:before {
-        /* content: counter(item) "."; */
         font-weight: normal;
-        color: #e0e0e0;
+        /* color: #e0e0e0; */
         margin-right: 10px;
         font-size: 1.2em;
     }
@@ -30,7 +29,7 @@ disableComments: true
         display: inline;
         margin: 0;
         font-size: 1.2em;
-        color: #ffffff;
+        /* color: #ffffff; */
         font-weight: normal;
     }
 
@@ -38,7 +37,7 @@ disableComments: true
         display: inline;
         margin: 0;
         font-size: 0.8em;
-        color: #ffffff;
+        /* color: #ffffff; */
         font-weight: normal;
     }
     
