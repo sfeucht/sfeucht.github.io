@@ -28,7 +28,7 @@ Strikingly, Luria found that illiterate respondents were very unlikely to simply
 > "There are different sorts of bears." <br>
 > **(The syllogism is repeated.)** <br>
 > "I don't know. I've seen a black bear. I've never seen any others... each locality has its own animals: if it's white, they will be white; if it's yellow, they will be yellow." <br>
-> **But what kind of bears are there in Novaya Zemlya?***<br>
+> **But what kind of bears are there in Novaya Zemlya?**<br>
 > "We always speak only of what we see, we don't talk about what we haven't seen."<br>
 > **But what do my words imply? (The syllogism is repeated.)**<br>
 > "Well, it's like this: our tsar isn't like yours, and yours isn't like ours. Your words can be answered only by someone who was there, and if a person wasn't there he can't say anything on the basis of your words." <br>
@@ -36,7 +36,7 @@ Strikingly, Luria found that illiterate respondents were very unlikely to simply
 
 Luria presents illiterate Uzbeks with many more logical puzzles, which they also seem to reject. When shown drawings of an axe, a saw, a hatchet, and a log, and asked to choose the odd one out, a 25-year-old illiterate respondent said: "They're all alike. The saw will saw the log and the hatchet will chop it into small pieces. If one of these has to go, I'd throw out the hatchet. It doesn't do as good a job as a saw." Literate respondents, on the other hand, would almost always discard the log, with the rationale that the three tools should be grouped together. 
 
-Regardless of the underlying explanation for this behavior, I find these interview responses thrilling to read. There are a lot of hypotheses for why these people were so resistant to such logic-based tasks (e.g., Ong points out that peasants who had learned to write were more likely to entertain Luria's syllogisms), but there is no reason to believe that regular people born in the Uzbek SSR and randomly selected for this study were any more or less "intelligent" than individuals drawn from some other population. Clearly, abstract reasoning tasks like deduction and categorization are *not* universal across humans—and these Uzbek farmers were getting along just fine without much care for them!
+Regardless of the underlying explanation for this behavior, I find these interview responses thrilling to read. There are a lot of hypotheses for why these people were so resistant to such logic-based tasks (e.g., Ong points out that people who had learned to write were more likely to entertain Luria's syllogisms), but there is no reason to believe that regular people born in the Uzbek SSR and randomly selected for this study were any more or less "intelligent" than individuals drawn from some other population. Clearly, abstract reasoning tasks like deduction and categorization are *not* universal across humans—and these Uzbek farmers were getting along just fine without much care for them!
 
 ### Some Sympathy 
 
