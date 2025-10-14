@@ -47,7 +47,7 @@ To go back to the bear example, it's not that people *couldn't conceive* of the 
 >**Well, which of you is right?**<br>
 >"What the cock knows how to do, he does. What I know, I say, and nothing beyond that!"
 
-Reading the transcripts of these interviews, it seems to me that these questions are just frustratingly uninteresting to the interviewed subjects, who were not used to contrived tests of formal reasoning in classroom settings. It's not unreasonable to respond this way if you aren't used to separating a word problem from the world that it is embedded in (sequestering it away in a little [closure](https://en.wikipedia.org/wiki/Closure_(computer_programming))). 
+Reading the transcripts of these interviews, it seems to me that these questions are just frustratingly uninteresting to the interviewed subjects, who were not used to contrived tests of formal reasoning in classroom settings. It's not unreasonable to respond this way if you aren't used to separating a word problem from the world that it is embedded in.
 
 Here's an example that might make you more sympathetic to the Uzbek nomads. What valid inference can you make based on the following statements ([Byrne, 1989](https://modeltheory.org/papers/1989suppression.pdf))?
 
