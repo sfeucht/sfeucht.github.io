@@ -23,3 +23,4 @@ A meandering list of tunes and tracks that I enjoy, updated ~monthly.
 - [06/2025] <a href="https://www.youtube.com/watch?v=Claf8E18eLs">You're Gonna Make Me Lonesome When You Go - Bob Dylan</a>
 - [07/2025] <a href="https://www.youtube.com/watch?v=q4KYYRzFUzE">Vampire in the Corner - Magdalena Bay</a>
 - [09/2025] <a href="https://www.youtube.com/watch?v=1XtUK5Boy7o">Sunset - McCoy Tyner</a>
+- [11/2025] <a href="https://www.youtube.com/watch?v=TaKD1Vdarnw">King Harvest (Has Surely Come) - The Band</a>
