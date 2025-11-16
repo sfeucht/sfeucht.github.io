@@ -8,7 +8,7 @@ math: true
 April 23, 2025 
 
 <span style="color:gray">
-<i>(I think that we overvalue logical reasoning when it comes to measuring "intelligence.")</i>
+<i>I think that we overvalue logical reasoning when it comes to measuring "intelligence."</i>
 </span>
 
 What do we mean by *intelligence* in the context of cognitive science and AI? One thing that often comes to mind is logical reasoning: deriving conclusions from a set of axioms and rules, or thinking through syllogisms like *"all cats are mammals, all mammals are warm-blooded, therefore all cats are warm-blooded."* 

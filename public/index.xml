@@ -45,8 +45,12 @@
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/syllogisms&#34;&gt;Solving Syllogisms is Not Intelligence&lt;/a&gt; &lt;br&gt;
-April 24, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;(I think that we overvalue logical reasoning when it comes to measuring &amp;ldquo;intelligence.&amp;rdquo;)&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/h1&gt;&lt;!-- [Writing That is Language Now?](/rerereading) &lt;br&gt;
+November 15, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;A follow-up to &#34;Writing That&#39;s Not Language (Yet).&#34;&lt;/i&gt;&lt;/span&gt; --&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/syllogisms&#34;&gt;Solving Syllogisms is Not Intelligence&lt;/a&gt; &lt;br&gt;
+April 24, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;I think that we overvalue logical reasoning when it comes to measuring &amp;ldquo;intelligence.&amp;quot;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sfeucht.github.io/rereading&#34;&gt;Writing That&amp;rsquo;s Not Language (Yet)&lt;/a&gt; &lt;br&gt;
+August 10, 2021 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -216,6 +220,75 @@ BOTTOM TEXT
     
     <item>
       <title></title>
+      <link>http://localhost:1313/rerereading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/rerereading/</guid>
+      <description>&lt;h1 id=&#34;writing-that-is-language-now&#34; &gt;Writing That is Language Now?
+&lt;span&gt;
+    &lt;a href=&#34;#writing-that-is-language-now&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;November 15, 2025&lt;/p&gt;
+&lt;span style=&#34;color:gray&#34;&gt;
+&lt;i&gt;A follow-up to &lt;a href=&#34;https://sfeucht.github.io/rereading&#34;&gt;&#34;Writing That&#39;s Not Language (Yet).&#34;&lt;/a&gt;&lt;/i&gt;
+&lt;/span&gt;
+&lt;p&gt;Recently, a nonsense LLM-generated paper &lt;a href=&#34;https://x.com/micahgoldblum/status/1989088547777966512?s=20&#34;&gt;landed in the top 17% of ICLR submissions&lt;/a&gt;, with two reviewers giving it a score of 8/10. Although it was flagged by a third reviewer and &lt;a href=&#34;https://x.com/iclr_conf/status/1989349884227715257?s=20&#34;&gt;later desk-rejected&lt;/a&gt;, this kicked up a flurry of outrage among AI researchers. Personally, I was struck by the review that initially flagged the paper as AI-generated:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/review3_big.png&#34; alt=&#34;I found this paper very difficult to read and comprehend. Beginning with the abstract—which conveys almost no meaningful insight to non-expert readers—the paper remains largely opaque throughout. It introduces numerous topics without proper context or explanation, ultimately leading to the unsubstantiated claim that a &amp;ldquo;verification framework&amp;rdquo; has been established.
+There are two possible explanations for this lack of clarity: (1) The paper may be written in an extremely dense and narrow style, understandable only to experts working directly in this specific subarea (which I am not), or (2) The extensive use of LLM-assisted writing tools may have resulted in text that appears technically sophisticated but lacks genuine substance or coherence.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As soon as I saw the phrase &amp;ldquo;&lt;em&gt;appears&lt;/em&gt; technically sophisticated but lacks genuine substance,&amp;rdquo; I felt that there was something interesting here. The frustration here was palpable—I had experienced the exact same thing years before.&lt;/p&gt;
+&lt;h2 id=&#34;writing-thats-not-language&#34; &gt;Writing That&amp;rsquo;s Not Language
+&lt;span&gt;
+    &lt;a href=&#34;#writing-thats-not-language&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In 2020, I close-read approximately 118 AI-generated documents on cannabis legalization (plus an equal number of human-written ones). It was a painstaking task: I needed to classify the &lt;a href=&#34;https://publikationen.sulb.uni-saarland.de/bitstream/20.500.11880/23722/1/scidok_final.pdf&#34;&gt;lexical aspectual class&lt;/a&gt; of every clause, mark coherence relations between clauses, and rate the argumentation quality of each document. But there were two things that made this difficult. First, I didn&amp;rsquo;t know which articles were human-written and which were AI-generated. Second, the AI-generated documents were extremely uncanny. Take this sentence, for example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;tt&gt;If weed’s not really a public health issue and you&amp;rsquo;re really happy about it, get an understanding about the ways in which it will be able to influence your behaviour.&lt;/tt&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Is this someone&amp;rsquo;s Reddit comment, posted without a second thought? Or is it a semi-competent language model&amp;rsquo;s attempt to imitate the surface form of an argument? I was never really sure. But the quality of my annotations depended on actually understanding what was being said here, so I spent a lot of time re-reading these kinds of sentences over and over, trying to grasp some kind of meaning from them. It felt like I was having a stroke, or like I was being gaslit by the text. But then, I&amp;rsquo;d read something like&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;tt&gt;BART police already have a &amp;ldquo;marijuana alley&amp;rdquo; where potential customers could find sprayers and pagers ready to use and find it where they&amp;rsquo;re supposed to.&lt;/tt&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;and breathe a sigh of relief. This document is nonsense—it was generated by GPT-2, a disembodied probabilistic model that does not vote and cannot smoke weed. So, it was safe to say that there was never any meaning here for me to extract in the first place.&lt;/p&gt;
+&lt;p&gt;The following summer (2021), I wrote an &lt;a href=&#34;https://sfeucht.github.io/rereading&#34;&gt;essay&lt;/a&gt; about this experience for a class. It includes some more cool examples of AI-generated nonsense that has the &lt;em&gt;shape&lt;/em&gt; of a sensible argument. In that essay, I argued that the text generated by LLMs is odd in that it is not language &lt;em&gt;yet&lt;/em&gt;—not until a human is able to read and extract meaning from that text. In this way, LLM-generated text is strange and beautiful.&lt;/p&gt;
+&lt;h2 id=&#34;ants-fornicating-meaninglessly-in-the-sand&#34; &gt;Ants Fornicating Meaninglessly In the Sand
+&lt;span&gt;
+    &lt;a href=&#34;#ants-fornicating-meaninglessly-in-the-sand&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ants fornicating meaninglessly in the sand: &lt;a href=&#34;https://arxiv.org/pdf/2308.05576&#34;&gt;https://arxiv.org/pdf/2308.05576&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;doesn&amp;rsquo;t matter if the meaning is there in the first place, meaning comes from us getting it?
+[I WOULD ARGUE THAT THIS IS WHAT READING IS!!!! &amp;ldquo;MY READING&amp;rdquo; OF A TEXT. art, philosophy, derrida, etc. just degree of difficulty?] metaphors we live by.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;badly written human text: derrida, bad paper, bad review replies. show the actual paper!! compare to actual legit paper!!!!!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ground-back-into-the-iclr-paper&#34; &gt;ground back into the iclr paper
+&lt;span&gt;
+    &lt;a href=&#34;#ground-back-into-the-iclr-paper&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;if before it was writing that is not language&amp;hellip; now it is language that is without meaning?
+show example of the abstract. this is the same thing as before, just kicked up a level. now the model can imitate the form of a whole paper pretty well. but there is still a vacancy in what it is actually trying to say. . just on the entire level of the paper.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fake paper examples that david mentioned. yeah like who cares if the author thought it was fake, if they did actually say something interesting&lt;/li&gt;
+&lt;li&gt;can we only do this if we have faith that the writer is a human?&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://localhost:1313/research/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -314,7 +387,7 @@ BOTTOM TEXT
 &lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;April 23, 2025&lt;/p&gt;
 &lt;span style=&#34;color:gray&#34;&gt;
-&lt;i&gt;(I think that we overvalue logical reasoning when it comes to measuring &#34;intelligence.&#34;)&lt;/i&gt;
+&lt;i&gt;I think that we overvalue logical reasoning when it comes to measuring &#34;intelligence.&#34;&lt;/i&gt;
 &lt;/span&gt;
 &lt;p&gt;What do we mean by &lt;em&gt;intelligence&lt;/em&gt; in the context of cognitive science and AI? One thing that often comes to mind is logical reasoning: deriving conclusions from a set of axioms and rules, or thinking through syllogisms like &lt;em&gt;&amp;ldquo;all cats are mammals, all mammals are warm-blooded, therefore all cats are warm-blooded.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Until recently, I thought of structured reasoning tasks as central to human (and by extension machine) intelligence. It seemed almost obvious that a &amp;ldquo;truly&amp;rdquo; intelligent system would encode abstract notions of, e.g., &lt;a href=&#34;https://arxiv.org/abs/2310.09612&#34;&gt;same versus different,&lt;/a&gt; and that such a system would have absolutely no trouble with syllogistic tasks. I don&amp;rsquo;t think this is an unpopular opinion: critics of LLMs assert that logical tasks are &lt;a href=&#34;https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and&#34;&gt;essential to &amp;ldquo;true&amp;rdquo; general intelligence&lt;/a&gt;. Some go on to claim that this type of reasoning is fundamentally incompatible with probablistic next-token prediction.&lt;/p&gt;
@@ -329,13 +402,13 @@ BOTTOM TEXT
 &amp;ldquo;There are different sorts of bears.&amp;rdquo; &lt;br&gt;
 &lt;strong&gt;(The syllogism is repeated.)&lt;/strong&gt; &lt;br&gt;
 &amp;ldquo;I don&amp;rsquo;t know. I&amp;rsquo;ve seen a black bear. I&amp;rsquo;ve never seen any others&amp;hellip; each locality has its own animals: if it&amp;rsquo;s white, they will be white; if it&amp;rsquo;s yellow, they will be yellow.&amp;rdquo; &lt;br&gt;
-&lt;strong&gt;But what kind of bears are there in Novaya Zemlya?&lt;/strong&gt;*&lt;br&gt;
+&lt;strong&gt;But what kind of bears are there in Novaya Zemlya?&lt;/strong&gt;&lt;br&gt;
 &amp;ldquo;We always speak only of what we see, we don&amp;rsquo;t talk about what we haven&amp;rsquo;t seen.&amp;quot;&lt;br&gt;
 &lt;strong&gt;But what do my words imply? (The syllogism is repeated.)&lt;/strong&gt;&lt;br&gt;
 &amp;ldquo;Well, it&amp;rsquo;s like this: our tsar isn&amp;rsquo;t like yours, and yours isn&amp;rsquo;t like ours. Your words can be answered only by someone who was there, and if a person wasn&amp;rsquo;t there he can&amp;rsquo;t say anything on the basis of your words.&amp;rdquo; &lt;br&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Luria presents illiterate Uzbeks with many more logical puzzles, which they also seem to reject. When shown drawings of an axe, a saw, a hatchet, and a log, and asked to choose the odd one out, a 25-year-old illiterate respondent said: &amp;ldquo;They&amp;rsquo;re all alike. The saw will saw the log and the hatchet will chop it into small pieces. If one of these has to go, I&amp;rsquo;d throw out the hatchet. It doesn&amp;rsquo;t do as good a job as a saw.&amp;rdquo; Literate respondents, on the other hand, would almost always discard the log, with the rationale that the three tools should be grouped together.&lt;/p&gt;
-&lt;p&gt;Regardless of the underlying explanation for this behavior, I find these interview responses thrilling to read. There are a lot of hypotheses for why these people were so resistant to such logic-based tasks (e.g., Ong points out that peasants who had learned to write were more likely to entertain Luria&amp;rsquo;s syllogisms), but there is no reason to believe that regular people born in the Uzbek SSR and randomly selected for this study were any more or less &amp;ldquo;intelligent&amp;rdquo; than individuals drawn from some other population. Clearly, abstract reasoning tasks like deduction and categorization are &lt;em&gt;not&lt;/em&gt; universal across humans—and these Uzbek farmers were getting along just fine without much care for them!&lt;/p&gt;
+&lt;p&gt;Regardless of the underlying explanation for this behavior, I find these interview responses thrilling to read. There are a lot of hypotheses for why these people were so resistant to such logic-based tasks (e.g., Ong points out that people who had learned to write were more likely to entertain Luria&amp;rsquo;s syllogisms), but there is no reason to believe that regular people born in the Uzbek SSR and randomly selected for this study were any more or less &amp;ldquo;intelligent&amp;rdquo; than individuals drawn from some other population. Clearly, abstract reasoning tasks like deduction and categorization are &lt;em&gt;not&lt;/em&gt; universal across humans—and these Uzbek farmers were getting along just fine without much care for them!&lt;/p&gt;
 &lt;h3 id=&#34;some-sympathy&#34; &gt;Some Sympathy
 &lt;span&gt;
     &lt;a href=&#34;#some-sympathy&#34;&gt;
@@ -349,7 +422,7 @@ BOTTOM TEXT
 &lt;strong&gt;Well, which of you is right?&lt;/strong&gt;&lt;br&gt;
 &amp;ldquo;What the cock knows how to do, he does. What I know, I say, and nothing beyond that!&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Reading the transcripts of these interviews, it seems to me that these questions are just frustratingly uninteresting to the interviewed subjects, who were not used to contrived tests of formal reasoning in classroom settings. It&amp;rsquo;s not unreasonable to respond this way if you aren&amp;rsquo;t used to separating a word problem from the world that it is embedded in (sequestering it away in a little &lt;a href=&#34;https://en.wikipedia.org/wiki/Closure_(computer_programming)&#34;&gt;closure&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Reading the transcripts of these interviews, it seems to me that these questions are just frustratingly uninteresting to the interviewed subjects, who were not used to contrived tests of formal reasoning in classroom settings. It&amp;rsquo;s not unreasonable to respond this way if you aren&amp;rsquo;t used to separating a word problem from the world that it is embedded in.&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s an example that might make you more sympathetic to the Uzbek nomads. What valid inference can you make based on the following statements (&lt;a href=&#34;https://modeltheory.org/papers/1989suppression.pdf&#34;&gt;Byrne, 1989&lt;/a&gt;)?&lt;/p&gt;
 &lt;!-- http://repo.darmajaya.ac.id/4379/1/Computational%20logic%20and%20human%20thinking%20_%20how%20to%20be%20artificially%20intelligent%20%28%20PDFDrive%20%29.pdf
 https://modeltheory.org/papers/1989suppression.pdf --&gt;
