@@ -11,7 +11,9 @@ November 15, 2025
 <i>A follow-up to <a href="https://sfeucht.github.io/rereading">"Writing That's Not Language (Yet)."</a></i>
 </span>
 
-Recently, a nonsense LLM-generated paper [landed in the top 17% of ICLR submissions](https://x.com/micahgoldblum/status/1989088547777966512?s=20), with two reviewers giving it a score of 8/10. Although it was flagged by a third reviewer and [later desk-rejected](https://x.com/iclr_conf/status/1989349884227715257?s=20), this "paper" kicked up a flurry of outrage among AI researchers. For me, this review hit close to home:
+*TODO tom: replace specifics in first paragraph with more generics, add interesting tagline*
+
+Recently, a nonsense LLM-generated paper [landed in the top 17% of ICLR submissions](https://x.com/micahgoldblum/status/1989088547777966512?s=20), with two reviewers giving it a score of 8/10. Although it was flagged by a third reviewer and [later desk-rejected](https://x.com/iclr_conf/status/1989349884227715257?s=20), this "paper" kicked up a flurry of outrage among AI researchers. Here's part of the review that first called out the paper:
 
 ![I found this paper very difficult to read and comprehend. Beginning with the abstract—which conveys almost no meaningful insight to non-expert readers—the paper remains largely opaque throughout. It introduces numerous topics without proper context or explanation, ultimately leading to the unsubstantiated claim that a "verification framework" has been established.
 There are two possible explanations for this lack of clarity: (1) The paper may be written in an extremely dense and narrow style, understandable only to experts working directly in this specific subarea (which I am not), or (2) The extensive use of LLM-assisted writing tools may have resulted in text that appears technically sophisticated but lacks genuine substance or coherence.](/review3_big.png)
