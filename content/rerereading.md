@@ -8,7 +8,7 @@ math: true
 November 15, 2025
 
 <span style="color:gray">
-<i>What exactly are we doing when we read LLM-generated text? (A follow-up to <a href="https://sfeucht.github.io/rereading">"Writing That's Not Language (Yet).")</a></i>
+<i>What exactly are we doing when we read LLM-generated text? (A follow-up to <a href="https://sfeucht.github.io/rereading">"Writing That's Not Language (Yet)."</a>)</i>
 </span>
 
 Recently, a [nonsense LLM-generated paper](https://x.com/micahgoldblum/status/1989088547777966512?s=20) kicked up some outrage in the community after receiving several positive reviews at ICLR, a popular deep learning conference. Although it was flagged by a third reviewer and [later rejected for violating conference guidelines](https://x.com/iclr_conf/status/1989349884227715257?s=20), I found it interesting that the fake paper had made it as far as it did. Particularly, I was moved by this skeptical reviewer's comments:
@@ -18,7 +18,6 @@ There are two possible explanations for this lack of clarity: (1) The paper may 
 
 The frustration here resonated with me a lot—probably because I'd been in a very similar situation before. 
 
-## Writing That's Not Language
 In 2020, I close-read approximately 118 AI-generated documents on cannabis legalization (and an equal number of human-written ones). It was a painstaking task: I needed to classify the [lexical aspectual class](https://publikationen.sulb.uni-saarland.de/bitstream/20.500.11880/23722/1/scidok_final.pdf) of every clause, mark coherence relations between clauses, and rate the argumentation quality of each document. But there were two things that made this difficult. First, I didn't know which articles were human-written and which were AI-generated. Second, the AI-generated documents were extremely uncanny. Take this sentence, for example:
 
 > <tt>If weed’s not really a public health issue and you're really happy about it, get an understanding about the ways in which it will be able to influence your behaviour.</tt>
