@@ -11,7 +11,7 @@ November 15, 2025
 <i>What exactly are we doing when we read LLM-generated text? (A follow-up to <a href="https://sfeucht.github.io/rereading">"Writing That's Not Language (Yet)."</a>)</i>
 </span>
 
-Recently, a [nonsense LLM-generated paper](https://x.com/micahgoldblum/status/1989088547777966512?s=20) kicked up some outrage in the community after receiving several positive reviews at ICLR, a popular deep learning conference. Although it was flagged by a third reviewer and [later rejected for violating conference guidelines](https://x.com/iclr_conf/status/1989349884227715257?s=20), I found it interesting that the fake paper had made it as far as it did. Particularly, I was moved by this skeptical reviewer's comments:
+Recently, a [nonsense LLM-generated paper](https://x.com/micahgoldblum/status/1989088547777966512?s=20) kicked up some outrage in the community after receiving several positive reviews at ICLR, a popular deep learning conference. Although it was flagged by a third reviewer and [later rejected for violating conference guidelines](https://x.com/iclr_conf/status/1989349884227715257?s=20), I found it interesting that the fake paper had made it as far as it did. I was particularly moved by this reviewer's comments:
 
 ![I found this paper very difficult to read and comprehend. Beginning with the abstract—which conveys almost no meaningful insight to non-expert readers—the paper remains largely opaque throughout. It introduces numerous topics without proper context or explanation, ultimately leading to the unsubstantiated claim that a "verification framework" has been established.
 There are two possible explanations for this lack of clarity: (1) The paper may be written in an extremely dense and narrow style, understandable only to experts working directly in this specific subarea (which I am not), or (2) The extensive use of LLM-assisted writing tools may have resulted in text that appears technically sophisticated but lacks genuine substance or coherence.](/review3_big.png)
@@ -33,7 +33,7 @@ The following summer (2021), I wrote an [essay](https://sfeucht.github.io/reread
 ## Writing That's Not a Paper 
 LLMs are a lot better now than they were in 2020: almost every sentence that comes out of a frontier model is not only structurally coherent, but sensical in the context of the sentences that came before it. You can almost always follow the flow of an LLM-generated article from beginning to end without much difficulty. So, does that mean that these documents are just... meaningful now? 
 
-I don't think so, and this recent ICLR situation illustrates why. There's no fundamental difference between what GPT-2 does and what GPT-5 does (to our knowledge). If GPT-2 gave us *sentences* that looked correct but did not actually say anything, then GPT-5 gives us entire *papers* that look coherent but don't actually make any sense. Here's a screenshot I took of the culprit paper's introduction as an example.
+Maybe not. There's no fundamental difference between what GPT-2 does and what GPT-5 does (to our knowledge). If GPT-2 gave us *sentences* that looked correct but did not actually say anything, then maybe GPT-5 gives us entire *papers* that look coherent but don't actually make any sense. Here's a screenshot I took of the culprit paper's introduction as an example.
 
 ![Deploying large language models in sensitive settings creates a need for verifiable inference: proofs that outputs were computed correctly without revealing proprietary weights or private inputs. Zero-knowledge ML (ZKML) offers this, yet current systems struggle to scale to Transformer architectures.
 Existing frameworks compile networks into polynomial constraint systems; prover cost is dominated by the number of constraints (roughly linear in parameter count). Cryptographic advances (e.g., lookups, sumcheck, commitments) accelerate the protocol layer, but they do not remove the model-level redundancy intrinsic to attention—leaving many constraints structurally unnecessary.
@@ -42,70 +42,46 @@ Scope and guarantees. We certify exact functional equivalence (no approximation)
 
 I know nothing about this area, so I'll leave critique of the "substance" of this paper to others (*if* that substance exists; more on that later). But what struck me was that this introduction has all of the surface-level indicators of being cogent and well-written: plain language, italicized key terms, and even a bolded paragraph header that points you to the **Key Idea.** Nonetheless, when I read it, I have no idea what problem the "authors" were trying to solve, or how their "key idea" actually helps to solve it. 
 
-Importantly, the way I feel reading this introduction is exactly like how I *used* to feel reading technical papers in undergrad, when I first started trying to do ML research. Scanning over the text, it looks like something that should make a lot of sense to an expert somewhere; but no matter how many times I re-read any sentence, I am no closer to understanding what is happening. It could be because I don't know about ZKML, but I don't think this is true: if I read the introduction of [this real paper](https://arxiv.org/pdf/2404.16109) on zero-knowledge proofs for LLMs, it's like a breath of fresh air. I actually understand what ZKML is, why it's interesting and hard, and even get a rough sense of what the authors did (even though it would take lots of work for me to truly understand it). 
+The way I feel reading this introduction is how I used to feel reading technical papers in undergrad, when I first started trying to get into ML research. Scanning over the text, it looks like something that should make a lot of sense to an expert somewhere, but no matter how many times I re-read any sentence, I am no closer to understanding what's going on. It could be because I don't know about ZKML, but I don't think this is true. If I read the introduction of [this real paper](https://arxiv.org/pdf/2404.16109) on zero-knowledge proofs for LLMs, it's like a breath of fresh air: I actually understand what ZKML is, why it's interesting and hard, and even get a rough sense of what the authors did (even though it would take lots of work for me to truly understand it). 
 
-Unfortunately, the folks who had to review this paper were subjected to worse LLM-gaslighting than I ever experienced in my aforementioned annotator days. In 2020, when I re-re-read a clause like "potential customers could find sprayers and pagers ready to use and find it where they're supposed to," the escape hatch was always right there (I knew it could be AI). But here, not only was the nonsensity of the text much more subtle, but the possibility that this paper was AI-generated might not have even crossed the reviewers' minds. If I was in this situation, I might have felt that old insecurity from undergrad creeping in, a nagging feeling that the problem is *me*, maybe even that I should keep my head down and not object. I can see that being a factor for why this could get past so many reviewers.[^1] 
+Unfortunately, the folks who had to review this paper were subjected to worse LLM-gaslighting than I ever had to experience in my annotator days. In 2020, when I re-re-read a clause like "potential customers could find sprayers and pagers ready to use and find it where they're supposed to," the escape hatch was always right there (I knew it could be AI). But here, not only was the nonsensity of the text much more subtle, but the possibility that this paper was AI-generated might not have even crossed the reviewers' minds. If I was in this situation, I might have felt that old insecurity from undergrad creeping in, a nagging feeling that the problem is *me*, maybe even that I should keep my head down and not object. I can see that being a factor for why this could get past so many reviewers.[^1] 
 
-## Writing as a Conduit for Meaning
+## The Conduit Metaphor
 
-This specific frustration of re-re-reading sentences to no avail isn't new, and I would guess that most people have experienced it with human-written text. I know that I can sometimes get "stuck" on sentences, reading them over and over like a broken record. For me, this mostly happens when reading highly technical texts, but I've also experienced it reading fiction, and even forum posts.
+This specific frustration of re-re-reading sentences to no avail isn't new; I would guess that most people have experienced it with human-written text. I know that I can sometimes get "stuck" on sentences, reading them over and over like a broken record. For me, this mostly happens when reading technical writing, but I've also experienced it reading fiction, and even forum posts.
 
 Reading is usually very easy for us, and it almost happens involuntarily. Think of the Stroop effect, where it's hard to *not* read the content of a word when it's flashed in front of you. When we read text that's written by others, we understand their thoughts and intentions quite quickly, almost as if there's a wire conducting their throughts straight into our brains. This might be why, at least in western English-speaking cultures, we conceptualize language as a conduit for meaning. This is known as the <span style="font-variant:small-caps;">Conduit Metaphor</span>, [first described](http://www.biolinguagem.com/ling_cog_cult/reddy_1979_conduit_metaphor.pdf) by linguist Michael J. Reddy in 1979, who argued that it forms the basis of how English speakers conceptualize communication and meaning.[^2]
 
-Under the <span style="font-variant:small-caps;">Conduit Metaphor</span>, we think of ideas as objects in our minds, and communication as the task of "packaging" these ideas into words and sentences before sending them to others to be unpacked. Reddy uses linguistic evidence to argue that this is how English speakers conceptualize language: "try to get your thoughts across better," "put those ideas in some other paragraph," "the sentence was filled with emotion". But if you study language, you've probably also come across this assumption stated *explicitly*, like in work on applying information theoretic considerations to language, where language is conceptualized as a noisy channel through which we send meaningful messages.  
+Under the <span style="font-variant:small-caps;">Conduit Metaphor</span>, we think of ideas as objects in our minds, and communication as the task of "packaging" these ideas into words and sentences before sending them to others to be unpacked. Reddy uses linguistic evidence to argue that this is how English speakers conceptualize language: "try to get your thoughts across better," "put those ideas in some other paragraph," "the sentence was filled with emotion". If you study language, you've probably also come across this assumption stated *explicitly*, like in work on applying information theory to language, where language is conceptualized as a noisy channel through which we send meaningful messages.  
 
-However, as Reddy points out in his original essay, this metaphor is misleading. Ideas are not objects that we can isolate from our minds and send directly into another person's brain. One example that Lakoff and Johnson give in their 1980 book *Metaphors We Live By* is ____. 
+However, as Reddy points out in his original essay, this metaphor is misleading. Ideas are not objects that we can take from our minds and wire directly into other people's brains. One example that Lakoff and Johnson give in their 1980 book *Metaphors We Live By* is ____. 
 
-Let's focus on text for now. Instead of thinking of reading in terms of the <span style="font-variant:small-caps;">Conduit Metaphor</span>, where a given text "contains" meaning that must be unpackaged by the reader, we could think of reading as a process of *generating* meaning from a given text. Under this conceptualization, the process of reading is kind of like making a recipe from a cookbook—every person making that recipe will execute the instructions differently, depending on their kitchen and the ingredients that they have access to in their own home, leading to very different outcomes. (The <span style="font-variant:small-caps;">Conduit Metaphor</span> would be akin ordering UberEats.)
+Instead of thinking of reading in terms of the <span style="font-variant:small-caps;">Conduit Metaphor</span>, where a given text "contains" meaning that must be unpackaged by the reader, we could think of reading as a process of *generating* meaning from some object that exists in the world. Under this conceptualization, the process of reading is kind of like making a recipe from a cookbook—every person making that recipe will execute the instructions differently, depending on their kitchen and the ingredients that they have access to in their own home, leading to very different outcomes. (The <span style="font-variant:small-caps;">Conduit Metaphor</span> would be akin ordering UberEats.)
 
-So what is happening when we find ourselves stuck re-re-reading the same sentence? We don't have to think of it as a failure to decipher/"get" the true meaning lurking deep inside the text. There is no meaning "inside" any text at all. It's just that in this moment, these symbols are not helping us to generate ideas inside our own heads; we're unable to *do* anything with these words. *This may be because tired, the author bad, deliberate obfuscation, we don't have the relevant concepts in our mind, etc.*
+I really like this conceptual metaphor for reading because it seems to resonate more with other ways in which we use the word. When we read tea leaves, we are generating meaning from a random blob based on our own personal symbols and conceptual structures. You can read someone's face, or "read into" their actions, but those interpretations will always be in terms of your own disposition, your hopes and anxieties. The act of reading is often interpretation, rather than extraction: when someone says, "that's my reading of it," they are being totally precise, because every person will read a given text slightly differently. 
 
-
-
-In a post-LLM world, it makes a lot more sense to conceptualize reading as *generating* meaning from a given text. 
-
-process of reading 
-
-death of the author 
-
-
-<!-- Then what exactly is happening when this process becomes so difficult?  -->
-
-(importantly, a human could also write things that don't have meaning. think of that first example sentence. )
-banging your head against a really difficult to understand paper. you can only do this if you have faith that the writer was a human who had something important they wanted to say. 
-
-https://en.wikipedia.org/wiki/Conduit_metaphor - in English. put the meaning into words=package, send the package, they unpack the package and get the meaning that you put in there. (noisy but yea.)
-
-CONSTRUCT THEIR OWN MEANING. only based on their existing knowledge and experiences. 
-toolmaker's parable metaphor
-
-this is why language is so interesting in the first place! bc its related to consciousness and how we can never actually understand what's inside someone else's head. 
-
-my alternative to conduit: you have meaning, print it out as text, send the text, and then they interpret the meaning via their own conceptual system. there is no meaning inherent in text. --- better version is toolmaker's parable, they build the tool themselves based on their own environments and knowledge, think it's weird. but if they think that the tool came from the nexus, they're like "wow they are stupid."   Orrrr we tend to blame the sender or receiver (I am dumb!!)
-
-Better way of saying it: put into package, send package, and then somehow it disappears and when we open the package we decide what is going to be in that package. / WE GENERATE whatever's in the package when we open it. (Miscommunication.)
-
-https://www.youtube.com/watch?v=k2n29-ugaAE
-
-- fake paper examples that david mentioned. yeah like who cares if the author thought it was fake, if they did actually say something interesting 
-- can we only do this if we have faith that the writer is a human?
-
-re-re-reading shows the cracks in what reading is as a whole. it's *generating* meaning from text, not unpacking it. we are always generating/creating, not unpacking. 
-
+So what is happening when we find ourselves stuck re-re-reading the same sentence? I think that this notion of "reading" lets us off the hook. If there is never any meaning "contained" inside a text, then these moments are not failures to extract some true meaning hidden inside a work, but instead just moments where some symbols on a page are not helping to generate ideas in our minds. This could happen for any number of reasons: fatigue, failure on the author's part to phrase their thoughts clearly, or simply a lack of relevant conceptual structure on the part of the reader (like when you try to read technical writing on an unfamiliar topic). And of course, it could happen when trying to read an artefact generated by a probabilistic language model. 
 
 ## Ants Fornicating Meaninglessly In the Sand
 - ants fornicating meaninglessly in the sand: https://arxiv.org/pdf/2308.05576
 - doesn't matter if the meaning is there in the first place, meaning comes from us getting it? 
 - you don't need this entire externalist philosophy here. 
 [I WOULD ARGUE THAT THIS IS WHAT READING IS!!!! "MY READING" OF A TEXT. art, philosophy, derrida, etc. just degree of difficulty?] metaphors we live by. 
-
 - badly written human text: derrida, bad paper, bad review replies. show the actual paper!! compare to actual legit paper!!!!! 
-- even well-written human text. it's not that we convert thoughts to words and words back to thoughts. it's not a symmetric process. you can have thoughts you don't write down, but more importantly, people can read anything out of your words that you weren't thinking of. is this a continuum? 
 
-"language as a conduit" lakoff 
 ellie's opinion piece look at "meaning" idea https://royalsocietypublishing.org/doi/10.1098/rsta.2022.0041
 
+## What Now?
+- even well-written human text. it's not that we convert thoughts to words and words back to thoughts. it's not a symmetric process. you can have thoughts you don't write down, but more importantly, people can read anything out of your words that you weren't thinking of. is this a continuum? 
+
 But... what *if* the thing that the reviewers read from the work was actually good? 
+
+- fake paper examples that david mentioned. yeah like who cares if the author thought it was fake, if they did actually say something interesting 
+- derrida example? 
+
+In a post-LLM world, we are now flooded with "meaningless" slop TODO talk about "faith" and generating meanings... 
+
+<!-- banging your head against a really difficult to understand paper. you can only do this if you have faith that the writer was a human who had something important they wanted to say.  -->
 
 
 [^1]: Of course, the right thing to do in this situation would always be to ask for the paper to be reassigned, or review to the best of your ability with low confidence; if a paper is that hard to understand, it probably shouldn't get published anyway. But a willingness to call BS seems to be a combination of seniority and personality. 
