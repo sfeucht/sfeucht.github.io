@@ -4,7 +4,7 @@ toc: false
 math: true
 ---
 
-# Writing That is Still Not Meaningful
+# Writing That is Still Not Meaningful?
 November 30, 2025
 
 <span style="color:gray">
@@ -66,7 +66,7 @@ So what is happening when we find ourselves stuck re-re-reading the same sentenc
 
 Under this framing, if a piece of text is meaningful to a reader, it doesn't really matter *how* that text came into being: whether it was human-written, AI-generated, or [formed by some ants in the dirt](https://arxiv.org/pdf/2308.05576). This is starting to get into philosophical territory; since I don't have a background in philosophy, I'll just plainly state the issue that arises for me here.[^3]
 
-This "ants in the dirt" example that I linked to is from Hilary Putnam's 1981 book, *Reason, Truth, and History.* I learned about it from Matthew Mandelkern and Tal Linzen's article, "Do Language Models' Words Refer?", who explain it very well:
+This "ants in the dirt" example that I linked to is from Hilary Putnam's 1981 book, *Reason, Truth, and History.* I learned about it from [Matthew Mandelkern and Tal Linzen's 2024 article](https://arxiv.org/pdf/2308.05576), "Do Language Models' Words Refer?", who explain it very well:
 > Suppose that, at a picnic, you observe ants wending through the sand in a surprising pattern, which closely resembles the English sentence "Peano proved that arithmetic is incomplete". At the same time, you get a text message from Luke, who is taking a logic class. He writes, "Peano proved that arithmetic is incomplete".
 >
 > Intuitively, the two cases are very different, despite involving physically similar
@@ -77,7 +77,7 @@ Luke said something, whereas the ants didn’t say anything at all. In particula
 something false about Peano, which means that his (use of the) word ‘Peano’ managed
 to refer to Peano.
 
-Because of everything that we just talked about, I do not think that there is any real difference meaning-wise between ants accidentally spelling a sentence and a human intentionally typing one. If I read a sentence that causes me to have a particular thought, then I have made meaning from that sentence, and so the sentence is meaningful. Of course, the difference is that when a human sends me a text, they are hoping for me to have a particular thought. But the thought in my head will never be the exact same as what they were intending, and if some ants happen to spell out the same sentence, it will have the same effect. 
+Because of everything that we just talked about, I don't buy this argument. In particular, I do not think that there is any real difference meaning-wise between ants accidentally spelling a sentence and a human intentionally typing one. If I read a sentence that causes me to have a particular thought, then I have made meaning from that sentence, and so the sentence is meaningful. Of course, the difference is that when a human sends me a text, they are *intending* for me to have a *particular* thought. But the thought in my head will never be the exact same as what they were intending; and on the flip side, if some ants happen to spell out the same sentence, it will have the same effect. 
 
 In other words, I think that we can view *all* reading as interpretation, like an augur. I don't think that meaning is ever "intrinsic to the patterns themselves."
 
