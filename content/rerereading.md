@@ -5,7 +5,7 @@ math: true
 ---
 
 # Writing That is Still Not Meaningful?
-November 30, 2025
+December 2, 2025
 
 <span style="color:gray">
 <i>What exactly are we doing when we read LLM-generated text?</i>
@@ -46,7 +46,7 @@ The way I feel reading this introduction is how I used to feel reading technical
 
 Unfortunately, the folks who had to review this paper were subjected to worse LLM-gaslighting than I ever had to experience in my annotator days. In 2020, when I re-re-read a clause like "potential customers could find sprayers and pagers ready to use and find it where they're supposed to," the escape hatch was always right there (I knew it could be AI). But here, not only was the nonsensity of the text much more subtle, but the possibility that this paper was AI-generated might not have even crossed the reviewers' minds. If I was in this situation, I might have felt that old insecurity from undergrad creeping in, a nagging feeling that the problem is *me*, maybe even that I should keep my head down and not object. I can see that being a factor for why this could get past so many reviewers.[^1] 
 
-## The Conduit Metaphor
+## The Conduit Metaphor 
 
 This specific frustration of re-re-reading sentences to no avail isn't new; I would guess that most people have experienced it with human-written text. I know that I can sometimes get "stuck" on sentences, reading them over and over like a broken record. For me, this mostly happens when reading technical writing, but I've also experienced it reading fiction, and even forum posts.
 
@@ -54,9 +54,9 @@ Reading is usually very easy for us, and it almost happens involuntarily. Think 
 
 Under the <span style="font-variant:small-caps;">Conduit Metaphor</span>, we think of ideas as objects in our minds, and communication as the task of "packaging" these ideas into words and sentences before sending them to others to be unpacked. Reddy uses linguistic evidence to argue that this is how English speakers conceptualize language: "try to *get your thoughts across* better," "*put* those ideas *in* some other paragraph," "the sentence was *filled* with emotion". If you study language, you've probably also come across this assumption stated explicitly, like in work on applying information theory to language, where language is conceptualized as a noisy channel through which we send meaningful messages.  
 
-However, as Reddy points out in his original essay, this metaphor is misleading. Ideas are not objects that we can take from our minds and wire directly into other people's brains. One example that George Lakoff and Mark Johnson give in their 1980 book *Metaphors We Live By* is ____. 
+However, as Reddy points out in his original essay, this metaphor is misleading. Ideas are not objects that we can take from our minds and wire directly into other people's brains. We can never actually access or experience the mind of another person. One example that George Lakoff and Mark Johnson give in their 1980 book *Metaphors We Live By* is ____. TODO: we can't actually reach into ppl's brains
 
-Instead of thinking of reading in terms of the <span style="font-variant:small-caps;">Conduit Metaphor</span>, where a given text "contains" meaning that must be unpackaged by the reader, we could also think of reading as a process of *generating* meaning from some object that exists in the world. Under this conceptualization, the process of reading is kind of like making a recipe from a cookbook—every person making that recipe will execute the instructions differently, depending on their kitchen and the ingredients that they have access to in their own home, leading to very different outcomes. (The <span style="font-variant:small-caps;">Conduit Metaphor</span> would be akin to ordering UberEats.)
+Instead of thinking of reading in terms of the <span style="font-variant:small-caps;">Conduit Metaphor</span>, where a given text "contains" meaning that must be unpackaged by the reader, we could also think of reading as a process of *generating* meaning from some object that exists in the world. Under this conceptualization, the process of reading is kind of like making a recipe from a cookbook—every person making that recipe will execute the instructions differently, depending on their kitchen and the ingredients that they have access to in their own home, leading to very different outcomes. In this analogy, ideas are food, and the <span style="font-variant:small-caps;">Conduit Metaphor</span> would be akin to ordering UberEats (transporting that food directly into your home). But since we can't actually directly transport ideas from one head to another, we have to make do with recipes. 
 
 I like this conceptual metaphor for reading because it seems to resonate with other ways in which we use the word "read." When we read tea leaves, we are generating meaning from a random blob based on our own personal symbols and conceptual structures. You can *read* someone's face, or "read into" their actions, but those interpretations will always be in terms of your own disposition, your own hopes and anxieties. The act of reading is often interpretation, rather than extraction: when someone says, "that's my reading of it," they are being totally precise, because every person will read a given text slightly differently.
 
@@ -77,9 +77,9 @@ Luke said something, whereas the ants didn’t say anything at all. In particula
 something false about Peano, which means that his (use of the) word ‘Peano’ managed
 to refer to Peano.
 
-Because of everything that we just talked about, I don't buy this argument. In particular, I do not think that there is any real difference meaning-wise between ants accidentally spelling a sentence and a human intentionally typing one. If I read a sentence that causes me to have a particular thought, then I have made meaning from that sentence, and so the sentence is meaningful. Of course, the difference is that when a human sends me a text, they are *intending* for me to have a *particular* thought. But the thought in my head will never be the exact same as what they were intending; and on the flip side, if some ants happen to spell out the same sentence, it will have the same effect. 
+Because of everything that we just talked about, I don't buy this argument. In particular, I do not think that there is any real difference meaning-wise between ants accidentally spelling a sentence and a human intentionally typing one. If I read a sentence that causes me to have a particular thought, then I have made meaning from that sentence, and so the sentence is meaningful (to me). Of course, the difference is that when a human sends me a text, they are *intending* for me to have a *particular* thought. But the thought in my head will never be the exact same as what they were intending; and on the flip side, if some ants happen to spell out the same sentence, it will have the same effect. 
 
-In other words, I think that we can view *all* reading as interpretation, like an augur. I don't think that meaning is ever "intrinsic to the patterns themselves."
+In other words, I think that we can view *all* reading as interpretation, like an augur. I don't think that meaning is ever "intrinsic to the patterns themselves." 
 
 ## + What Now?
 There are some infamous examples of fake papers making it into philosophy journals... 
