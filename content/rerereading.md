@@ -5,7 +5,7 @@ math: true
 ---
 
 # Writing That is Still Not Meaningful?
-December 2, 2025
+December 3, 2025
 
 <span style="color:gray">
 <i>What exactly are we doing when we read LLM-generated text?</i>
@@ -87,21 +87,19 @@ If we apply the "recipe metaphor" to this scenario, then the meaning that arises
 
 This is what confuses me about debates on whether LLM-generated text is "truly meaningful." If I read a sentence that causes me to have a particular thought, then I have made meaning from that sentence, and so the sentence is meaningful (to me). It used to be that LLM-generated text was hard to interpret, which meant that most of the time, it was not meaningful—unless you were a poor annotator like me, whose job it was to try very hard to interpret horrible things like <a href="https://www.nytimes.com/2025/12/03/magazine/chatbot-writing-style.html">"It’s all just the right amount of subtlety in male porn, and the amount of subtlety you can detect is simply astounding."</a> But now, LLM-generated text is so good that the majority of it is meaningful to most people almost all of the time. 
 
+The difference between Luke's text and the ants' sentence might just be the pragmatic considerations that arise when we read both messages. If you read something written in the sand by ants, you know that this message was not "intentional," and maybe put less stock in the idea it triggers in your mind. But if you know that a piece of text came from a person, you will try harder to understand it. This is where studies on detection of human vs machine-generated text get really interesting: 
+
+[the "faith" idea. link it to poetry interpretation study.]
+
+https://x.com/colin_fraser/status/1861324416375722257?s=20
+https://x.com/colin_fraser/status/1861324416375722257
+
 [the difference between luke and the ants maybe has to do with all of those metalinguistic considerations that go on when you read their sentences. knowing the context behind someone, and guessing their intentions, really helps with interpretation.] The question of communicative intent is different, though (and again, is where my lack of background is probably showing). [talk about what it means to write under this framework, trying to induce an idea in someone else...]
 
-
-There are some infamous examples of fake papers making it into philosophy journals... 
-
-- even well-written human text. it's not that we convert thoughts to words and words back to thoughts. it's not a symmetric process. you can have thoughts you don't write down, but more importantly, people can read anything out of your words that you weren't thinking of. is this a continuum? 
-
+## What if the AI Paper Was Good?
 But... what *if* the thing that the reviewers read from the work was actually good? 
-
-- fake paper examples that david mentioned. yeah like who cares if the author thought it was fake, if they did actually say something interesting 
+There are some infamous examples of fake papers making it into philosophy journals... yeah like who cares if the author thought it was fake, if they did actually say something interesting 
 - derrida example? 
-
-In a post-LLM world, we are now flooded with "meaningless" slop TODO talk about "faith" and generating meanings... 
-
-<!-- banging your head against a really difficult to understand paper. you can only do this if you have faith that the writer was a human who had something important they wanted to say.  -->
 
 
 [^1]: Of course, the right thing to do in this situation would always be to ask for the paper to be reassigned, or review to the best of your ability with low confidence; if a paper is that hard to understand, it probably shouldn't get published anyway. But a willingness to call BS seems to be a combination of seniority and personality. 
