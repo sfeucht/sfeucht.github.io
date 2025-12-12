@@ -45,8 +45,8 @@
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h1&gt;&lt;!-- [Writing That is Still Not Meaningful?](/rerereading) &lt;br&gt;
-December 4, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;What exactly are we doing when we read LLM-generated text?&lt;/i&gt;&lt;/span&gt; --&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/rerereading&#34;&gt;Writing That is Still Not Meaningful?&lt;/a&gt; &lt;br&gt;
+December 4, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;What exactly are we doing when we read LLM-generated text?&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://localhost:1313/syllogisms&#34;&gt;Solving Syllogisms is Not Intelligence&lt;/a&gt; &lt;br&gt;
 April 24, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;I think that we overvalue logical reasoning when it comes to measuring &amp;ldquo;intelligence.&amp;quot;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://sfeucht.github.io/rereading&#34;&gt;Writing That&amp;rsquo;s Not Language (Yet)&lt;/a&gt; &lt;br&gt;
@@ -133,6 +133,23 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
 &lt;li&gt;(May) Syntactic Structures - Noam Chomsky&lt;/li&gt;
 &lt;li&gt;(June) How to Write About Contemporary Art - Gilda Williams&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/fav-paintings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/fav-paintings/</guid>
+      <description>&lt;h1 id=&#34;favourite-paintings&#34; &gt;Favourite Paintings
+&lt;span&gt;
+    &lt;a href=&#34;#favourite-paintings&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/franzmarc.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;!-- &lt;img src=&#34;http://localhost:1313/franzmarc.png&#34; alt=&#34;Grazing Horses IV - Franz Marc (1911)&#34; width=&#34;300&#34; align=&#34;left&#34;/&gt; --&gt;
 </description>
     </item>
     
@@ -271,7 +288,7 @@ Scope and guarantees. We certify exact functional equivalence (no approximation)
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;This specific frustration of re-re-reading sentences to no avail isn&amp;rsquo;t new; I would guess that most people have experienced it with human-written text. I know that I can sometimes get &amp;ldquo;stuck&amp;rdquo; on sentences, reading them over and over like a broken record. For me, this mostly happens when reading technical writing, but I&amp;rsquo;ve also experienced it reading fiction, and even forum posts.&lt;/p&gt;
-&lt;p&gt;Reading is usually very easy for us, and it almost happens involuntarily. Think of the Stroop effect, where it&amp;rsquo;s hard to &lt;em&gt;not&lt;/em&gt; read the content of a word when it&amp;rsquo;s flashed in front of you. When we read text that&amp;rsquo;s written by others, we understand their thoughts and intentions quite quickly, almost as if there&amp;rsquo;s a wire conducting their throughts straight into our brains. This might be why, at least in western English-speaking cultures, we conceptualize language as a conduit for meaning. This is known as the &lt;span style=&#34;font-variant:small-caps;&#34;&gt;Conduit Metaphor&lt;/span&gt;, &lt;a href=&#34;http://www.biolinguagem.com/ling_cog_cult/reddy_1979_conduit_metaphor.pdf&#34;&gt;first described&lt;/a&gt; by linguist Michael J. Reddy in 1979, who argued that it forms the basis of how English speakers conceptualize communication and meaning.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Reading is usually very easy for us, and it almost happens involuntarily. Think of the Stroop effect, where it&amp;rsquo;s hard to &lt;em&gt;not&lt;/em&gt; read the content of a word when it&amp;rsquo;s flashed in front of you. When we read text that&amp;rsquo;s written by others, we understand their thoughts and intentions quite quickly, almost as if there&amp;rsquo;s a wire conducting their thoughts straight into our brains. This might be why, at least in western English-speaking cultures, we conceptualize language as a conduit for meaning. This is known as the &lt;span style=&#34;font-variant:small-caps;&#34;&gt;Conduit Metaphor&lt;/span&gt;, &lt;a href=&#34;http://www.biolinguagem.com/ling_cog_cult/reddy_1979_conduit_metaphor.pdf&#34;&gt;first described&lt;/a&gt; by linguist Michael J. Reddy in 1979, who argued that it forms the basis of how English speakers conceptualize communication and meaning.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Under the &lt;span style=&#34;font-variant:small-caps;&#34;&gt;Conduit Metaphor&lt;/span&gt;, we think of thoughts/ideas as objects in our minds that can be &amp;ldquo;transferred&amp;rdquo; to other people. There&amp;rsquo;s two ideas going on here: first, that communication is the process of transferring thoughts to other people, and second, that language is the &lt;em&gt;container&lt;/em&gt; in which we put those thoughts (&amp;ldquo;put those ideas in some other paragraph,&amp;rdquo; &amp;ldquo;her words were filled with emotion&amp;rdquo;). If you study language, you&amp;rsquo;ve probably come across this assumption stated explicitly; for example, information-theoretic modeling of language conceptualizes communication as a noisy channel, where we encode meaning into messages that are then sent along this channel.&lt;/p&gt;
 &lt;p&gt;However, as Reddy points out in his original essay, this metaphor is misleading. We can never actually access or experience the mind of another person, and ideas are not objects that we can take from our minds and wire directly into other people&amp;rsquo;s brains. If we could actually do that, we wouldn&amp;rsquo;t need language at all.&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; Instead, communication is more like sending someone a recipe for a specific dish. Recipes do not inherently &amp;ldquo;contain&amp;rdquo; any food in them. Every person making a particular recipe will interpret the instructions differently, depending on their kitchen and the ingredients that they have access to in their own home; this can sometimes lead to very different outcomes. It would be nice if we could directly send our friends food (i.e., thoughts), but because we don&amp;rsquo;t have a way to establish direct brain-to-brain contact, we have to make do with recipes (i.e., language).&lt;/p&gt;
 &lt;!-- Instead of thinking of reading in terms of the &lt;span style=&#34;font-variant:small-caps;&#34;&gt;Conduit Metaphor&lt;/span&gt;, where a given text &#34;contains&#34; meaning that must be unpackaged by the reader, we could think of reading as a process of *generating* meaning from some object that exists in the world.  --&gt;
