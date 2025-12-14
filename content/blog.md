@@ -5,8 +5,8 @@ toc: false
 
 # Sheridan's Blog
 
-[Writing That is Still Not Meaningful?](/rerereading) <br>
-December 4, 2025 • <span style="color:gray"><i>What exactly are we doing when we read LLM-generated text?</i></span>
+[Is AI Writing Still Nonsense?](/rerereading) <br>
+December 4, 2025 • <span style="color:gray"><i>Or, what exactly are we doing when we read LLM-generated text?</i></span>
 
 [Solving Syllogisms is Not Intelligence](/syllogisms) <br>
 April 24, 2025 • <span style="color:gray"><i>I think that we overvalue logical reasoning when it comes to measuring "intelligence."</i></span>

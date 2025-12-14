@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:63976/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:63976/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:63976/blog/</loc>
+    <loc>http://localhost:1313/blog/</loc>
   </url><url>
-    <loc>http://localhost:63976/books2024/</loc>
+    <loc>http://localhost:1313/books2024/</loc>
   </url><url>
-    <loc>http://localhost:63976/books2025/</loc>
+    <loc>http://localhost:1313/books2025/</loc>
   </url><url>
-    <loc>http://localhost:63976/fav-paintings/</loc>
+    <loc>http://localhost:1313/fav-paintings/</loc>
   </url><url>
-    <loc>http://localhost:63976/headphones/</loc>
+    <loc>http://localhost:1313/headphones/</loc>
   </url><url>
-    <loc>http://localhost:63976/manny/</loc>
+    <loc>http://localhost:1313/manny/</loc>
   </url><url>
-    <loc>http://localhost:63976/rerereading/</loc>
+    <loc>http://localhost:1313/rerereading/</loc>
   </url><url>
-    <loc>http://localhost:63976/research/</loc>
+    <loc>http://localhost:1313/research/</loc>
   </url><url>
-    <loc>http://localhost:63976/syllogisms/</loc>
+    <loc>http://localhost:1313/syllogisms/</loc>
   </url><url>
-    <loc>http://localhost:63976/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://localhost:63976/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>
