@@ -2,9 +2,11 @@
 disableComments: true
 toc: false
 math: true
+title: Is AI Writing Still Nonsense?
+description: Or, what exactly are we doing when we read LLM-generated text?
 ---
 
-# Is AI Writing Still Nonsense?
+<!-- # Is AI Writing Still Nonsense? -->
 December 4, 2025
 
 <span style="color:gray">

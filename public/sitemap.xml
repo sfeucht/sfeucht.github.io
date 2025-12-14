@@ -20,13 +20,13 @@
   </url><url>
     <loc>http://localhost:1313/manny/</loc>
   </url><url>
-    <loc>http://localhost:1313/rerereading/</loc>
-  </url><url>
     <loc>http://localhost:1313/research/</loc>
   </url><url>
     <loc>http://localhost:1313/syllogisms/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/rerereading/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>
