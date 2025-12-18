@@ -71,12 +71,17 @@ disableComments: true
         <span>Mechanistic Interpretability Workshop at NeurIPS, 2025.</span>
     </li>
     <li class="paper">
+        <a href="https://arxiv.org/pdf/2511.05743"><h5>In-Context Learning Without Copying</h5></a><br>
+        <span>Kerem Sahin, <b>Sheridan Feucht</b>, Adam Belfki, Jannik Brinkmann, Aaron Mueller, David Bau, Chris Wendler</span><br>
+        <span>Preprint (November 2025).</span>
+    </li>
+    <li class="paper">
         <a href="https://elm.baulab.info/"><h5>Erasing Conceptual Knowledge from Language Models</h5></a><br>
         <span>Rohit Gandikota, <b>Sheridan Feucht</b>, Samuel Marks, David Bau</span><br>
         <span>Conference on Neural Information Processing Systems (NeurIPS), 2025.</span>
     </li>
     <li class="paper">
-        <a href="https://arxiv.org/abs/2310.09612"><h5>Deep Neural Networks Can Learn Generalizable Same-Different Visual Relations</h5></a><br>
+        <a href="https://arxiv.org/pdf/2310.09612"><h5>Deep Neural Networks Can Learn Generalizable Same-Different Visual Relations</h5></a><br>
         <span>Alexa R. Tartaglini*, <b>Sheridan Feucht*</b>, Michael A. Lepori, Wai Keen Vong, Charles Lovering, Brenden M. Lake, Ellie Pavlick</span><br>
         <span>Conference on Cognitive Computational Neuroscience, 2025.</span>
     </li>

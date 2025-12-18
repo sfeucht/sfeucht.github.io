@@ -309,12 +309,17 @@ BOTTOM TEXT
         &lt;span&gt;Mechanistic Interpretability Workshop at NeurIPS, 2025.&lt;/span&gt;
     &lt;/li&gt;
     &lt;li class=&#34;paper&#34;&gt;
+        &lt;a href=&#34;https://arxiv.org/pdf/2511.05743&#34;&gt;&lt;h5&gt;In-Context Learning Without Copying&lt;/h5&gt;&lt;/a&gt;&lt;br&gt;
+        &lt;span&gt;Kerem Sahin, &lt;b&gt;Sheridan Feucht&lt;/b&gt;, Adam Belfki, Jannik Brinkmann, Aaron Mueller, David Bau, Chris Wendler&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;Preprint (November 2025).&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&#34;paper&#34;&gt;
         &lt;a href=&#34;https://elm.baulab.info/&#34;&gt;&lt;h5&gt;Erasing Conceptual Knowledge from Language Models&lt;/h5&gt;&lt;/a&gt;&lt;br&gt;
         &lt;span&gt;Rohit Gandikota, &lt;b&gt;Sheridan Feucht&lt;/b&gt;, Samuel Marks, David Bau&lt;/span&gt;&lt;br&gt;
         &lt;span&gt;Conference on Neural Information Processing Systems (NeurIPS), 2025.&lt;/span&gt;
     &lt;/li&gt;
     &lt;li class=&#34;paper&#34;&gt;
-        &lt;a href=&#34;https://arxiv.org/abs/2310.09612&#34;&gt;&lt;h5&gt;Deep Neural Networks Can Learn Generalizable Same-Different Visual Relations&lt;/h5&gt;&lt;/a&gt;&lt;br&gt;
+        &lt;a href=&#34;https://arxiv.org/pdf/2310.09612&#34;&gt;&lt;h5&gt;Deep Neural Networks Can Learn Generalizable Same-Different Visual Relations&lt;/h5&gt;&lt;/a&gt;&lt;br&gt;
         &lt;span&gt;Alexa R. Tartaglini*, &lt;b&gt;Sheridan Feucht*&lt;/b&gt;, Michael A. Lepori, Wai Keen Vong, Charles Lovering, Brenden M. Lake, Ellie Pavlick&lt;/span&gt;&lt;br&gt;
         &lt;span&gt;Conference on Cognitive Computational Neuroscience, 2025.&lt;/span&gt;
     &lt;/li&gt;
