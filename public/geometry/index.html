@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-theme="">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Notes on Geometry Papers - Sheridan Feucht</title>
+
+<meta name="description" content="Not All LM Features are 1D Linear (Engels et al., 2024)
+
+    
+        
+    
+
+Paper - They&rsquo;re basically trying to figure out how to decompose hidden states into sums of different functions of the input (features). So for example, you might have a 1-dimensional representation of an integer value 3, added to an n-dimensional representation of the language semantics of &ldquo;three,&rdquo; etc.">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="http://localhost:1313/css/style.78de91526730265cde940d6082f8460bc8c2b62e4eddf9093c33d728050dcc87.css" integrity="sha256-eN6RUmcwJlzelA1ggvhGC8jCti5O3fkJPDPXKAUNzIc=">
+    
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <script src="http://localhost:1313/js/script.32e751300d2d69e2cb56a98d2c9d964d54a53a8fb7281ccdbd80f055c88e8d86.js" type="text/javascript" charset="utf-8" integrity="sha256-MudRMA0taeLLVqmNLJ2WTVSlOo&#43;3KBzNvYDwVciOjYY="></script>
+    
+
+
+
+
+
+
+
+<meta property="og:url" content="http://localhost:1313/geometry/">
+  <meta property="og:site_name" content="Sheridan Feucht">
+  <meta property="og:title" content="Notes on Geometry Papers">
+  <meta property="og:description" content="Not All LM Features are 1D Linear (Engels et al., 2024) Paper - They’re basically trying to figure out how to decompose hidden states into sums of different functions of the input (features). So for example, you might have a 1-dimensional representation of an integer value 3, added to an n-dimensional representation of the language semantics of “three,” etc.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Notes on Geometry Papers">
+  <meta name="twitter:description" content="Not All LM Features are 1D Linear (Engels et al., 2024) Paper - They’re basically trying to figure out how to decompose hidden states into sums of different functions of the input (features). So for example, you might have a 1-dimensional representation of an integer value 3, added to an n-dimensional representation of the language semantics of “three,” etc.">
+
+
+
+    
+        <link rel="webmention" href="https://webmention.io/hugo-theme-anubis/webmention" />
+        
+            <link rel="pingback" href="https://webmention.io/hugo-theme-anubis/xmlrpc" />
+        
+    
+    
+        <link rel="webmention" href="https://sfeucht.github.io/webmentions/receive" />
+    
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <div class="header-top">
+    <h1 class="site-title">
+    <a href="/">Sheridan Feucht</a>
+</h1>
+    <ul class="social-icons">
+
+
+    
+        <li>
+            <a href="/research" title="Research" rel="me">
+                <span class="social-text">
+    research
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="/blog" title="Blog" rel="me">
+                <span class="social-text">
+    blog
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://twitter.com/sheridan_feucht" title="Twitter" rel="me">
+            <span class="social-text">
+    twitter
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://bsky.app/profile/sfeucht.bsky.social" title="Bluesky" rel="me">
+                <span class="social-text">
+    bluesky
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/sfeucht" title="Github" rel="me">
+            <span class="social-text">
+    github
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="/sfeucht_cv.pdf" title="Cv" rel="me">
+                <span class="social-text">
+    cv
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+
+
+
+</ul>
+</div>
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Notes on Geometry Papers</h1>
+
+                
+            </header>
+        </div>
+        
+
+
+
+
+
+
+        <div class="content e-content">
+            <h1 id="not-all-lm-features-are-1d-linear-engels-et-al-2024" >Not All LM Features are 1D Linear (Engels et al., 2024)
+<span>
+    <a href="#not-all-lm-features-are-1d-linear-engels-et-al-2024">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h1><p><a href="https://arxiv.org/pdf/2405.14860">Paper</a> - They&rsquo;re basically trying to figure out how to decompose hidden states into sums of different functions of the input (features). So for example, you might have a 1-dimensional representation of an integer value 3, added to an n-dimensional representation of the language semantics of &ldquo;three,&rdquo; etc.</p>
+<p>When you&rsquo;re doing this, there&rsquo;s a problem: how do you know whether a multi-dimensional feature you&rsquo;ve found is &ldquo;atomic&rdquo;, or whether it&rsquo;s actually possible to further decompose it into other sub-features?</p>
+<h2 id="reducibility" >Reducibility
+<span>
+    <a href="#reducibility">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>To figure this out, they formally define <em>reducible</em> features—which crucially we don&rsquo;t actually want to count as a good/valid multi-dimensional feature. So for a given multi-dimensional feature $\bf f$ (defined as a function that maps from inputs to some $d_f$-dimensional subspace), can it actually be &ldquo;broken down&rdquo; (e.g. latitude and longitude)?</p>
+<p>They come up with two metrics to see if this is approximately true:</p>
+<ol>
+<li>$S(f)$ - <strong>Separability index.</strong> For all possible ways to break down a feature into $\bf a$ and $\bf b$, what is the minimum mutual information $I(\textbf{a}, \textbf{b})$? For example, a multidimensional Gaussian will not actually have mutual information between subfeatures if you choose the right axes. Higher = harder to separate.</li>
+<li>$M_\epsilon(f)$ - <strong>$\epsilon$-mixture index.</strong> Across all the token positions, can we pick a special vector $\bf v$ for which the feature can be projected near zero pretty often? (in practice, this is something like less than $\epsilon$ * standard deviation rather than zero). If you can find a vector $\bf v$ and offset $c$ so that $\textbf{v} \cdot \textbf{f(t)} + c$ is small for lots of token positions, then that means that in all of those cases that direction in the feature space wasn&rsquo;t really being used. Of course, $\bf v$ has to be within the subspace $\mathbb{R}^{d_f}$, because otherwise you could easily find a vector that&rsquo;s orthogonal to $\mathbb{R}^{d_f}$ and zeros out everything. Higher = easier to separate.</li>
+</ol>
+ <details>
+<summary>Concrete-ish example of mixture index</summary>
+Let's say your multi-dimensional feature $\bf f$ was dimension $d_f=2$ but to your dismay it was actually a mixture of two features, $\bf e_1$ and $\bf e_2$. For 60% of the token positions where the feature is active, it's using mostly $\bf e_1$, and for the other 40% it's using mostly $\bf e_2$. In such a case, you could choose $\bf v=e_2$ and get a zero dot product for 60% of tokens and one dot product for the other 40%, resulting in a score of around 0.60. This is pretty high, and it indicates that this so-called "multi-dimensional feature" is actually just a combination of sub-features represented by $\bf e_1$ and $\bf e_2$.
+</details>
+<p>In practice, $S(f)$ scores for GPT-2 features are mostly less than 0.2 (aka, most features are pretty separable), and $M_\epsilon(f)$ features are quite high, mostly bigger than 0.4 (aka, most features are pretty much mixtures). They use these scores to argue that their day-of-week features, since they have high $S(f)$ and low $M_\epsilon(f)$, are irreducible multi-dimensional features.</p>
+<h2 id="going-from-sae-to-multi-dim-features" >Going from SAE to Multi-Dim Features
+<span>
+    <a href="#going-from-sae-to-multi-dim-features">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>If $\bf D$ is the decoder matrix of the SAE containing all of the output features, then to cluster features together, they take the cosine similarity between all decoder vectors and prune away cosine similarities below a threshold $T$. By construction these clusters will be &ldquo;$T$-orthogonal&rdquo; (i.e. if $T=0$ then they&rsquo;re truly orthogonal).</p>
+<p>If the SAE is good at reconstructing, then when a multi-dimensional non-reducible feature $\bf f$ is active, <strong>they claim that one of these cosine-similar clusters will be equal to f.</strong> This is not super obvious. Naively, you&rsquo;d think it&rsquo;d be the opposite—that if $\bf f$ was a 2D feature that was properly reconstructed by the SAE, the SAE would have learned two orthogonal decoder vectors that span the space. But if $\bf f$ is not a mixture, it would never make sense to separate out these two features, because then the SAE would get penalized by always having both features active whenever it needs to reconstruct $\bf f$. So instead, they guess that the SAE would learn a bunch of cosine-similar things that are all in $\bf f$ (intuitively, maybe this would be like learning separate &ldquo;Monday&rdquo;, &ldquo;Tuesday&rdquo;, &ldquo;Wednesday&rdquo; features).</p>
+<p>So what they do is:</p>
+<ol>
+<li>Cluster all the SAE decoder vectors using this thresholding thing</li>
+<li>To analyze a cluster, get cluster-specific reconstructions of all hidden states $\textbf{x}_{i,l}$.</li>
+<li>Analyze that cluster&rsquo;s representations across a bunch of hidden states by looking at PCA projections, or running $S(f)$ and $M_\epsilon(f)$</li>
+</ol>
+<p>Two important details:</p>
+<ul>
+<li>In order to calculate these scores, they actually <em>first</em> calculate the PCA directions over the reconstructed activations, and then project onto PCA components 1-2, 2-3, 3-4, 4-5, averaging the separability/mixture over each of these planes.</li>
+<li>This process implicitly filters for datapoints that are relevant for this cluster/feature. In step (2), if none of the cluster&rsquo;s features are active for a particular hidden state $\textbf{x}_{i,l}$, it is not included in the analysis. In the case of a days-of-the-week feature, the PCAs will be quite nice because of course the main variation between a bunch of weekday vectors will probably separate things by weekday.</li>
+</ul>
+<p>Another cool thing is that they show that these features are actually cones, where the first principal component seems to be intensity of weekday-ness, perhaps.</p>
+<p><img src="/geometry/engels_pca.png" alt=""></p>
+<h2 id="intervening-on-circles" >Intervening on Circles
+<span>
+    <a href="#intervening-on-circles">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>They do all this SAE stuff on GPT-2, but for Mistral and Llama they actually just find the circles again from scratch (I think).</p>
+<p>todo - section 5.1</p>
+
+        </div>
+        
+
+    
+
+
+
+<div class="post-info">
+    
+
+    <a class="post-hidden-url u-url" href="http://localhost:1313/geometry/">http://localhost:1313/geometry/</a>
+    <a href="http://localhost:1313/" class="p-name p-author post-hidden-author h-card" rel="me">Sheridan Feucht</a>
+
+
+    <div class="post-taxonomies">
+        
+        
+        
+    </div>
+</div>
+
+    </article>
+
+    
+        
+        
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Sheridan Feucht, 2025<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>  
+        </div> 
+
+        
+
+    
+
+
+
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto-without-switcher"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+    changeButtonText()
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        changeButtonText()
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+  
+    showContent()
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    } 
+    if (defaultTheme) {
+        return defaultTheme
+    } 
+    if (!window.matchMedia) {
+        return 'light'
+    } 
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return 'light'
+}
+
+function changeButtonText()
+{   
+    if (switchButton) {
+        switchButton.textContent = currentTheme == 'dark' ?  "❂" : "☾"
+    }
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    changeButtonText()
+}
+
+function showContent() {
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+}
+</script>
+
+   
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=http://localhost:1313/ class="p-name u-url url fn" rel="me">Sheridan Feucht</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:feucht.s@northeastern.edu">feucht.s@northeastern.edu</a>
+    
+
+     
+        <img class="u-photo" src="/images/me.png" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

@@ -518,5 +518,68 @@ to refer to Peano. --&gt;
 </description>
     </item>
     
+    <item>
+      <title>Notes on Geometry Papers</title>
+      <link>http://localhost:1313/geometry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/geometry/</guid>
+      <description>&lt;h1 id=&#34;not-all-lm-features-are-1d-linear-engels-et-al-2024&#34; &gt;Not All LM Features are 1D Linear (Engels et al., 2024)
+&lt;span&gt;
+    &lt;a href=&#34;#not-all-lm-features-are-1d-linear-engels-et-al-2024&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2405.14860&#34;&gt;Paper&lt;/a&gt; - They&amp;rsquo;re basically trying to figure out how to decompose hidden states into sums of different functions of the input (features). So for example, you might have a 1-dimensional representation of an integer value 3, added to an n-dimensional representation of the language semantics of &amp;ldquo;three,&amp;rdquo; etc.&lt;/p&gt;
+&lt;p&gt;When you&amp;rsquo;re doing this, there&amp;rsquo;s a problem: how do you know whether a multi-dimensional feature you&amp;rsquo;ve found is &amp;ldquo;atomic&amp;rdquo;, or whether it&amp;rsquo;s actually possible to further decompose it into other sub-features?&lt;/p&gt;
+&lt;h2 id=&#34;reducibility&#34; &gt;Reducibility
+&lt;span&gt;
+    &lt;a href=&#34;#reducibility&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To figure this out, they formally define &lt;em&gt;reducible&lt;/em&gt; features—which crucially we don&amp;rsquo;t actually want to count as a good/valid multi-dimensional feature. So for a given multi-dimensional feature $\bf f$ (defined as a function that maps from inputs to some $d_f$-dimensional subspace), can it actually be &amp;ldquo;broken down&amp;rdquo; (e.g. latitude and longitude)?&lt;/p&gt;
+&lt;p&gt;They come up with two metrics to see if this is approximately true:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$S(f)$ - &lt;strong&gt;Separability index.&lt;/strong&gt; For all possible ways to break down a feature into $\bf a$ and $\bf b$, what is the minimum mutual information $I(\textbf{a}, \textbf{b})$? For example, a multidimensional Gaussian will not actually have mutual information between subfeatures if you choose the right axes. Higher = harder to separate.&lt;/li&gt;
+&lt;li&gt;$M_\epsilon(f)$ - &lt;strong&gt;$\epsilon$-mixture index.&lt;/strong&gt; Across all the token positions, can we pick a special vector $\bf v$ for which the feature can be projected near zero pretty often? (in practice, this is something like less than $\epsilon$ * standard deviation rather than zero). If you can find a vector $\bf v$ and offset $c$ so that $\textbf{v} \cdot \textbf{f(t)} + c$ is small for lots of token positions, then that means that in all of those cases that direction in the feature space wasn&amp;rsquo;t really being used. Of course, $\bf v$ has to be within the subspace $\mathbb{R}^{d_f}$, because otherwise you could easily find a vector that&amp;rsquo;s orthogonal to $\mathbb{R}^{d_f}$ and zeros out everything. Higher = easier to separate.&lt;/li&gt;
+&lt;/ol&gt;
+ &lt;details&gt;
+&lt;summary&gt;Concrete-ish example of mixture index&lt;/summary&gt;
+Let&#39;s say your multi-dimensional feature $\bf f$ was dimension $d_f=2$ but to your dismay it was actually a mixture of two features, $\bf e_1$ and $\bf e_2$. For 60% of the token positions where the feature is active, it&#39;s using mostly $\bf e_1$, and for the other 40% it&#39;s using mostly $\bf e_2$. In such a case, you could choose $\bf v=e_2$ and get a zero dot product for 60% of tokens and one dot product for the other 40%, resulting in a score of around 0.60. This is pretty high, and it indicates that this so-called &#34;multi-dimensional feature&#34; is actually just a combination of sub-features represented by $\bf e_1$ and $\bf e_2$.
+&lt;/details&gt;
+&lt;p&gt;In practice, $S(f)$ scores for GPT-2 features are mostly less than 0.2 (aka, most features are pretty separable), and $M_\epsilon(f)$ features are quite high, mostly bigger than 0.4 (aka, most features are pretty much mixtures). They use these scores to argue that their day-of-week features, since they have high $S(f)$ and low $M_\epsilon(f)$, are irreducible multi-dimensional features.&lt;/p&gt;
+&lt;h2 id=&#34;going-from-sae-to-multi-dim-features&#34; &gt;Going from SAE to Multi-Dim Features
+&lt;span&gt;
+    &lt;a href=&#34;#going-from-sae-to-multi-dim-features&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If $\bf D$ is the decoder matrix of the SAE containing all of the output features, then to cluster features together, they take the cosine similarity between all decoder vectors and prune away cosine similarities below a threshold $T$. By construction these clusters will be &amp;ldquo;$T$-orthogonal&amp;rdquo; (i.e. if $T=0$ then they&amp;rsquo;re truly orthogonal).&lt;/p&gt;
+&lt;p&gt;If the SAE is good at reconstructing, then when a multi-dimensional non-reducible feature $\bf f$ is active, &lt;strong&gt;they claim that one of these cosine-similar clusters will be equal to f.&lt;/strong&gt; This is not super obvious. Naively, you&amp;rsquo;d think it&amp;rsquo;d be the opposite—that if $\bf f$ was a 2D feature that was properly reconstructed by the SAE, the SAE would have learned two orthogonal decoder vectors that span the space. But if $\bf f$ is not a mixture, it would never make sense to separate out these two features, because then the SAE would get penalized by always having both features active whenever it needs to reconstruct $\bf f$. So instead, they guess that the SAE would learn a bunch of cosine-similar things that are all in $\bf f$ (intuitively, maybe this would be like learning separate &amp;ldquo;Monday&amp;rdquo;, &amp;ldquo;Tuesday&amp;rdquo;, &amp;ldquo;Wednesday&amp;rdquo; features).&lt;/p&gt;
+&lt;p&gt;So what they do is:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Cluster all the SAE decoder vectors using this thresholding thing&lt;/li&gt;
+&lt;li&gt;To analyze a cluster, get cluster-specific reconstructions of all hidden states $\textbf{x}_{i,l}$.&lt;/li&gt;
+&lt;li&gt;Analyze that cluster&amp;rsquo;s representations across a bunch of hidden states by looking at PCA projections, or running $S(f)$ and $M_\epsilon(f)$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Two important details:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In order to calculate these scores, they actually &lt;em&gt;first&lt;/em&gt; calculate the PCA directions over the reconstructed activations, and then project onto PCA components 1-2, 2-3, 3-4, 4-5, averaging the separability/mixture over each of these planes.&lt;/li&gt;
+&lt;li&gt;This process implicitly filters for datapoints that are relevant for this cluster/feature. In step (2), if none of the cluster&amp;rsquo;s features are active for a particular hidden state $\textbf{x}_{i,l}$, it is not included in the analysis. In the case of a days-of-the-week feature, the PCAs will be quite nice because of course the main variation between a bunch of weekday vectors will probably separate things by weekday.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Another cool thing is that they show that these features are actually cones, where the first principal component seems to be intensity of weekday-ness, perhaps.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/geometry/engels_pca.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;intervening-on-circles&#34; &gt;Intervening on Circles
+&lt;span&gt;
+    &lt;a href=&#34;#intervening-on-circles&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;They do all this SAE stuff on GPT-2, but for Mistral and Llama they actually just find the circles again from scratch (I think).&lt;/p&gt;
+&lt;p&gt;todo - section 5.1&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
