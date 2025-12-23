@@ -45,14 +45,13 @@ Another cool thing is that they show that these features are actually cones, whe
 While they do try intervening on the subspace found by the SAE, they get slightly better results by training probes to find good subspaces at each layer. Specifically, they 
 1. Take the top-$k$ principal component directions of hidden states at the "Monday" position (pretty sure this position) across all the prompts and project onto there first.
 2. Then train a linear probe $\bf P$ in that space that maps from $k$ to 2 dimensions, trained to correspond to <tt>circle</tt>($\alpha$) -- e.g. for weekdays <tt>circle</tt>$(\alpha)=[\cos(2\pi\alpha/7), \sin(2\pi\alpha/7)]$. 
-3. To intervene on "Monday" and make it look like "Wednesday", they just discard "Monday." Start with mean over prompts $\overline{x_{i,l}}$. Project that onto the circle with $\textbf{PW}_{i,l}$ and then calculate offset from <tt>circle</tt>(Wednesday). Then project that offset back to model space with $\textbf{W}^T\_{i,l}\textbf{P}^+$ and add back to the mean to get final activation. 
+3. To intervene on "Monday" and make it look like "Wednesday", they just discard "Monday." I am confused about how exactly this intervention works, because their Equation 6 seems wrong (you can't calculate <tt>circle</tt>$(\alpha_{j'}) - \overline{x\_{i,l}}$ directly because they are different dimensions). Equation 7 doesn't clarify, it seems to have a missing parenthesis. 
 
-They're not doing a patch between two examples, but "constructing" a new activation based on offset from the mean. [TODO FIX THIS]
-$$x\_{i,l}^{j*}=\overline{x\_{i,l}}-\textbf{PW}_{i,l}\overline{x\_{i,l}}+$$
-Really what it is is they are subtracting whatever is currently in there ____. 
-It's cool because you can basically just choose what index of the week you want and then feed it into the intervention. Josh Engels mentions in the talk that the intervention only works if you ablate out everything else that's not in the PCA; I'm not exactly sure what he means here, probably the fact that you can't actually patch between individual examples? 
+<!-- Start with mean over prompts $\overline{x_{i,l}}$. Project that onto the circle with $\textbf{PW}_{i,l}$ and then calculate offset from <tt>circle</tt>(Wednesday). Then project that offset back to model space with $\textbf{W}^T\_{i,l}\textbf{P}^+$ and add back to the mean to get final activation.  -->
+Josh Engels mentions in the talk that the intervention only works if you ablate out everything else that's not in the PCA; I'm not exactly sure what he means here, probably the fact that they have to mean-ablate everything by using $\overline{x\_{i,l}}$ instead of the base activation. 
 
 ## Generic Ideas/Takeaways
+- How does the model actually use these circular representations to calculate the answer? 
 - Some of these facts must be piecewise memorized as well (e.g. Saturday is 1 day after Friday is almost surely memorized) -- probably why they have to ablate all other weekday information. 
-- If you rotated within the circle subspace for tasks like "What holidays are typically on [Thursday]?" or "What letter does [Thursday] start with?" then you'd probably see it doesn't affect anything. Presumably lots of weekday embedding information is unrelated to circles. 
+- Presumably lots of weekday embedding information is unrelated to circles -- if you rotated within the circle subspace for tasks like "What holidays are typically on [Thursday]?" or "What letter does [Thursday] start with?" then you'd probably see it doesn't affect anything. 
 - It still worries me to think about multiple circles happening at once. If you have six orthogonal 2D circles, could that just be some alternate formulation of an n-dimensional subspace? 

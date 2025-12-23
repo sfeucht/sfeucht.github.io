@@ -580,12 +580,10 @@ Let&#39;s say your multi-dimensional feature $\bf f$ was dimension $d_f=2$ but t
 &lt;ol&gt;
 &lt;li&gt;Take the top-$k$ principal component directions of hidden states at the &amp;ldquo;Monday&amp;rdquo; position (pretty sure this position) across all the prompts and project onto there first.&lt;/li&gt;
 &lt;li&gt;Then train a linear probe $\bf P$ in that space that maps from $k$ to 2 dimensions, trained to correspond to &lt;tt&gt;circle&lt;/tt&gt;($\alpha$) &amp;ndash; e.g. for weekdays &lt;tt&gt;circle&lt;/tt&gt;$(\alpha)=[\cos(2\pi\alpha/7), \sin(2\pi\alpha/7)]$.&lt;/li&gt;
-&lt;li&gt;To intervene on &amp;ldquo;Monday&amp;rdquo; and make it look like &amp;ldquo;Wednesday&amp;rdquo;, they just discard &amp;ldquo;Monday.&amp;rdquo; Start with mean over prompts $\overline{x_{i,l}}$. Project that onto the circle with $\textbf{PW}_{i,l}$ and then calculate offset from &lt;tt&gt;circle&lt;/tt&gt;(Wednesday). Then project that offset back to model space with $\textbf{W}^T_{i,l}\textbf{P}^+$ and add back to the mean to get final activation.&lt;/li&gt;
+&lt;li&gt;To intervene on &amp;ldquo;Monday&amp;rdquo; and make it look like &amp;ldquo;Wednesday&amp;rdquo;, they just discard &amp;ldquo;Monday.&amp;rdquo; I am confused about how exactly this intervention works, because their Equation 6 seems wrong (you can&amp;rsquo;t calculate &lt;tt&gt;circle&lt;/tt&gt;$(\alpha_{j&amp;rsquo;}) - \overline{x_{i,l}}$ directly because they are different dimensions). Equation 7 doesn&amp;rsquo;t clarify, it seems to have a missing parenthesis.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;They&amp;rsquo;re not doing a patch between two examples, but &amp;ldquo;constructing&amp;rdquo; a new activation based on offset from the mean. [TODO FIX THIS]
-$$x_{i,l}^{j*}=\overline{x_{i,l}}-\textbf{PW}_{i,l}\overline{x_{i,l}}+$$
-Really what it is is they are subtracting whatever is currently in there ____.
-It&amp;rsquo;s cool because you can basically just choose what index of the week you want and then feed it into the intervention. Josh Engels mentions in the talk that the intervention only works if you ablate out everything else that&amp;rsquo;s not in the PCA; I&amp;rsquo;m not exactly sure what he means here, probably the fact that you can&amp;rsquo;t actually patch between individual examples?&lt;/p&gt;
+&lt;!-- Start with mean over prompts $\overline{x_{i,l}}$. Project that onto the circle with $\textbf{PW}_{i,l}$ and then calculate offset from &lt;tt&gt;circle&lt;/tt&gt;(Wednesday). Then project that offset back to model space with $\textbf{W}^T\_{i,l}\textbf{P}^+$ and add back to the mean to get final activation.  --&gt;
+&lt;p&gt;Josh Engels mentions in the talk that the intervention only works if you ablate out everything else that&amp;rsquo;s not in the PCA; I&amp;rsquo;m not exactly sure what he means here, probably the fact that they have to mean-ablate everything by using $\overline{x_{i,l}}$ instead of the base activation.&lt;/p&gt;
 &lt;h2 id=&#34;generic-ideastakeaways&#34; &gt;Generic Ideas/Takeaways
 &lt;span&gt;
     &lt;a href=&#34;#generic-ideastakeaways&#34;&gt;
@@ -593,8 +591,9 @@ It&amp;rsquo;s cool because you can basically just choose what index of the week
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;How does the model actually use these circular representations to calculate the answer?&lt;/li&gt;
 &lt;li&gt;Some of these facts must be piecewise memorized as well (e.g. Saturday is 1 day after Friday is almost surely memorized) &amp;ndash; probably why they have to ablate all other weekday information.&lt;/li&gt;
-&lt;li&gt;If you rotated within the circle subspace for tasks like &amp;ldquo;What holidays are typically on [Thursday]?&amp;rdquo; or &amp;ldquo;What letter does [Thursday] start with?&amp;rdquo; then you&amp;rsquo;d probably see it doesn&amp;rsquo;t affect anything. Presumably lots of weekday embedding information is unrelated to circles.&lt;/li&gt;
+&lt;li&gt;Presumably lots of weekday embedding information is unrelated to circles &amp;ndash; if you rotated within the circle subspace for tasks like &amp;ldquo;What holidays are typically on [Thursday]?&amp;rdquo; or &amp;ldquo;What letter does [Thursday] start with?&amp;rdquo; then you&amp;rsquo;d probably see it doesn&amp;rsquo;t affect anything.&lt;/li&gt;
 &lt;li&gt;It still worries me to think about multiple circles happening at once. If you have six orthogonal 2D circles, could that just be some alternate formulation of an n-dimensional subspace?&lt;/li&gt;
 &lt;/ul&gt;
 </description>
