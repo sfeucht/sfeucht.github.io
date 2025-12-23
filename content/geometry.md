@@ -6,7 +6,7 @@ title: Notes on Geometry Papers
 ---
 
 # Not All LM Features are 1D Linear (Engels et al., 2024)
-[Paper](https://arxiv.org/pdf/2405.14860) - They're basically trying to figure out how to decompose hidden states into sums of different functions of the input (features). So for example, you might have a 1-dimensional representation of an integer value 3, added to an n-dimensional representation of the language semantics of "three," etc. 
+[[Paper](https://arxiv.org/pdf/2405.14860), [Video](https://www.youtube.com/watch?v=eVlGeHA2Cnw&t=858s)] - They're basically trying to figure out how to decompose hidden states into sums of different functions of the input (features). So for example, you might have a 1-dimensional representation of an integer value 3, added to an n-dimensional representation of the language semantics of "three," etc. 
 
 When you're doing this, there's a problem: how do you know whether a multi-dimensional feature you've found is "atomic", or whether it's actually possible to further decompose it into other sub-features? 
 
@@ -26,7 +26,7 @@ In practice, $S(f)$ scores for GPT-2 features are mostly less than 0.2 (aka, mos
 ## Going from SAE to Multi-Dim Features
 If $\bf D$ is the decoder matrix of the SAE containing all of the output features, then to cluster features together, they take the cosine similarity between all decoder vectors and prune away cosine similarities below a threshold $T$. By construction these clusters will be "$T$-orthogonal" (i.e. if $T=0$ then they're truly orthogonal). 
 
-If the SAE is good at reconstructing, then when a multi-dimensional non-reducible feature $\bf f$ is active, **they claim that one of these cosine-similar clusters will be equal to f.** This is not super obvious. Naively, you'd think it'd be the opposite—that if $\bf f$ was a 2D feature that was properly reconstructed by the SAE, the SAE would have learned two orthogonal decoder vectors that span the space. But if $\bf f$ is not a mixture, it would never make sense to separate out these two features, because then the SAE would get penalized by always having both features active whenever it needs to reconstruct $\bf f$. So instead, they guess that the SAE would learn a bunch of cosine-similar things that are all in $\bf f$ (intuitively, maybe this would be like learning separate "Monday", "Tuesday", "Wednesday" features). 
+If the SAE is good at reconstructing, then when a multi-dimensional non-reducible feature $\bf f$ is active, **they claim that one of these cosine-similar clusters will be equal to f.** This is not super obvious. Naively, you'd think it'd be the opposite—that if $\bf f$ was a 2D feature that was properly reconstructed by the SAE, the SAE would have learned two orthogonal decoder vectors that span the space (and those would have close to zero cosine similarity). But if $\bf f$ is truly a multi-dimensional feature, it would never make sense to separate out these two features; then the SAE would get penalized by always having both features active whenever it needs to reconstruct $\bf f$. So instead, they guess that the SAE would learn a bunch of cosine-similar things that are all in $\bf f$ (intuitively, maybe this would be like learning separate "Monday", "Tuesday", "Wednesday" features). 
 
 So what they do is:
 1. Cluster all the SAE decoder vectors using this thresholding thing
@@ -35,13 +35,24 @@ So what they do is:
 
 Two important details: 
 - In order to calculate these scores, they actually *first* calculate the PCA directions over the reconstructed activations, and then project onto PCA components 1-2, 2-3, 3-4, 4-5, averaging the separability/mixture over each of these planes.
-- This process implicitly filters for datapoints that are relevant for this cluster/feature. In step (2), if none of the cluster's features are active for a particular hidden state $\textbf{x}_{i,l}$, it is not included in the analysis. In the case of a days-of-the-week feature, the PCAs will be quite nice because of course the main variation between a bunch of weekday vectors will probably separate things by weekday.
+- This process implicitly filters for datapoints that are relevant for this cluster/feature. In step (2), if none of the cluster's features are active for a particular hidden state $\textbf{x}_{i,l}$, it is not included in the analysis. In the case of a days-of-the-week feature, the PCAs will of course look pretty nice, since the biggest variation between a bunch of weekday vectors will almost surely be information about weekday.
 
 Another cool thing is that they show that these features are actually cones, where the first principal component seems to be intensity of weekday-ness, perhaps. 
 
 ![](/geometry/engels_pca.png)
 
 ## Intervening on Circles 
-They do all this SAE stuff on GPT-2, but for Mistral and Llama they actually just find the circles again from scratch (I think). 
+While they do try intervening on the subspace found by the SAE, they get slightly better results by training probes to find good subspaces at each layer. Specifically, they 
+1. Take the top-$k$ principal component directions of hidden states at the "Monday" position (pretty sure this position) across all the prompts and project onto there first.
+2. Then train a linear probe $\bf P$ in that space that maps from $k$ to 2 dimensions, trained to correspond to <tt>circle</tt>($\alpha$) -- e.g. for weekdays <tt>circle</tt>$(\alpha)=[\cos(2\pi\alpha/7), \sin(2\pi\alpha/7)]$. 
+3. To intervene on "Monday" and make it look like "Wednesday", they just discard "Monday." Start with mean over prompts $\overline{x_{i,l}}$. Project that onto the circle with $\textbf{PW}_{i,l}$ and then calculate offset from <tt>circle</tt>(Wednesday). Then project that offset back to model space with $\textbf{W}^T\_{i,l}\textbf{P}^+$ and add back to the mean to get final activation. 
 
-todo - section 5.1 
+They're not doing a patch between two examples, but "constructing" a new activation based on offset from the mean. [TODO FIX THIS]
+$$x\_{i,l}^{j*}=\overline{x\_{i,l}}-\textbf{PW}_{i,l}\overline{x\_{i,l}}+$$
+Really what it is is they are subtracting whatever is currently in there ____. 
+It's cool because you can basically just choose what index of the week you want and then feed it into the intervention. Josh Engels mentions in the talk that the intervention only works if you ablate out everything else that's not in the PCA; I'm not exactly sure what he means here, probably the fact that you can't actually patch between individual examples? 
+
+## Generic Ideas/Takeaways
+- Some of these facts must be piecewise memorized as well (e.g. Saturday is 1 day after Friday is almost surely memorized) -- probably why they have to ablate all other weekday information. 
+- If you rotated within the circle subspace for tasks like "What holidays are typically on [Thursday]?" or "What letter does [Thursday] start with?" then you'd probably see it doesn't affect anything. Presumably lots of weekday embedding information is unrelated to circles. 
+- It still worries me to think about multiple circles happening at once. If you have six orthogonal 2D circles, could that just be some alternate formulation of an n-dimensional subspace? 

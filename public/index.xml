@@ -530,7 +530,7 @@ to refer to Peano. --&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2405.14860&#34;&gt;Paper&lt;/a&gt; - They&amp;rsquo;re basically trying to figure out how to decompose hidden states into sums of different functions of the input (features). So for example, you might have a 1-dimensional representation of an integer value 3, added to an n-dimensional representation of the language semantics of &amp;ldquo;three,&amp;rdquo; etc.&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/pdf/2405.14860&#34;&gt;Paper&lt;/a&gt;, &lt;a href=&#34;https://www.youtube.com/watch?v=eVlGeHA2Cnw&amp;amp;t=858s&#34;&gt;Video&lt;/a&gt;] - They&amp;rsquo;re basically trying to figure out how to decompose hidden states into sums of different functions of the input (features). So for example, you might have a 1-dimensional representation of an integer value 3, added to an n-dimensional representation of the language semantics of &amp;ldquo;three,&amp;rdquo; etc.&lt;/p&gt;
 &lt;p&gt;When you&amp;rsquo;re doing this, there&amp;rsquo;s a problem: how do you know whether a multi-dimensional feature you&amp;rsquo;ve found is &amp;ldquo;atomic&amp;rdquo;, or whether it&amp;rsquo;s actually possible to further decompose it into other sub-features?&lt;/p&gt;
 &lt;h2 id=&#34;reducibility&#34; &gt;Reducibility
 &lt;span&gt;
@@ -556,7 +556,7 @@ Let&#39;s say your multi-dimensional feature $\bf f$ was dimension $d_f=2$ but t
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;If $\bf D$ is the decoder matrix of the SAE containing all of the output features, then to cluster features together, they take the cosine similarity between all decoder vectors and prune away cosine similarities below a threshold $T$. By construction these clusters will be &amp;ldquo;$T$-orthogonal&amp;rdquo; (i.e. if $T=0$ then they&amp;rsquo;re truly orthogonal).&lt;/p&gt;
-&lt;p&gt;If the SAE is good at reconstructing, then when a multi-dimensional non-reducible feature $\bf f$ is active, &lt;strong&gt;they claim that one of these cosine-similar clusters will be equal to f.&lt;/strong&gt; This is not super obvious. Naively, you&amp;rsquo;d think it&amp;rsquo;d be the opposite—that if $\bf f$ was a 2D feature that was properly reconstructed by the SAE, the SAE would have learned two orthogonal decoder vectors that span the space. But if $\bf f$ is not a mixture, it would never make sense to separate out these two features, because then the SAE would get penalized by always having both features active whenever it needs to reconstruct $\bf f$. So instead, they guess that the SAE would learn a bunch of cosine-similar things that are all in $\bf f$ (intuitively, maybe this would be like learning separate &amp;ldquo;Monday&amp;rdquo;, &amp;ldquo;Tuesday&amp;rdquo;, &amp;ldquo;Wednesday&amp;rdquo; features).&lt;/p&gt;
+&lt;p&gt;If the SAE is good at reconstructing, then when a multi-dimensional non-reducible feature $\bf f$ is active, &lt;strong&gt;they claim that one of these cosine-similar clusters will be equal to f.&lt;/strong&gt; This is not super obvious. Naively, you&amp;rsquo;d think it&amp;rsquo;d be the opposite—that if $\bf f$ was a 2D feature that was properly reconstructed by the SAE, the SAE would have learned two orthogonal decoder vectors that span the space (and those would have close to zero cosine similarity). But if $\bf f$ is truly a multi-dimensional feature, it would never make sense to separate out these two features; then the SAE would get penalized by always having both features active whenever it needs to reconstruct $\bf f$. So instead, they guess that the SAE would learn a bunch of cosine-similar things that are all in $\bf f$ (intuitively, maybe this would be like learning separate &amp;ldquo;Monday&amp;rdquo;, &amp;ldquo;Tuesday&amp;rdquo;, &amp;ldquo;Wednesday&amp;rdquo; features).&lt;/p&gt;
 &lt;p&gt;So what they do is:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Cluster all the SAE decoder vectors using this thresholding thing&lt;/li&gt;
@@ -566,7 +566,7 @@ Let&#39;s say your multi-dimensional feature $\bf f$ was dimension $d_f=2$ but t
 &lt;p&gt;Two important details:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;In order to calculate these scores, they actually &lt;em&gt;first&lt;/em&gt; calculate the PCA directions over the reconstructed activations, and then project onto PCA components 1-2, 2-3, 3-4, 4-5, averaging the separability/mixture over each of these planes.&lt;/li&gt;
-&lt;li&gt;This process implicitly filters for datapoints that are relevant for this cluster/feature. In step (2), if none of the cluster&amp;rsquo;s features are active for a particular hidden state $\textbf{x}_{i,l}$, it is not included in the analysis. In the case of a days-of-the-week feature, the PCAs will be quite nice because of course the main variation between a bunch of weekday vectors will probably separate things by weekday.&lt;/li&gt;
+&lt;li&gt;This process implicitly filters for datapoints that are relevant for this cluster/feature. In step (2), if none of the cluster&amp;rsquo;s features are active for a particular hidden state $\textbf{x}_{i,l}$, it is not included in the analysis. In the case of a days-of-the-week feature, the PCAs will of course look pretty nice, since the biggest variation between a bunch of weekday vectors will almost surely be information about weekday.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Another cool thing is that they show that these features are actually cones, where the first principal component seems to be intensity of weekday-ness, perhaps.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/geometry/engels_pca.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -576,8 +576,27 @@ Let&#39;s say your multi-dimensional feature $\bf f$ was dimension $d_f=2$ but t
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;They do all this SAE stuff on GPT-2, but for Mistral and Llama they actually just find the circles again from scratch (I think).&lt;/p&gt;
-&lt;p&gt;todo - section 5.1&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;While they do try intervening on the subspace found by the SAE, they get slightly better results by training probes to find good subspaces at each layer. Specifically, they&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Take the top-$k$ principal component directions of hidden states at the &amp;ldquo;Monday&amp;rdquo; position (pretty sure this position) across all the prompts and project onto there first.&lt;/li&gt;
+&lt;li&gt;Then train a linear probe $\bf P$ in that space that maps from $k$ to 2 dimensions, trained to correspond to &lt;tt&gt;circle&lt;/tt&gt;($\alpha$) &amp;ndash; e.g. for weekdays &lt;tt&gt;circle&lt;/tt&gt;$(\alpha)=[\cos(2\pi\alpha/7), \sin(2\pi\alpha/7)]$.&lt;/li&gt;
+&lt;li&gt;To intervene on &amp;ldquo;Monday&amp;rdquo; and make it look like &amp;ldquo;Wednesday&amp;rdquo;, they just discard &amp;ldquo;Monday.&amp;rdquo; Start with mean over prompts $\overline{x_{i,l}}$. Project that onto the circle with $\textbf{PW}_{i,l}$ and then calculate offset from &lt;tt&gt;circle&lt;/tt&gt;(Wednesday). Then project that offset back to model space with $\textbf{W}^T_{i,l}\textbf{P}^+$ and add back to the mean to get final activation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;They&amp;rsquo;re not doing a patch between two examples, but &amp;ldquo;constructing&amp;rdquo; a new activation based on offset from the mean. [TODO FIX THIS]
+$$x_{i,l}^{j*}=\overline{x_{i,l}}-\textbf{PW}_{i,l}\overline{x_{i,l}}+$$
+Really what it is is they are subtracting whatever is currently in there ____.
+It&amp;rsquo;s cool because you can basically just choose what index of the week you want and then feed it into the intervention. Josh Engels mentions in the talk that the intervention only works if you ablate out everything else that&amp;rsquo;s not in the PCA; I&amp;rsquo;m not exactly sure what he means here, probably the fact that you can&amp;rsquo;t actually patch between individual examples?&lt;/p&gt;
+&lt;h2 id=&#34;generic-ideastakeaways&#34; &gt;Generic Ideas/Takeaways
+&lt;span&gt;
+    &lt;a href=&#34;#generic-ideastakeaways&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Some of these facts must be piecewise memorized as well (e.g. Saturday is 1 day after Friday is almost surely memorized) &amp;ndash; probably why they have to ablate all other weekday information.&lt;/li&gt;
+&lt;li&gt;If you rotated within the circle subspace for tasks like &amp;ldquo;What holidays are typically on [Thursday]?&amp;rdquo; or &amp;ldquo;What letter does [Thursday] start with?&amp;rdquo; then you&amp;rsquo;d probably see it doesn&amp;rsquo;t affect anything. Presumably lots of weekday embedding information is unrelated to circles.&lt;/li&gt;
+&lt;li&gt;It still worries me to think about multiple circles happening at once. If you have six orthogonal 2D circles, could that just be some alternate formulation of an n-dimensional subspace?&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
