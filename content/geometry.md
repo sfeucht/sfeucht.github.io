@@ -55,3 +55,15 @@ Josh Engels mentions in the talk that the intervention only works if you ablate 
 - Some of these facts must be piecewise memorized as well (e.g. Saturday is 1 day after Friday is almost surely memorized) -- probably why they have to ablate all other weekday information. 
 - Presumably lots of weekday embedding information is unrelated to circles -- if you rotated within the circle subspace for tasks like "What holidays are typically on [Thursday]?" or "What letter does [Thursday] start with?" then you'd probably see it doesn't affect anything. 
 - It still worries me to think about multiple circles happening at once. If you have six orthogonal 2D circles, could that just be some alternate formulation of an n-dimensional subspace? 
+
+# When Models Manipulate Manifolds / Linebreaks (Gurnee et al., 2025)
+
+They find 1-dimensional feature manifolds embedded in low-dimensional subspaces for: num. characters in a token, num. characters in current line, overall line width constraint, num characters *remaining* in the current line. 
+
+- It wouldn't really make sense to dedicate an entire 1D subspace to num characters in current line, because then you're wasting that entire dimension if you're in a doc that doesn't have linebreaks. This is really strong evidence for superposition; as they note, a ring structure implies that there is superposition/interference in that representation. 
+
+They find a bunch of features that activate on a [range of given line widths](https://transformer-circuits.pub/2025/linebreaks/index.html#char-count). Since two are usually active at a time, they imagine curves connecting all these features. If they take PCA across 150 different line width averages for Layer 2, they find a 6-dimensional subspace that explains 95% of the variance across line width averages. They can also reconstruct the activations *only* using the SAE features above, and the curves track each other fairly closely. 
+
+- This is really interesting because there is no human-intuitive reason why line widths would have to be represented as a curve, right? Unless there was something about a 60-length line that nicely parallels a 30-length line? This really might be an artifact of superposition, because we don't want to use up an entire dimension, so we snake it around like so; probably because you're unlikely to confuse 60 and 30 anyway(?)
+- Q: do all of their averaged-line-width features come from tokens within documents with a max line width of 150, or do they come from different documents with different *max* line widths?
+- If we were trying to find this using some geometric DAS, why would we assume we're looking for a curved manifold? 
