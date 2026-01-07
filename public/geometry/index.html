@@ -355,7 +355,7 @@ Let's say your multi-dimensional feature $\bf f$ was dimension $d_f=2$ but to yo
 <ul>
 <li>It wouldn&rsquo;t really make sense to dedicate an entire 1D subspace to num characters in current line, because then you&rsquo;re wasting that entire dimension if you&rsquo;re in a doc that doesn&rsquo;t have linebreaks. This is really strong evidence for superposition; as they note, a ring structure implies that there is superposition/interference in that representation.</li>
 </ul>
-<p>They find a bunch of features that activate on a <a href="https://transformer-circuits.pub/2025/linebreaks/index.html#char-count">range of given line widths</a>. Since two are usually active at a time, they imagine curves connecting all these features. If they take PCA across 150 different line width averages for Layer 2, they find a 6-dimensional subspace that explains 95% of the variance across line width averages. They can also reconstruct the activations <em>only</em> using the SAE features above, and the curves track each other fairly closely.</p>
+<p>They find a bunch of features that activate on a <a href="https://transformer-circuits.pub/2025/linebreaks/index.html#char-count">range of given line widths</a>. Since two are usually active at a time, they imagine a curve connecting all these features. If they take PCA across 150 different line width averages for Layer 2, they find a 6-dimensional subspace that explains 95% of the variance across line width averages. They can also reconstruct the activations <em>only</em> using the SAE features above, and the curves track each other fairly closely.</p>
 <ul>
 <li>This is really interesting because there is no human-intuitive reason why line widths would have to be represented as a curve, right? Unless there was something about a 60-length line that nicely parallels a 30-length line? This really might be an artifact of superposition, because we don&rsquo;t want to use up an entire dimension, so we snake it around like so; probably because you&rsquo;re unlikely to confuse 60 and 30 anyway(?)</li>
 <li>Q: do all of their averaged-line-width features come from tokens within documents with a max line width of 150, or do they come from different documents with different <em>max</em> line widths?</li>
@@ -403,7 +403,7 @@ Let's say your multi-dimensional feature $\bf f$ was dimension $d_f=2$ but to yo
     <div class="common-footer-bottom">
         
         <div class="copyright">
-            <p>© Sheridan Feucht, 2025<br>
+            <p>© Sheridan Feucht, 2026<br>
             Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
             
             </p>  

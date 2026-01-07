@@ -5,7 +5,6 @@ title = "Anubis"
 theme = "anubis"
 paginate = 3
 
-disqusShortname = ""
 googleAnalytics = ""
 
 [author]
