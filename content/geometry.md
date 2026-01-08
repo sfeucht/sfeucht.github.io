@@ -58,6 +58,7 @@ Josh Engels mentions in the talk that the intervention only works if you ablate 
 
 # When Models Manipulate Manifolds / Linebreaks (Gurnee et al., 2025)
 
+## Line snaking through a subspace
 They find 1-dimensional feature manifolds embedded in low-dimensional subspaces for: num. characters in a token, num. characters in current line, overall line width constraint, num characters *remaining* in the current line. 
 
 - It wouldn't really make sense to dedicate an entire 1D subspace to num characters in current line, because then you're wasting that entire dimension if you're in a doc that doesn't have linebreaks. This is really strong evidence for superposition; as they note, a ring structure implies that there is superposition/interference in that representation. 
@@ -68,6 +69,7 @@ They find a bunch of features that activate on a [range of given line widths](ht
 - Q: do all of their averaged-line-width features come from tokens within documents with a max line width of 150, or do they come from different documents with different *max* line widths?
 - If we were trying to find this using some geometric DAS, why would we assume we're looking for a curved manifold? Or, how would we figure out what kind of curves we might be looking for? *This seems like something someone who's good at math could figure out*
 
+## "Ringing" plots
 150-way logistic regression: basically just a bunch of model_dim vectors each individually trained to activate for e.g. a 50 char line, 51 char, etc. If they take all these guys and do PCA, the top 6 components capture 82% of the variance of these vectors. You can just plot the behavior of each of these logistic regression probes on a heatmap, and see that the diagonal is quite fuzzy. But you also see that there is some small off-diagonal "ringing" in their predictions as well (which also occurs if you take cosine sim. between all the mean vectors, or the probe vectors).
 
 - A very fuzzy intuition for this is that if you have some representation of line width that snakes around within a subspace back onto itself, as well as a logistic regression probe vector that's trained to have a high dot product with lines of a particular length, then it wouldn't just slightly activate for adjacent line widths but *also* for areas near it on the spiral. (This is basically the intuition in their toy example.)
@@ -76,6 +78,11 @@ Math details for their toy model: let's say we want 150 vectors that are all som
 
 Probably the reason why they define $X$ to be circulant is because of its connection to Fourier transforms. Multiplying by a circulant matrix implements a convolution, which is just multiplication in Fourier space; this means that [circulant matrices have eigenvectors](https://en.wikipedia.org/wiki/Circulant_matrix#Eigenvectors_and_eigenvalues) that are Fourier modes (i.e., fundamental waves). So this approximation they were doing is equivalent to truncating the less-important Fourier coefficients for $X$. 
 
-Since this toy Fourier approximation looks so much like their real-life ringing example, they wonder whether the line width stuff in the real LLM is constructed via Fourier features. They say you can't have just *any* generic low-dimensional embedding of a high-dimensional circle that slides along itself via a linear transform, which I buy. In the [footnote](https://transformer-circuits.pub/2025/linebreaks/index.html#appendix-gibbs) TODO explain based on my notebook. TODO look at their experiments. 
+Since this toy Fourier approximation looks so much like their real-life ringing example, they wonder whether the line width stuff in the real LLM is constructed via Fourier features. They say you can't have just *any* generic low-dimensional embedding of a high-dimensional circle that slides along itself via a linear transform, which I buy. In the [footnote](https://transformer-circuits.pub/2025/linebreaks/index.html#appendix-gibbs) they have this derivation about how this particular circulant matrix is built out of Fourier features, and show that because of this fact they are able to get a transformation on this structure that "slides it along itself." For the actual character count curve, they find that Fourier approximations are pretty good at explaining the variance compared to ceiling (PCA). 
+<details>
+<summary>Circulant Matrix Notes</summary>
+If you have a permutation $\rho$ that maps $e_i \mapsto e_{i+1}$, then since $X$ is circulant, this permutation "doesn't change it"; i.e., if we define $P_\rho$ as the matrix that implements our permutation, then $P_\rho X P_\rho^{-1} = X$. This gives us commutativity, $P_\rho X = XP_\rho$. Then if you have an eigenvector for $Xv = \lambda v$, then $P_\rho v$ is also in the eigenspace, since $P_\rho Xv=P_\rho\lambda v$ so $X(P_\rho v) = \lambda (P_\rho v)$. I'm still not clear on this last step: apparently if permuting eigenvectors leaves them in the eigenspace, then the permutation operation will work just as well in the low dimensional top-$k$ eigenvectors; thus, we have a linear map that operates on the projected-down manifold as well.
+</details>
 
- <!-- but then say that a "Fourier construction" could have this property. [Point of confusion: I thought that you could use a Fourier series to approximate any function...?] -->
+## Manipulation of Manifolds
+

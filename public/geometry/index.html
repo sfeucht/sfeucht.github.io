@@ -351,7 +351,13 @@ Let's say your multi-dimensional feature $\bf f$ was dimension $d_f=2$ but to yo
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h1><p>They find 1-dimensional feature manifolds embedded in low-dimensional subspaces for: num. characters in a token, num. characters in current line, overall line width constraint, num characters <em>remaining</em> in the current line.</p>
+</h1><h2 id="line-snaking-through-a-subspace" >Line snaking through a subspace
+<span>
+    <a href="#line-snaking-through-a-subspace">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>They find 1-dimensional feature manifolds embedded in low-dimensional subspaces for: num. characters in a token, num. characters in current line, overall line width constraint, num characters <em>remaining</em> in the current line.</p>
 <ul>
 <li>It wouldn&rsquo;t really make sense to dedicate an entire 1D subspace to num characters in current line, because then you&rsquo;re wasting that entire dimension if you&rsquo;re in a doc that doesn&rsquo;t have linebreaks. This is really strong evidence for superposition; as they note, a ring structure implies that there is superposition/interference in that representation.</li>
 </ul>
@@ -361,14 +367,30 @@ Let's say your multi-dimensional feature $\bf f$ was dimension $d_f=2$ but to yo
 <li>Q: do all of their averaged-line-width features come from tokens within documents with a max line width of 150, or do they come from different documents with different <em>max</em> line widths?</li>
 <li>If we were trying to find this using some geometric DAS, why would we assume we&rsquo;re looking for a curved manifold? Or, how would we figure out what kind of curves we might be looking for? <em>This seems like something someone who&rsquo;s good at math could figure out</em></li>
 </ul>
-<p>150-way logistic regression: basically just a bunch of model_dim vectors each individually trained to activate for e.g. a 50 char line, 51 char, etc. If they take all these guys and do PCA, the top 6 components capture 82% of the variance of these vectors. You can just plot the behavior of each of these logistic regression probes on a heatmap, and see that the diagonal is quite fuzzy. But you also see that there is some small off-diagonal &ldquo;ringing&rdquo; in their predictions as well (which also occurs if you take cosine sim. between all the mean vectors, or the probe vectors).</p>
+<h2 id="ringing-plots" >&ldquo;Ringing&rdquo; plots
+<span>
+    <a href="#ringing-plots">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>150-way logistic regression: basically just a bunch of model_dim vectors each individually trained to activate for e.g. a 50 char line, 51 char, etc. If they take all these guys and do PCA, the top 6 components capture 82% of the variance of these vectors. You can just plot the behavior of each of these logistic regression probes on a heatmap, and see that the diagonal is quite fuzzy. But you also see that there is some small off-diagonal &ldquo;ringing&rdquo; in their predictions as well (which also occurs if you take cosine sim. between all the mean vectors, or the probe vectors).</p>
 <ul>
 <li>A very fuzzy intuition for this is that if you have some representation of line width that snakes around within a subspace back onto itself, as well as a logistic regression probe vector that&rsquo;s trained to have a high dot product with lines of a particular length, then it wouldn&rsquo;t just slightly activate for adjacent line widths but <em>also</em> for areas near it on the spiral. (This is basically the intuition in their toy example.)</li>
 </ul>
 <p>Math details for their toy model: let&rsquo;s say we want 150 vectors that are all somewhat similar to their neighbors but orthogonal to everything else. They define the cosine similarity matrix $X$ for this toy setting as a &ldquo;circulant matrix&rdquo; where basically you just have the row [1, 0.5, 0, &hellip;] permuted to the right in every row to create a fuzzy diagonal. If you take a 5-rank approximation of it using the eigendecomposition of $X$, then you get the same &ldquo;ringing&rdquo; pattern. <em>Note: it is nice to just look at the cosine similarity matrix here instead of trying to think of a familiar shape in 150 or 5 dimensions.</em></p>
 <p>Probably the reason why they define $X$ to be circulant is because of its connection to Fourier transforms. Multiplying by a circulant matrix implements a convolution, which is just multiplication in Fourier space; this means that <a href="https://en.wikipedia.org/wiki/Circulant_matrix#Eigenvectors_and_eigenvalues">circulant matrices have eigenvectors</a> that are Fourier modes (i.e., fundamental waves). So this approximation they were doing is equivalent to truncating the less-important Fourier coefficients for $X$.</p>
-<p>Since this toy Fourier approximation looks so much like their real-life ringing example, they wonder whether the line width stuff in the real LLM is constructed via Fourier features. They say you can&rsquo;t have just <em>any</em> generic low-dimensional embedding of a high-dimensional circle that slides along itself via a linear transform, which I buy. In the <a href="https://transformer-circuits.pub/2025/linebreaks/index.html#appendix-gibbs">footnote</a> TODO explain based on my notebook. TODO look at their experiments.</p>
- <!-- but then say that a "Fourier construction" could have this property. [Point of confusion: I thought that you could use a Fourier series to approximate any function...?] -->
+<p>Since this toy Fourier approximation looks so much like their real-life ringing example, they wonder whether the line width stuff in the real LLM is constructed via Fourier features. They say you can&rsquo;t have just <em>any</em> generic low-dimensional embedding of a high-dimensional circle that slides along itself via a linear transform, which I buy. In the <a href="https://transformer-circuits.pub/2025/linebreaks/index.html#appendix-gibbs">footnote</a> they have this derivation about how this particular circulant matrix is built out of Fourier features, and show that because of this fact they are able to get a transformation on this structure that &ldquo;slides it along itself.&rdquo; For the actual character count curve, they find that Fourier approximations are pretty good at explaining the variance compared to ceiling (PCA).</p>
+<details>
+<summary>Circulant Matrix Notes</summary>
+If you have a permutation $\rho$ that maps $e_i \mapsto e_{i+1}$, then since $X$ is circulant, this permutation "doesn't change it"; i.e., if we define $P_\rho$ as the matrix that implements our permutation, then $P_\rho X P_\rho^{-1} = X$. This gives us commutativity, $P_\rho X = XP_\rho$. Then if you have an eigenvector for $Xv = \lambda v$, then $P_\rho v$ is also in the eigenspace, since $P_\rho Xv=P_\rho\lambda v$ so $X(P_\rho v) = \lambda (P_\rho v)$. I'm still not clear on this last step: apparently if permuting eigenvectors leaves them in the eigenspace, then the permutation operation will work just as well in the low dimensional top-$k$ eigenvectors; thus, we have a linear map that operates on the projected-down manifold as well.
+</details>
+<h2 id="manipulation-of-manifolds" >Manipulation of Manifolds
+<span>
+    <a href="#manipulation-of-manifolds">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2>
         </div>
         
 
