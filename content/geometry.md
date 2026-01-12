@@ -70,7 +70,9 @@ They find a bunch of features that activate on a [range of given line widths](ht
 - If we were trying to find this using some geometric DAS, why would we assume we're looking for a curved manifold? Or, how would we figure out what kind of curves we might be looking for? *This seems like something someone who's good at math could figure out*
 
 ## "Ringing" plots
-150-way logistic regression: basically just a bunch of model_dim vectors each individually trained to activate for e.g. a 50 char line, 51 char, etc. If they take all these guys and do PCA, the top 6 components capture 82% of the variance of these vectors. You can just plot the behavior of each of these logistic regression probes on a heatmap, and see that the diagonal is quite fuzzy. But you also see that there is some small off-diagonal "ringing" in their predictions as well (which also occurs if you take cosine sim. between all the mean vectors, or the probe vectors).
+~~150-way logistic regression: basically just a bunch of model_dim vectors each individually trained to activate for e.g. a 50 char line, 51 char, etc.~~ I misunderstood because of their language: the precise definition of "logistic regression" is binary classification with a single vector and a sigmoid activation function, but if you look closer they actually do *multinomial logistic regression* ("as a 150-way multiclass classification problem"). In other words, they have a probe $P\in\mathbb{R}^{(150,d)}$ and then calculate cross-entropy loss with $\text{softmax}(Px)$ where $x$ is a d-dimensional hidden state. So this is actually very similar to approaches I've used–the difference is that they analyze all of the rows of this resulting probe in interesting ways. 
+
+Anyway, if they take all these guys and do PCA, the top 6 components capture 82% of the variance of these vectors. You can just plot the behavior of each of these ~~logistic regression probes~~ d-dimensional probe rows on a heatmap, and see that the diagonal is quite fuzzy. But you also see that there is some small off-diagonal "ringing" in their predictions as well (which also occurs if you take cosine sim. between all the mean vectors, or the probe vectors).
 
 - A very fuzzy intuition for this is that if you have some representation of line width that snakes around within a subspace back onto itself, as well as a logistic regression probe vector that's trained to have a high dot product with lines of a particular length, then it wouldn't just slightly activate for adjacent line widths but *also* for areas near it on the spiral. (This is basically the intuition in their toy example.)
 
@@ -85,4 +87,25 @@ If you have a permutation $\rho$ that maps $e_i \mapsto e_{i+1}$, then since $X$
 </details>
 
 ## Manipulation of Manifolds
+All this stuff before was looking at "character count," the number of characters that there are so far for some arbitrary token. Now, they train probes for "line width," which is different for each document and specifically at the newline tokens. 
 
+They find a head that outputs a "boundary detection feature." The hypothesis here is that its query would be the character count at the current token, and the keys would allow the head to match its "current chars" query to any previous newlines. So they have a bunch of probes that can identify "current chars" and "line width" features, which appear to be aligned if they take the joint PCA and visualize in 3D. Following their hypothesis, if they multiply the "current char" probes through the $W_q$ matrix, and the "line width" probes through the $W_k$ matrix, they see that the two manifolds are twisted against each other so that if we're at "character count of 42" then we'll activate the most for "line width of 46". 
+- Probably unlikely that the distribution of line widths in real life is so uniform... interesting that the learned algorithm is so general. 
+- Cosine similarity heatmaps within the QK subspace show more "ringing". Let's say the current chars are at 38, then the head would attend heavily to a newline with width 40, but also kind of lightly to 20 as well. 
+- I wish we could know how big their model is, since it's interesting that the model has *several* boundary heads. I wonder what % of its overall heads those take up.
+Also, the idea is that the boundary heads output information about how many characters are *remaining* as well as, presumably, whatever the separator token will be through the OV circuit. I'm not sure exactly how that would work. 
+
+## Is the next token too long?
+There's SAE features that seem to activate only if the next token will be too long (and upweight newline), and also features that activate if the next token is short, downweighting newline. How does the model combine the next-token prediction with the detected boundary? 
+
+They calculate the mean over all the hidden states where the next token is $j$ characters long, and the mean over all states where there are only $i$ characters remaining. When you take the PCA of these mean vectors together, they look like two kind of orthogonal-ish curves. If you sum together any two points on the curve, that's like saying, "there are $i$ characters remaining and I want to predict a $j$-character token." The way these curves are arranged makes it simple to draw a plane where $i-j=0$.  
+
+- Do they consider that the model doesn't actually predict one next token, but a distribution over future tokens? How exactly does that fit in here?
+- "This sum is principled because both sets of vectors are marginalized data means, so collectively have the mean of the data, which we center to be 0." Not exactly sure what the concern would be here?
+
+## How do heads actually calculate num. characters in a line?
+Interestingly, if you train more little probes, one for each possible token length, you can see that they form a rippled circle. Again, funny why it would need to be a circle, but this explains 70% of the variance. 
+
+![](/geometry/gurnee_embed_char.png)
+
+Apparently after layer 0 there's already rough probe accuracies for current # of characters at a given token position. They don't really explain how they find particular heads that are responsible for building up this information. The general vibe is that the QK circuit uses the previous newline as an attention sink and then smears the rest of its attn across subsequent tokens, whereas the OV circuit somehow combines an estimate based on avg. token length (4 chars) with "corrections" to each token based on the embedding-level information above. 
