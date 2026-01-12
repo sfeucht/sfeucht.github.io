@@ -691,5 +691,96 @@ therefore $U$, the left singular vectors of $X$, are the same as the principal c
 </description>
     </item>
     
+    <item>
+      <title>What is DAS doing?</title>
+      <link>http://localhost:1313/das/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/das/</guid>
+      <description>&lt;p&gt;Here&amp;rsquo;s my notes on what DAS is doing when they say &amp;ldquo;learn a rotation matrix&amp;rdquo;, and how that&amp;rsquo;s equivalent to the more Bau lab way of thinking about it, &amp;ldquo;learning a subspace.&amp;rdquo;&lt;/p&gt;
+&lt;h2 id=&#34;trivial-concrete-example&#34; &gt;Trivial concrete example
+&lt;span&gt;
+    &lt;a href=&#34;#trivial-concrete-example&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s say your activations were in $\mathbb{R}^4$, where the standard basis is $e_1, e_2, e_3, e_4$. Say the subspace that was causally important for a given &amp;ldquo;foo&amp;rdquo; variable was spanned by $e_2$ and $e_3$, and DAS had perfectly learned that. Now, we want to intervene on a base hidden state $h_{base}$, setting its &amp;ldquo;foo&amp;rdquo; variable to whatever it was in $h_{src}$, where $$h_{base}=\begin{bmatrix}a\\ b\\ c \\ d\end{bmatrix}; h_{src}=\begin{bmatrix}e\\ f\\ g \\ h\end{bmatrix}$$
+and then the desired intervened hidden state would be
+$$h_{intervened}=\begin{bmatrix}a\\ f\\ g \\ d\end{bmatrix}.$$&lt;/p&gt;
+&lt;h3 id=&#34;das-viewpoint&#34; &gt;DAS Viewpoint
+&lt;span&gt;
+    &lt;a href=&#34;#das-viewpoint&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;DAS thinks about this in terms of an orthogonal rotation. In their codebase, to do an intervention, they apply the learned rotation $R$ to both $h_{src}$ and $h_{base}$ and then literally swap out the first $k$ entries of those hidden states (where $k$ is the dimension of the subspace learned). So the rotation matrix DAS would have learned in this case would be one that moves the relevant dimensions to the beginning of the vector:
+$$R=\begin{bmatrix}
+0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \\
+1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\
+\end{bmatrix} =
+\begin{bmatrix}
+\text{&amp;mdash; } e_2^T \text{&amp;mdash;} \\
+\text{&amp;mdash; } e_3^T \text{&amp;mdash;} \\
+\text{&amp;mdash; } e_1^T \text{&amp;mdash;} \\
+\text{&amp;mdash; } e_4^T \text{&amp;mdash;}
+\end{bmatrix} \text{ so that } Rh_{base} = \begin{bmatrix}b\\ c\\ a \\ d\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;Then, we can achieve $h_{intervened}$ by calculating $Rh_{base}$ and $Rh_{src}$, swapping out the first $k=2$ dimensions, and then rotating back.&lt;/p&gt;
+&lt;p&gt;$$ h_{intervened} = R^{-1}(Rh_{base} \leftarrow_{:k} Rh_{src})$$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# In _do_intervention_by_swap() (pyvene/models/intervention_utils.py:115):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; subspaces &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; mode &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;interchange&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          base[&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;, :interchange_dim] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; source[&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;, :interchange_dim]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bau-lab-viewpoint&#34; &gt;Bau Lab Viewpoint
+&lt;span&gt;
+    &lt;a href=&#34;#bau-lab-viewpoint&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;ve written this out before &lt;a href=&#34;https://sfeucht.github.io/blackboxnlp_abstract_2024.pdf&#34;&gt;here&lt;/a&gt;. Instead of thinking of this as a rotation matrix, we could think of it as adding the projection of $h_{src}$ onto the relevant subspace to the projection of $h_{base}$ onto everything &lt;em&gt;except&lt;/em&gt; for the relevant subspace.&lt;/p&gt;
+&lt;p&gt;So here, let&amp;rsquo;s define a matrix $A$, which has columns $e_2$ and $e_3$, which define the ground-truth subspace we want to intervene on. In general, to get a projection matrix onto the space spanned by columns of $A$, you&amp;rsquo;d want $A(A^TA)^{-1}A^T$, but since $A$ is orthogonal, we can simplify: $A^TA=A^{-1}A=I$ and so the projection matrix is just $P=AA^T$.
+$$P = \begin{bmatrix}
+| &amp;amp; |  \\
+e_2 &amp;amp; e_3  \\
+| &amp;amp; |
+\end{bmatrix}
+\begin{bmatrix}
+\text{&amp;mdash; } e_2^T \text{&amp;mdash;} \\
+\text{&amp;mdash; } e_3^T \text{&amp;mdash;} \\
+\end{bmatrix} =
+\begin{bmatrix}
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;Now, if I want to project onto everything &lt;em&gt;but&lt;/em&gt; the &amp;ldquo;foo&amp;rdquo; subspace, then I just need $I-P$.
+$$I - P = \begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\
+\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;Why does this project onto &amp;ldquo;everything but the &amp;lsquo;foo&amp;rsquo; subspace&amp;rdquo;? If you work it out for a single hidden state $h$, you can see that $(I-P)h + Ph = h$.
+The intervention itself can just be thought of as swapping out one of these terms:
+$$h_{intervened}=(I-P)h_{base} + Ph_{src},$$
+which actually looks very intuitive if you write it out for our concrete example:
+$$\begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\
+\end{bmatrix}\begin{bmatrix}a\\ b\\ c \\ d\end{bmatrix} +
+\begin{bmatrix}
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+\end{bmatrix}\begin{bmatrix}e\\ f\\ g \\ h\end{bmatrix}=
+\begin{bmatrix}a\\ 0\\ 0 \\ d\end{bmatrix} + \begin{bmatrix}0\\ f\\ g \\ 0\end{bmatrix}=h_{intervened}$$&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
