@@ -35,27 +35,6 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/blog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/blog/</guid>
-      <description>&lt;h1 id=&#34;sheridans-blog&#34; &gt;Sheridan&amp;rsquo;s Blog
-&lt;span&gt;
-    &lt;a href=&#34;#sheridans-blog&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/rerereading&#34;&gt;Is AI Writing Still Nonsense?&lt;/a&gt; &lt;br&gt;
-December 4, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;Or, what exactly are we doing when we read LLM-generated text?&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/syllogisms&#34;&gt;Solving Syllogisms is Not Intelligence&lt;/a&gt; &lt;br&gt;
-April 24, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;I think that we overvalue logical reasoning when it comes to measuring &amp;ldquo;intelligence.&amp;quot;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://sfeucht.github.io/rereading&#34;&gt;Writing That&amp;rsquo;s Not Language (Yet)&lt;/a&gt; &lt;br&gt;
-August 10, 2021 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://localhost:1313/books2024/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -400,6 +379,19 @@ The word problems in this anecdote are clearly reminiscent of how we measure IQ 
     </item>
     
     <item>
+      <title>Easy way to calculate PCA</title>
+      <link>http://localhost:1313/pca-svd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/pca-svd/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s say you have a matrix $A$ of dimension (model_dim, n_samples), i.e. the columns correspond to points in a dataset. If we want to calculate PCA, we first center by subtracting the mean of the columns of $A$.&lt;/p&gt;
+&lt;p&gt;The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From &lt;a href=&#34;http://localhost:1313/Covariance_and_Whitening_Self_Explanation.pdf&#34;&gt;other notes&lt;/a&gt; we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it&amp;rsquo;s symmetric and it&amp;rsquo;s also an eigendecomposition.&lt;/p&gt;
+&lt;p&gt;We don&amp;rsquo;t actually have to calculate $AA^T$. We can directly take the SVD of $A$ instead as $U_A\Sigma V_A^T$. Then, we know that $AA^T=(U_A\Sigma V_A^T)(V_A\Sigma U_A^T)=U_A\Sigma^2U_A^T$ and that the left singular vectors of the data matrix $A$ are the same as the eigenvectors of $A$&amp;rsquo;s covariance matrix.&lt;/p&gt;
+&lt;p&gt;If you ever get confused about rows and columns, remember that you&amp;rsquo;d always want to take the singular vectors that are the model dimension; in this case they are the left singular vectors, since $A$ is (model_dim, n_samples). Also, the covariance matrix has to be (model_dim, model_dim).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Is AI Writing Still Nonsense?</title>
       <link>http://localhost:1313/rerereading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -515,6 +507,23 @@ to refer to Peano. --&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>List of All My Notes</title>
+      <link>http://localhost:1313/notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/</guid>
+      <description>&lt;p&gt;This page is super-secret and for my own reference, but if you&amp;rsquo;ve somehow found this page and notice a flaw in my notes, please let me know and I won&amp;rsquo;t be mad.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/pca-svd&#34;&gt;Easy way to calculate PCA&lt;/a&gt; (Jan 2026)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/das&#34;&gt;What is DAS Doing?&lt;/a&gt; (Jan 2026)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/geometry&#34;&gt;Notes on Geometry Papers&lt;/a&gt; (Dec 2026)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/Covariance_and_Whitening_Self_Explanation.pdf&#34;&gt;Covariance Self-Explainer&lt;/a&gt; (Jan 2025)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/blackboxnlp_abstract_2024.pdf&#34;&gt;BlackboxNLP 2024 Abstract&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -688,6 +697,21 @@ therefore $U$, the left singular vectors of $X$, are the same as the principal c
 &lt;p&gt;&amp;ldquo;The top 3 principal components of all the 150 logistic regression vectors&amp;rdquo; is actually the same as &amp;ldquo;the top 3 input space singular vectors&amp;rdquo;. This means that if we had the probe they had, and took the SVD, the singular values would drop off really quickly, I think.&lt;/p&gt;
 &lt;p&gt;Also, if we wanted to get the same plots as them after taking the SVD, the key thing to do would be to project all of the rows of the original probe $P$ onto the first three singular vectors on the right side of the SVD of $P$. This is quite intuitive, because if the probe has found a bunch of vectors in the residual stream that have a high dot product with a particular character count, then they should probably make sense projected onto the most important singular vectors for probing out that character count. But it&amp;rsquo;s also weird and circular.&lt;/p&gt;
 &lt;p&gt;I think that the &amp;ldquo;taking the PCA of all of these logistic probes&amp;rdquo; framing is quite nice and maybe more intuitive than what I&amp;rsquo;ve written here.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sheridan&#39;s Blog</title>
+      <link>http://localhost:1313/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/rerereading&#34;&gt;Is AI Writing Still Nonsense?&lt;/a&gt; &lt;br&gt;
+December 4, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;Or, what exactly are we doing when we read LLM-generated text?&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/syllogisms&#34;&gt;Solving Syllogisms is Not Intelligence&lt;/a&gt; &lt;br&gt;
+April 24, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;I think that we overvalue logical reasoning when it comes to measuring &amp;ldquo;intelligence.&amp;quot;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sfeucht.github.io/rereading&#34;&gt;Writing That&amp;rsquo;s Not Language (Yet)&lt;/a&gt; &lt;br&gt;
+August 10, 2021 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 </description>
     </item>
     

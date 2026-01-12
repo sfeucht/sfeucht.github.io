@@ -10,14 +10,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Sheridan&rsquo;s Blog - Sheridan Feucht</title>
+<title>Easy way to calculate PCA - Sheridan Feucht</title>
 
-<meta name="description" content="Is AI Writing Still Nonsense? 
-December 4, 2025 • Or, what exactly are we doing when we read LLM-generated text?
-Solving Syllogisms is Not Intelligence 
-April 24, 2025 • I think that we overvalue logical reasoning when it comes to measuring &ldquo;intelligence.&quot;
-Writing That&rsquo;s Not Language (Yet) 
-August 10, 2021 • An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.">
+<meta name="description" content="Let&rsquo;s say you have a matrix $A$ of dimension (model_dim, n_samples), i.e. the columns correspond to points in a dataset. If we want to calculate PCA, we first center by subtracting the mean of the columns of $A$.
+The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From other notes we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it&rsquo;s symmetric and it&rsquo;s also an eigendecomposition.">
 
 
 
@@ -95,21 +91,19 @@ August 10, 2021 • An interactive essay I wrote for an undergraduate seminar on
 
 
 
-<meta property="og:url" content="http://localhost:1313/blog/">
+<meta property="og:url" content="http://localhost:1313/pca-svd/">
   <meta property="og:site_name" content="Sheridan Feucht">
-  <meta property="og:title" content="Sheridan&#39;s Blog">
-  <meta property="og:description" content="Is AI Writing Still Nonsense? December 4, 2025 • Or, what exactly are we doing when we read LLM-generated text?
-Solving Syllogisms is Not Intelligence April 24, 2025 • I think that we overvalue logical reasoning when it comes to measuring “intelligence.&#34;
-Writing That’s Not Language (Yet) August 10, 2021 • An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.">
+  <meta property="og:title" content="Easy way to calculate PCA">
+  <meta property="og:description" content="Let’s say you have a matrix $A$ of dimension (model_dim, n_samples), i.e. the columns correspond to points in a dataset. If we want to calculate PCA, we first center by subtracting the mean of the columns of $A$.
+The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From other notes we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it’s symmetric and it’s also an eigendecomposition.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Sheridan&#39;s Blog">
-  <meta name="twitter:description" content="Is AI Writing Still Nonsense? December 4, 2025 • Or, what exactly are we doing when we read LLM-generated text?
-Solving Syllogisms is Not Intelligence April 24, 2025 • I think that we overvalue logical reasoning when it comes to measuring “intelligence.&#34;
-Writing That’s Not Language (Yet) August 10, 2021 • An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.">
+  <meta name="twitter:title" content="Easy way to calculate PCA">
+  <meta name="twitter:description" content="Let’s say you have a matrix $A$ of dimension (model_dim, n_samples), i.e. the columns correspond to points in a dataset. If we want to calculate PCA, we first center by subtracting the mean of the columns of $A$.
+The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From other notes we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it’s symmetric and it’s also an eigendecomposition.">
 
 
 
@@ -263,7 +257,7 @@ Writing That’s Not Language (Yet) August 10, 2021 • An interactive essay I w
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">Sheridan&rsquo;s Blog</h1>
+                <h1 class="p-name post-title">Easy way to calculate PCA</h1>
 
                 
             </header>
@@ -276,12 +270,10 @@ Writing That’s Not Language (Yet) August 10, 2021 • An interactive essay I w
 
 
         <div class="content e-content">
-            <p><a href="/rerereading">Is AI Writing Still Nonsense?</a> <br>
-December 4, 2025 • <span style="color:gray"><i>Or, what exactly are we doing when we read LLM-generated text?</i></span></p>
-<p><a href="/syllogisms">Solving Syllogisms is Not Intelligence</a> <br>
-April 24, 2025 • <span style="color:gray"><i>I think that we overvalue logical reasoning when it comes to measuring &ldquo;intelligence.&quot;</i></span></p>
-<p><a href="https://sfeucht.github.io/rereading">Writing That&rsquo;s Not Language (Yet)</a> <br>
-August 10, 2021 • <span style="color:gray"><i>An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.</i></span></p>
+            <p>Let&rsquo;s say you have a matrix $A$ of dimension (model_dim, n_samples), i.e. the columns correspond to points in a dataset. If we want to calculate PCA, we first center by subtracting the mean of the columns of $A$.</p>
+<p>The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From <a href="/Covariance_and_Whitening_Self_Explanation.pdf">other notes</a> we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it&rsquo;s symmetric and it&rsquo;s also an eigendecomposition.</p>
+<p>We don&rsquo;t actually have to calculate $AA^T$. We can directly take the SVD of $A$ instead as $U_A\Sigma V_A^T$. Then, we know that $AA^T=(U_A\Sigma V_A^T)(V_A\Sigma U_A^T)=U_A\Sigma^2U_A^T$ and that the left singular vectors of the data matrix $A$ are the same as the eigenvectors of $A$&rsquo;s covariance matrix.</p>
+<p>If you ever get confused about rows and columns, remember that you&rsquo;d always want to take the singular vectors that are the model dimension; in this case they are the left singular vectors, since $A$ is (model_dim, n_samples). Also, the covariance matrix has to be (model_dim, model_dim).</p>
 
         </div>
         
@@ -293,7 +285,7 @@ August 10, 2021 • <span style="color:gray"><i>An interactive essay I wrote for
 <div class="post-info">
     
 
-    <a class="post-hidden-url u-url" href="http://localhost:1313/blog/">http://localhost:1313/blog/</a>
+    <a class="post-hidden-url u-url" href="http://localhost:1313/pca-svd/">http://localhost:1313/pca-svd/</a>
     <a href="http://localhost:1313/" class="p-name p-author post-hidden-author h-card" rel="me">Sheridan Feucht</a>
 
 

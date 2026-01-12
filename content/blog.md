@@ -1,9 +1,8 @@
 ---
 disableComments: true
 toc: false
+title: Sheridan's Blog
 ---
-
-# Sheridan's Blog
 
 [Is AI Writing Still Nonsense?](/rerereading) <br>
 December 4, 2025 • <span style="color:gray"><i>Or, what exactly are we doing when we read LLM-generated text?</i></span>
