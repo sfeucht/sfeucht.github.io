@@ -671,6 +671,23 @@ Also, the idea is that the boundary heads output information about how many char
 &lt;/h2&gt;&lt;p&gt;Interestingly, if you train more little probes, one for each possible token length, you can see that they form a rippled circle. Again, funny why it would need to be a circle, but this explains 70% of the variance.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/geometry/gurnee_embed_char.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Apparently after layer 0 there&amp;rsquo;s already rough probe accuracies for current # of characters at a given token position. They don&amp;rsquo;t really explain how they find particular heads that are responsible for building up this information. The general vibe is that the QK circuit uses the previous newline as an attention sink and then smears the rest of its attn across subsequent tokens, whereas the OV circuit somehow combines an estimate based on avg. token length (4 chars) with &amp;ldquo;corrections&amp;rdquo; to each token based on the embedding-level information above.&lt;/p&gt;
+&lt;h2 id=&#34;note-on-taking-pca-of-probe&#34; &gt;Note on &amp;ldquo;taking PCA of probe&amp;rdquo;
+&lt;span&gt;
+    &lt;a href=&#34;#note-on-taking-pca-of-probe&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I think that taking the SVD of the (n_classes, model_dim) probe $P$ from above is actually the same as doing PCA on the probe rows, if the mean of these rows is close to zero.&lt;/p&gt;
+&lt;p&gt;If you want to do PCA on the rows of $P$, then we can construct a matrix $X=P^T$ that has all of these row vectors as data points arranged in columns. (This is just a thing I&amp;rsquo;m doing so I don&amp;rsquo;t have to keep transposing $P$).
+For PCA you&amp;rsquo;d take the SVD/eigendecomp (basically the same for symmetric matrices) of $XX^T=Q\Lambda Q^{-1}$, assuming that the mean of the rows of $P$ is centered at 0. For SVD you have $X=U\Sigma V^T$.
+$$(U\Sigma V^T)(U\Sigma V^T)^T= Q\Lambda Q^{-1}$$
+$$U\Sigma V^TV\Sigma U^T= Q\Lambda Q^{-1}$$
+$$U\Sigma \Sigma U^T= Q\Lambda Q^{-1}$$
+therefore $U$, the left singular vectors of $X$, are the same as the principal components of a PCA ran on the rows of $P$. The shape of $XX^T$ would be (model_dim, model_dim), and $U$ would be (model_dim, model_dim), but only at most 150 of those columns would actually be used.&lt;/p&gt;
+&lt;p&gt;Since we defined $X=P^T$ then it&amp;rsquo;s actually $V\Sigma U^T = P$ and thus $U$ is really the &lt;em&gt;right&lt;/em&gt; singular vectors of our probe. Aka, these are the vectors that we rotate the residual stream space onto before zero-ing out $d-150$ of the model dimensions (or more, if it&amp;rsquo;s low-rank). We could also call them the &amp;ldquo;SVD input space&amp;rdquo; basis vectors; vectors that define which part of the residual stream is most important for this probe to make its decisions.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;The top 3 principal components of all the 150 logistic regression vectors&amp;rdquo; is actually the same as &amp;ldquo;the top 3 input space singular vectors&amp;rdquo;. This means that if we had the probe they had, and took the SVD, the singular values would drop off really quickly, I think.&lt;/p&gt;
+&lt;p&gt;Also, if we wanted to get the same plots as them after taking the SVD, the key thing to do would be to project all of the rows of the original probe $P$ onto the first three singular vectors on the right side of the SVD of $P$. This is quite intuitive, because if the probe has found a bunch of vectors in the residual stream that have a high dot product with a particular character count, then they should probably make sense projected onto the most important singular vectors for probing out that character count. But it&amp;rsquo;s also weird and circular.&lt;/p&gt;
+&lt;p&gt;I think that the &amp;ldquo;taking the PCA of all of these logistic probes&amp;rdquo; framing is quite nice and maybe more intuitive than what I&amp;rsquo;ve written here.&lt;/p&gt;
 </description>
     </item>
     

@@ -109,3 +109,21 @@ Interestingly, if you train more little probes, one for each possible token leng
 ![](/geometry/gurnee_embed_char.png)
 
 Apparently after layer 0 there's already rough probe accuracies for current # of characters at a given token position. They don't really explain how they find particular heads that are responsible for building up this information. The general vibe is that the QK circuit uses the previous newline as an attention sink and then smears the rest of its attn across subsequent tokens, whereas the OV circuit somehow combines an estimate based on avg. token length (4 chars) with "corrections" to each token based on the embedding-level information above. 
+
+## Note on "taking PCA of probe"
+I think that taking the SVD of the (n_classes, model_dim) probe $P$ from above is actually the same as doing PCA on the probe rows, if the mean of these rows is close to zero.
+
+If you want to do PCA on the rows of $P$, then we can construct a matrix $X=P^T$ that has all of these row vectors as data points arranged in columns. (This is just a thing I'm doing so I don't have to keep transposing $P$). 
+For PCA you'd take the SVD/eigendecomp (basically the same for symmetric matrices) of $XX^T=Q\Lambda Q^{-1}$, assuming that the mean of the rows of $P$ is centered at 0. For SVD you have $X=U\Sigma V^T$.
+$$(U\Sigma V^T)(U\Sigma V^T)^T= Q\Lambda Q^{-1}$$
+$$U\Sigma V^TV\Sigma U^T= Q\Lambda Q^{-1}$$
+$$U\Sigma \Sigma U^T= Q\Lambda Q^{-1}$$
+therefore $U$, the left singular vectors of $X$, are the same as the principal components of a PCA ran on the rows of $P$. The shape of $XX^T$ would be (model_dim, model_dim), and $U$ would be (model_dim, model_dim), but only at most 150 of those columns would actually be used. 
+
+Since we defined $X=P^T$ then it's actually $V\Sigma U^T = P$ and thus $U$ is really the *right* singular vectors of our probe. Aka, these are the vectors that we rotate the residual stream space onto before zero-ing out $d-150$ of the model dimensions (or more, if it's low-rank). We could also call them the "SVD input space" basis vectors; vectors that define which part of the residual stream is most important for this probe to make its decisions.  
+
+"The top 3 principal components of all the 150 logistic regression vectors" is actually the same as "the top 3 input space singular vectors". This means that if we had the probe they had, and took the SVD, the singular values would drop off really quickly, I think. 
+
+Also, if we wanted to get the same plots as them after taking the SVD, the key thing to do would be to project all of the rows of the original probe $P$ onto the first three singular vectors on the right side of the SVD of $P$. This is quite intuitive, because if the probe has found a bunch of vectors in the residual stream that have a high dot product with a particular character count, then they should probably make sense projected onto the most important singular vectors for probing out that character count. But it's also weird and circular. 
+
+I think that the "taking the PCA of all of these logistic probes" framing is quite nice and maybe more intuitive than what I've written here. 
