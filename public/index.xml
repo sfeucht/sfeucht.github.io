@@ -737,7 +737,7 @@ $$h_{intervened}=\begin{bmatrix}a\\ f\\ g \\ d\end{bmatrix}.$$&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;p&gt;DAS thinks about this in terms of an orthogonal rotation. In their codebase, to do an intervention, they apply the learned rotation $R$ to both $h_{src}$ and $h_{base}$ and then literally swap out the first $k$ entries of those hidden states (where $k$ is the dimension of the subspace learned). So the rotation matrix DAS would have learned in this case would be one that moves the relevant dimensions to the beginning of the vector:
+&lt;/h3&gt;&lt;p&gt;DAS thinks about this in conceptually terms of an orthogonal rotation. To do an intervention, they apply the learned rotation $R$ to both $h_{src}$ and $h_{base}$ and then literally swap out the first $k$ entries of those hidden states (where $k$ is the dimension of the subspace learned). So the rotation matrix DAS would have learned in this case would be one that moves the relevant dimensions to the beginning of the vector:
 $$R=\begin{bmatrix}
 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\
 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \\
@@ -752,10 +752,9 @@ $$R=\begin{bmatrix}
 \end{bmatrix} \text{ so that } Rh_{base} = \begin{bmatrix}b\\ c\\ a \\ d\end{bmatrix}$$&lt;/p&gt;
 &lt;p&gt;Then, we can achieve $h_{intervened}$ by calculating $Rh_{base}$ and $Rh_{src}$, swapping out the first $k=2$ dimensions, and then rotating back.&lt;/p&gt;
 &lt;p&gt;$$ h_{intervened} = R^{-1}(Rh_{base} \leftarrow_{:k} Rh_{src})$$&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# In _do_intervention_by_swap() (pyvene/models/intervention_utils.py:115):&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; subspaces &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; mode &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;interchange&amp;#34;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          base[&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;, :interchange_dim] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; source[&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;, :interchange_dim]
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# NOTE: pyvene actually implements it the way we describe in the next section&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# but here&amp;#39;s some pseudocode of how you *would* do this&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rotated_h_base[&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;, :interchange_dim] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rotated_h_source[&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;, :interchange_dim]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bau-lab-viewpoint&#34; &gt;Bau Lab Viewpoint
 &lt;span&gt;
     &lt;a href=&#34;#bau-lab-viewpoint&#34;&gt;
@@ -803,6 +802,14 @@ $$\begin{bmatrix}
 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
 \end{bmatrix}\begin{bmatrix}e\\ f\\ g \\ h\end{bmatrix}=
 \begin{bmatrix}a\\ 0\\ 0 \\ d\end{bmatrix} + \begin{bmatrix}0\\ f\\ g \\ 0\end{bmatrix}=h_{intervened}$$&lt;/p&gt;
+&lt;p&gt;So for DAS, we can talk about it as &amp;ldquo;learning a low-rank projection&amp;rdquo; rather than &amp;ldquo;learning a rotation.&amp;rdquo;&lt;/p&gt;
+&lt;h3 id=&#34;quick-note&#34; &gt;Quick note
+&lt;span&gt;
+    &lt;a href=&#34;#quick-note&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Atticus was talking about Denis loosening the constraint to be able to learn rotations that also have stretching, which suddenly revealed new stuff. I wondered whether this is related to steering where you have to multiply the vector, and/or whether it&amp;rsquo;s possible that you&amp;rsquo;re now not learning an orthogonal projection, but somehow an &lt;em&gt;oblique&lt;/em&gt; projection. The intuition is this idea of a shadow stretching at golden hour. An oblique projection is idempotent $P^2=P$ but not symmetric, $P^T\not=P$. I&amp;rsquo;d have to work this out if it ends up being important but maybe &amp;ldquo;DAS with stretching&amp;rdquo; is now using some different scary and strange kind of projection strategy.&lt;/p&gt;
 </description>
     </item>
     
