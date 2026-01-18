@@ -10,10 +10,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Easy way to calculate PCA - Sheridan Feucht</title>
+<title>Can&rsquo;s Weekday Circles Notebook - Sheridan Feucht</title>
 
-<meta name="description" content="Let&rsquo;s say you have a matrix $A$ of dimension (model_dim, n_samples), i.e. the columns correspond to points in a dataset. If we want to calculate PCA, we first center by subtracting the mean of the columns of $A$.
-The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From other notes we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it&rsquo;s symmetric and it&rsquo;s also an eigendecomposition.">
+<meta name="description" content="Complex Eigenvalues
+
+    
+        
+    
+
+Whenever a matrix performs a rotation (other than $0$ or $\pi$ degrees), it has complex eigenvalues. This is because you can&rsquo;t actually find any (real) vector that will stay in the same place after a rotation by some non-nice angle. Let&rsquo;s think about a 2D rotation matrix, which looks like">
 
 
 
@@ -91,19 +96,17 @@ The classic PCA approach is to then get the covariance matrix $AA^T$ and take it
 
 
 
-<meta property="og:url" content="http://localhost:1313/pca-svd/">
+<meta property="og:url" content="http://localhost:1313/can-circles/">
   <meta property="og:site_name" content="Sheridan Feucht">
-  <meta property="og:title" content="Easy way to calculate PCA">
-  <meta property="og:description" content="Let’s say you have a matrix $A$ of dimension (model_dim, n_samples), i.e. the columns correspond to points in a dataset. If we want to calculate PCA, we first center by subtracting the mean of the columns of $A$.
-The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From other notes we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it’s symmetric and it’s also an eigendecomposition.">
+  <meta property="og:title" content="Can&#39;s Weekday Circles Notebook">
+  <meta property="og:description" content="Complex Eigenvalues Whenever a matrix performs a rotation (other than $0$ or $\pi$ degrees), it has complex eigenvalues. This is because you can’t actually find any (real) vector that will stay in the same place after a rotation by some non-nice angle. Let’s think about a 2D rotation matrix, which looks like">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Easy way to calculate PCA">
-  <meta name="twitter:description" content="Let’s say you have a matrix $A$ of dimension (model_dim, n_samples), i.e. the columns correspond to points in a dataset. If we want to calculate PCA, we first center by subtracting the mean of the columns of $A$.
-The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From other notes we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it’s symmetric and it’s also an eigendecomposition.">
+  <meta name="twitter:title" content="Can&#39;s Weekday Circles Notebook">
+  <meta name="twitter:description" content="Complex Eigenvalues Whenever a matrix performs a rotation (other than $0$ or $\pi$ degrees), it has complex eigenvalues. This is because you can’t actually find any (real) vector that will stay in the same place after a rotation by some non-nice angle. Let’s think about a 2D rotation matrix, which looks like">
 
 
 
@@ -257,7 +260,7 @@ The classic PCA approach is to then get the covariance matrix $AA^T$ and take it
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">Easy way to calculate PCA</h1>
+                <h1 class="p-name post-title">Can&rsquo;s Weekday Circles Notebook</h1>
 
                 
             </header>
@@ -270,18 +273,20 @@ The classic PCA approach is to then get the covariance matrix $AA^T$ and take it
 
 
         <div class="content e-content">
-            <p>Let&rsquo;s say you have a matrix $A$ of dimension (model_dim, n_samples), i.e. the columns correspond to points in a dataset. If we want to calculate PCA, we first center by subtracting the mean of the columns of $A$.</p>
-<p>The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From <a href="/Covariance_and_Whitening_Self_Explanation.pdf">other notes</a> we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it&rsquo;s symmetric and it&rsquo;s also an eigendecomposition.</p>
-<p>We don&rsquo;t actually have to calculate $AA^T$. We can directly take the SVD of $A$ instead as $U_A\Sigma V_A^T$. Then, we know that $AA^T=(U_A\Sigma V_A^T)(V_A\Sigma U_A^T)=U_A\Sigma^2U_A^T$ and that the left singular vectors of the data matrix $A$ are the same as the eigenvectors of $A$&rsquo;s covariance matrix.</p>
-<p>If you ever get confused about rows and columns, remember that you&rsquo;d always want to take the singular vectors that are the model dimension; in this case they are the left singular vectors, since $A$ is (model_dim, n_samples). Also, the covariance matrix has to be (model_dim, model_dim).</p>
-<h1 id="another-note-which-should-have-been-obvious" >Another note, which should have been obvious?
+            <h2 id="complex-eigenvalues" >Complex Eigenvalues
 <span>
-    <a href="#another-note-which-should-have-been-obvious">
+    <a href="#complex-eigenvalues">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h1><p>If the columns of $A\in\mathbb{R}^{(d,n)}$ are all orthogonal vectors, then $AA^T$ is also the matrix that projects activations onto the $n$-dimensional subspace spanned by columns of $A$. (If they were not orthogonal vectors, the projection matrix would be $A(A^TA)^{-1}A^T$.) I can&rsquo;t believe I never noticed this until now, need to think about deeper connections here.</p>
-<p>There&rsquo;s two ways to &ldquo;project onto a subspace.&rdquo; There&rsquo;s the linear algebra 101 thing, where a matrix multiplication is a change of basis: so if I have a vector $v\in\mathbb{R}^d$ and multiply $A^Tv$, then that takes dot product of $v$ with each column of $A$, telling me &ldquo;how much&rdquo; that vector is in the direction of each of those columns (e.g. [0.2, 3.1]). We can reconstruct $v$ by just multiplying those coefficients by the columns of $A$ again: $A(A^Tv)$. But wait, we&rsquo;ve actually lost information now about anything that <em>can&rsquo;t</em> be spanned by the columns of $A$. That&rsquo;s why $AA^T$ works as a projection matrix, if you want to <em>only</em> get the information in $v$ that&rsquo;s in the subspace spanned by $A$&rsquo;s columns, but keep that information in $d$ dimensions.</p>
+</h2><p>Whenever a matrix performs a rotation (other than $0$ or $\pi$ degrees), it has complex eigenvalues. This is because you can&rsquo;t actually find any (real) vector that will stay in the same place after a rotation by some non-nice angle. Let&rsquo;s think about a 2D rotation matrix, which looks like</p>
+<p>$$R(\theta) = \begin{bmatrix}
+\cos\theta &amp; -\sin\theta \\
+\sin\theta &amp; \cos\theta
+\end{bmatrix}$$</p>
+<p>where its eigenvalues solving the characteristic polynomial are $\lambda=\cos\theta \pm i\sin\theta$. Since the matrix itself is real, these imaginary eigenvalues come in pairs. If you plot these $\lambda$ on the complex plane, where the y-axis is $i$, then it is quite obviously on the unit circle of that imaginary plane; apparently, this unit-circle-ness is because it&rsquo;s an orthogonal transformation that does no stretching.</p>
+<p>Since the eigenvalues are complex, the eigenvectors have to be too. But our complex eigenvectors all come in pairs, where one is a complex conjugate of the other.</p>
+<p>Since most matrices are some combination of rotation and scaling, a randomly-generated matrix will almost surely have complex eigenvalues. However in practice we mostly look at symmetric matrices, like covariance matrices, Hessians, etc, which makes complex eigenvalues feel unfamiliar.</p>
 
         </div>
         
@@ -293,7 +298,7 @@ The classic PCA approach is to then get the covariance matrix $AA^T$ and take it
 <div class="post-info">
     
 
-    <a class="post-hidden-url u-url" href="http://localhost:1313/pca-svd/">http://localhost:1313/pca-svd/</a>
+    <a class="post-hidden-url u-url" href="http://localhost:1313/can-circles/">http://localhost:1313/can-circles/</a>
     <a href="http://localhost:1313/" class="p-name p-author post-hidden-author h-card" rel="me">Sheridan Feucht</a>
 
 

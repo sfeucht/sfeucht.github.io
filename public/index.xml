@@ -379,6 +379,29 @@ The word problems in this anecdote are clearly reminiscent of how we measure IQ 
     </item>
     
     <item>
+      <title>Can&#39;s Weekday Circles Notebook</title>
+      <link>http://localhost:1313/can-circles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/can-circles/</guid>
+      <description>&lt;h2 id=&#34;complex-eigenvalues&#34; &gt;Complex Eigenvalues
+&lt;span&gt;
+    &lt;a href=&#34;#complex-eigenvalues&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Whenever a matrix performs a rotation (other than $0$ or $\pi$ degrees), it has complex eigenvalues. This is because you can&amp;rsquo;t actually find any (real) vector that will stay in the same place after a rotation by some non-nice angle. Let&amp;rsquo;s think about a 2D rotation matrix, which looks like&lt;/p&gt;
+&lt;p&gt;$$R(\theta) = \begin{bmatrix}
+\cos\theta &amp;amp; -\sin\theta \\
+\sin\theta &amp;amp; \cos\theta
+\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;where its eigenvalues solving the characteristic polynomial are $\lambda=\cos\theta \pm i\sin\theta$. Since the matrix itself is real, these imaginary eigenvalues come in pairs. If you plot these $\lambda$ on the complex plane, where the y-axis is $i$, then it is quite obviously on the unit circle of that imaginary plane; apparently, this unit-circle-ness is because it&amp;rsquo;s an orthogonal transformation that does no stretching.&lt;/p&gt;
+&lt;p&gt;Since the eigenvalues are complex, the eigenvectors have to be too. But our complex eigenvectors all come in pairs, where one is a complex conjugate of the other.&lt;/p&gt;
+&lt;p&gt;Since most matrices are some combination of rotation and scaling, a randomly-generated matrix will almost surely have complex eigenvalues. However in practice we mostly look at symmetric matrices, like covariance matrices, Hessians, etc, which makes complex eigenvalues feel unfamiliar.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Easy way to calculate PCA</title>
       <link>http://localhost:1313/pca-svd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -388,6 +411,14 @@ The word problems in this anecdote are clearly reminiscent of how we measure IQ 
 &lt;p&gt;The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From &lt;a href=&#34;http://localhost:1313/Covariance_and_Whitening_Self_Explanation.pdf&#34;&gt;other notes&lt;/a&gt; we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it&amp;rsquo;s symmetric and it&amp;rsquo;s also an eigendecomposition.&lt;/p&gt;
 &lt;p&gt;We don&amp;rsquo;t actually have to calculate $AA^T$. We can directly take the SVD of $A$ instead as $U_A\Sigma V_A^T$. Then, we know that $AA^T=(U_A\Sigma V_A^T)(V_A\Sigma U_A^T)=U_A\Sigma^2U_A^T$ and that the left singular vectors of the data matrix $A$ are the same as the eigenvectors of $A$&amp;rsquo;s covariance matrix.&lt;/p&gt;
 &lt;p&gt;If you ever get confused about rows and columns, remember that you&amp;rsquo;d always want to take the singular vectors that are the model dimension; in this case they are the left singular vectors, since $A$ is (model_dim, n_samples). Also, the covariance matrix has to be (model_dim, model_dim).&lt;/p&gt;
+&lt;h1 id=&#34;another-note-which-should-have-been-obvious&#34; &gt;Another note, which should have been obvious?
+&lt;span&gt;
+    &lt;a href=&#34;#another-note-which-should-have-been-obvious&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;If the columns of $A\in\mathbb{R}^{(d,n)}$ are all orthogonal vectors, then $AA^T$ is also the matrix that projects activations onto the $n$-dimensional subspace spanned by columns of $A$. (If they were not orthogonal vectors, the projection matrix would be $A(A^TA)^{-1}A^T$.) I can&amp;rsquo;t believe I never noticed this until now, need to think about deeper connections here.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s two ways to &amp;ldquo;project onto a subspace.&amp;rdquo; There&amp;rsquo;s the linear algebra 101 thing, where a matrix multiplication is a change of basis: so if I have a vector $v\in\mathbb{R}^d$ and multiply $A^Tv$, then that takes dot product of $v$ with each column of $A$, telling me &amp;ldquo;how much&amp;rdquo; that vector is in the direction of each of those columns (e.g. [0.2, 3.1]). We can reconstruct $v$ by just multiplying those coefficients by the columns of $A$ again: $A(A^Tv)$. But wait, we&amp;rsquo;ve actually lost information now about anything that &lt;em&gt;can&amp;rsquo;t&lt;/em&gt; be spanned by the columns of $A$. That&amp;rsquo;s why $AA^T$ works as a projection matrix, if you want to &lt;em&gt;only&lt;/em&gt; get the information in $v$ that&amp;rsquo;s in the subspace spanned by $A$&amp;rsquo;s columns, but keep that information in $d$ dimensions.&lt;/p&gt;
 </description>
     </item>
     

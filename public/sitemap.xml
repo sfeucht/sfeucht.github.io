@@ -22,6 +22,8 @@
   </url><url>
     <loc>http://localhost:1313/syllogisms/</loc>
   </url><url>
+    <loc>http://localhost:1313/can-circles/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/pca-svd/</loc>
