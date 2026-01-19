@@ -476,6 +476,7 @@ The angle that $R$ rotates by is given by $\theta=\arctan(\beta/\alpha)$. In oth
 &lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;This is restating half of the stuff above, but looking at the other set of singular vectors. Say you have a data matrix $X\in\mathbb{R}^{n\times d}$, where each of the $n$ rows is a data point (e.g. a hidden state) of $d$ dimensions (e.g., model dimension). Assuming that $X$ is centered, then if you take the SVD $X=U\Sigma V^T$, its $d$-dimensional singular vectors $V^T$ are also the principal components of the data, as we talked about above.&lt;/p&gt;
 &lt;p&gt;But then, how to interpret the $n$-dimensional singular vectors $U$? Well, since the rows of $X$ are all data points, each row of $U\Sigma$ corresponds to a data point in $X$. Specifically, each of those rows gives you that data point expressed in the principal component basis given by $V^T$ (i.e., the coefficients on $V^T$&amp;rsquo;s rows you need to construct that data point). So if you want to take the PCA-reduced version of the data in $X$, all you have to do is take the top-$k$ columns of $U\Sigma$, which automatically gives you a $n\times k$ matrix of $k$-dimensional vectors for every data point. This is super useful in practice; it&amp;rsquo;s an extremely quick way to project data onto the first $k$ principal dimensions.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/pca-svd/notebook.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
