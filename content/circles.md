@@ -61,3 +61,13 @@ The angle that $R$ rotates by is given by $\theta=\arctan(\beta/\alpha)$. In oth
 
 
 I was able to get away with not thinking about complex eigenvalues for a long time probably because I was mostly looking at covariance matrices and stuff, which are symmetric and are guaranteed to have real eigenvalues. But actually, just like how if you randomly sampled a matrix it would almost surely be full-rank, it would also almost surely be some kind of stretch + rotation, giving it complex eigenvalues. 
+
+## Rotations in 4D+
+
+If a rotation in 3D is within a 2D plane with a third-dimension "spoke" that's orthogonal to that plane, then what is rotation in four dimensions? Thinking in terms of eigenvectors, you can always decompose a rotation in four dimensions into two rotations in two orthogonal 2D planes (two pairs of conjugate eigenvalues).[^1] Because it's impossible to imagine a four-dimensional space, I'll think of it as some kind of control panel with two dials that can be twisted independently of each other. 
+
+In this "dial" analogy, each dial is a 2D subspace that's orthogonal to the other dials. Any given vector can be projected onto each of these subspaces to see where those dials are "currently" pointing, specifying that vector. Then, if you multiply that vector by a rotation matrix (the one whose eigendecomposition gave you those dial planes in the first place), then it will rotate each of those dials by a different $\theta$, where that $\theta$ is exactly specified by the complex eigenvalue for that plane like we talked about above.
+
+By the way, you could of course always *compose* rotations in two non-orthogonal planes that are not orthogonal to each other, even in 3D, which is a really messy thing. I'm still not sure if we need to consider that for our work. But at least when we are decomposing, there's always a way to have a bunch of orthogonal 2D planes.
+
+[^1]: When I asked Claude to give me feedback on these notes, it said that actually any real orthogonal matrix in even dimensions can be block-diagonalized into 2x2 rotation blocks, which it called the Schur decomposition. In the case of orthogonal matrices, which are normal, the Schur decomposition is the eigendecomposition, so I think this can be safely ignored for now. 

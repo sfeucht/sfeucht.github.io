@@ -380,10 +380,10 @@ The word problems in this anecdote are clearly reminiscent of how we measure IQ 
     
     <item>
       <title>Circle Math</title>
-      <link>http://localhost:1313/can-circles/</link>
+      <link>http://localhost:1313/circles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/can-circles/</guid>
+      <guid>http://localhost:1313/circles/</guid>
       <description>&lt;h2 id=&#34;rotations-and-complex-eigenvalues&#34; &gt;Rotations and Complex Eigenvalues
 &lt;span&gt;
     &lt;a href=&#34;#rotations-and-complex-eigenvalues&#34;&gt;
@@ -430,6 +430,16 @@ $$Rw = (\alpha w + \beta u)$$&lt;/p&gt;
 The angle that $R$ rotates by is given by $\theta=\arctan(\beta/\alpha)$. In other words, this is crazily telling us that you can just plot the eigenvalue on the complex plane and look at what angle it is, and that tells you by what angle $R$ is rotating in the corresponding subspace. Plus, if you calculate $|\lambda|=\sqrt{\alpha^2+\beta^2}$, that is actually the radius $r$ of the eigenvalue on the complex plane, and is also the amount by which the transformation scales the vector it rotates.
 &lt;/details&gt;
 &lt;p&gt;I was able to get away with not thinking about complex eigenvalues for a long time probably because I was mostly looking at covariance matrices and stuff, which are symmetric and are guaranteed to have real eigenvalues. But actually, just like how if you randomly sampled a matrix it would almost surely be full-rank, it would also almost surely be some kind of stretch + rotation, giving it complex eigenvalues.&lt;/p&gt;
+&lt;h2 id=&#34;rotations-in-4d&#34; &gt;Rotations in 4D+
+&lt;span&gt;
+    &lt;a href=&#34;#rotations-in-4d&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If a rotation in 3D is within a 2D plane with a third-dimension &amp;ldquo;spoke&amp;rdquo; that&amp;rsquo;s orthogonal to that plane, then what is rotation in four dimensions? Thinking in terms of eigenvectors, you can always decompose a rotation in four dimensions into two rotations in two orthogonal 2D planes (two pairs of conjugate eigenvalues).[:1] Because it&amp;rsquo;s impossible to imagine a four-dimensional space, I&amp;rsquo;ll think of it as some kind of control panel with two dials that can be twisted independently of each other.&lt;/p&gt;
+&lt;p&gt;In this &amp;ldquo;dial&amp;rdquo; analogy, each dial is a 2D subspace that&amp;rsquo;s orthogonal to the other dials. Any given vector can be projected onto each of these subspaces to see where those dials are &amp;ldquo;currently&amp;rdquo; pointing, specifying that vector. Then, if you multiply that vector by a rotation matrix (which ofc has to have all of those dial planes as its eigenvector planes for this thinking to even make sense), then it will rotate each of those dials by a different $\theta$, where that $\theta$ is exactly specified by the complex eigenvalue for that plane like we talked about above.&lt;/p&gt;
+&lt;p&gt;By the way, you could of course always &lt;em&gt;compose&lt;/em&gt; rotations in two non-orthogonal planes that are not orthogonal to each other, even in 3D, which is a really messy thing. I&amp;rsquo;m still not sure if we need to consider that for our work. But at least when we are decomposing, there&amp;rsquo;s always a way to have a bunch of orthogonal 2D planes.&lt;/p&gt;
+&lt;p&gt;[:1] test&lt;/p&gt;
 </description>
     </item>
     
