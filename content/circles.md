@@ -31,7 +31,7 @@ $$\begin{bmatrix}
 \end{bmatrix} = \begin{bmatrix}\cos\theta + i\sin\theta \\ -i\cos\theta + \sin\theta\end{bmatrix} $$
 </details>
 
-I never really realized this, but rotations are deeply two-dimensional, tied up with the dualness of complex numbers. If you have a rotation in higher dimensions, it's actually constrained to a 2D plane, or multiple 2D planes if we're more than three dimensions. For now, if you think of any rotation in 3D, it's actually always a rotation in a 2D subspace, with an extra axis orthogonal to the plane that the vector is rotated on. Literally imagine any rotation in 3D and there's always a "spoke" that's being rotated around. Concretely, if we have vectors $[x,y,z]$, then a rotation by an angle of $\theta$ around the x-axis (on the yz plane) would look like:
+I never really realized this, but rotations are deeply two-dimensional, tied up with the dualness of complex numbers. If you have a rotation in higher dimensions, it's actually constrained to a 2D plane, or multiple 2D planes if we're more than three dimensions. For now, if you think of any rotation in 3D, it's actually always a rotation in a 2D subspace, with an extra axis orthogonal to the plane that the vector is rotated on. Literally imagine any rotation in 3D and there's always an "axle" that's being rotated around. Concretely, if we have vectors $[x,y,z]$, then a rotation by an angle of $\theta$ around the x-axis (on the yz plane) would look like:
 
 $$R(\theta)= \begin{bmatrix}
 1 & 0 & 0 \\\\
