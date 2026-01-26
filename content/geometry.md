@@ -4,7 +4,6 @@ toc: false
 math: true
 title: Notes on Geometry Papers
 ---
-
 # Not All LM Features are 1D Linear (Engels et al., 2024)
 [[Paper](https://arxiv.org/pdf/2405.14860), [Video](https://www.youtube.com/watch?v=eVlGeHA2Cnw&t=858s)] - They're basically trying to figure out how to decompose hidden states into sums of different functions of the input (features). So for example, you might have a 1-dimensional representation of an integer value 3, added to an n-dimensional representation of the language semantics of "three," etc. 
 

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-theme="">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>What is DAS doing? - Sheridan Feucht</title>
+
+<meta name="description" content="Here&rsquo;s my notes on what DAS is doing when they say &ldquo;learn a rotation matrix&rdquo;, and how that&rsquo;s equivalent to the more Bau lab way of thinking about it, &ldquo;learning a subspace.&rdquo;
+Trivial concrete example
+
+    
+        
+    
+
+Let&rsquo;s say your activations were in $\mathbb{R}^4$, where the standard basis is $e_1, e_2, e_3, e_4$. Say the subspace that was causally important for a given &ldquo;foo&rdquo; variable was spanned by $e_2$ and $e_3$, and DAS had perfectly learned that. Now, we want to intervene on a base hidden state $h_{base}$, setting its &ldquo;foo&rdquo; variable to whatever it was in $h_{src}$, where $$h_{base}=\begin{bmatrix}a\\ b\\ c \\ d\end{bmatrix}; h_{src}=\begin{bmatrix}e\\ f\\ g \\ h\end{bmatrix}$$
+and then the desired intervened hidden state would be
+$$h_{intervened}=\begin{bmatrix}a\\ f\\ g \\ d\end{bmatrix}.$$">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+    
+
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="http://localhost:1313/css/style.78de91526730265cde940d6082f8460bc8c2b62e4eddf9093c33d728050dcc87.css" integrity="sha256-eN6RUmcwJlzelA1ggvhGC8jCti5O3fkJPDPXKAUNzIc=">
+    
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <script src="http://localhost:1313/js/script.32e751300d2d69e2cb56a98d2c9d964d54a53a8fb7281ccdbd80f055c88e8d86.js" type="text/javascript" charset="utf-8" integrity="sha256-MudRMA0taeLLVqmNLJ2WTVSlOo&#43;3KBzNvYDwVciOjYY="></script>
+    
+
+
+
+
+
+
+
+<meta property="og:url" content="http://localhost:1313/das/">
+  <meta property="og:site_name" content="Sheridan Feucht">
+  <meta property="og:title" content="What is DAS doing?">
+  <meta property="og:description" content="Here’s my notes on what DAS is doing when they say “learn a rotation matrix”, and how that’s equivalent to the more Bau lab way of thinking about it, “learning a subspace.”
+Trivial concrete example Let’s say your activations were in $\mathbb{R}^4$, where the standard basis is $e_1, e_2, e_3, e_4$. Say the subspace that was causally important for a given “foo” variable was spanned by $e_2$ and $e_3$, and DAS had perfectly learned that. Now, we want to intervene on a base hidden state $h_{base}$, setting its “foo” variable to whatever it was in $h_{src}$, where $$h_{base}=\begin{bmatrix}a\\ b\\ c \\ d\end{bmatrix}; h_{src}=\begin{bmatrix}e\\ f\\ g \\ h\end{bmatrix}$$ and then the desired intervened hidden state would be $$h_{intervened}=\begin{bmatrix}a\\ f\\ g \\ d\end{bmatrix}.$$">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What is DAS doing?">
+  <meta name="twitter:description" content="Here’s my notes on what DAS is doing when they say “learn a rotation matrix”, and how that’s equivalent to the more Bau lab way of thinking about it, “learning a subspace.”
+Trivial concrete example Let’s say your activations were in $\mathbb{R}^4$, where the standard basis is $e_1, e_2, e_3, e_4$. Say the subspace that was causally important for a given “foo” variable was spanned by $e_2$ and $e_3$, and DAS had perfectly learned that. Now, we want to intervene on a base hidden state $h_{base}$, setting its “foo” variable to whatever it was in $h_{src}$, where $$h_{base}=\begin{bmatrix}a\\ b\\ c \\ d\end{bmatrix}; h_{src}=\begin{bmatrix}e\\ f\\ g \\ h\end{bmatrix}$$ and then the desired intervened hidden state would be $$h_{intervened}=\begin{bmatrix}a\\ f\\ g \\ d\end{bmatrix}.$$">
+
+
+
+    
+        <link rel="webmention" href="https://webmention.io/hugo-theme-anubis/webmention" />
+        
+            <link rel="pingback" href="https://webmention.io/hugo-theme-anubis/xmlrpc" />
+        
+    
+    
+        <link rel="webmention" href="https://sfeucht.github.io/webmentions/receive" />
+    
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <div class="header-top">
+    <h1 class="site-title">
+    <a href="/">Sheridan Feucht</a>
+</h1>
+    <ul class="social-icons">
+
+
+    
+        <li>
+            <a href="/research" title="Research" rel="me">
+                <span class="social-text">
+    research
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="/blog" title="Blog" rel="me">
+                <span class="social-text">
+    blog
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://twitter.com/sheridan_feucht" title="Twitter" rel="me">
+            <span class="social-text">
+    twitter
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://bsky.app/profile/sfeucht.bsky.social" title="Bluesky" rel="me">
+                <span class="social-text">
+    bluesky
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/sfeucht" title="Github" rel="me">
+            <span class="social-text">
+    github
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="/sfeucht_cv.pdf" title="Cv" rel="me">
+                <span class="social-text">
+    cv
+</span>
+
+
+
+            </a>
+        </li>
+    
+
+
+
+
+</ul>
+</div>
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">What is DAS doing?</h1>
+
+                
+            </header>
+        </div>
+        
+
+
+
+
+
+
+        <div class="content e-content">
+            <p>Here&rsquo;s my notes on what DAS is doing when they say &ldquo;learn a rotation matrix&rdquo;, and how that&rsquo;s equivalent to the more Bau lab way of thinking about it, &ldquo;learning a subspace.&rdquo;</p>
+<h2 id="trivial-concrete-example" >Trivial concrete example
+<span>
+    <a href="#trivial-concrete-example">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Let&rsquo;s say your activations were in $\mathbb{R}^4$, where the standard basis is $e_1, e_2, e_3, e_4$. Say the subspace that was causally important for a given &ldquo;foo&rdquo; variable was spanned by $e_2$ and $e_3$, and DAS had perfectly learned that. Now, we want to intervene on a base hidden state $h_{base}$, setting its &ldquo;foo&rdquo; variable to whatever it was in $h_{src}$, where $$h_{base}=\begin{bmatrix}a\\ b\\ c \\ d\end{bmatrix}; h_{src}=\begin{bmatrix}e\\ f\\ g \\ h\end{bmatrix}$$
+and then the desired intervened hidden state would be
+$$h_{intervened}=\begin{bmatrix}a\\ f\\ g \\ d\end{bmatrix}.$$</p>
+<h3 id="das-viewpoint" >DAS Viewpoint
+<span>
+    <a href="#das-viewpoint">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>DAS thinks about this in conceptually terms of an orthogonal rotation. To do an intervention, they apply the learned rotation $R$ to both $h_{src}$ and $h_{base}$ and then literally swap out the first $k$ entries of those hidden states (where $k$ is the dimension of the subspace learned). So the rotation matrix DAS would have learned in this case would be one that moves the relevant dimensions to the beginning of the vector:
+$$R=\begin{bmatrix}
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{bmatrix} =
+\begin{bmatrix}
+\text{&mdash; } e_2^T \text{&mdash;} \\
+\text{&mdash; } e_3^T \text{&mdash;} \\
+\text{&mdash; } e_1^T \text{&mdash;} \\
+\text{&mdash; } e_4^T \text{&mdash;}
+\end{bmatrix} \text{ so that } Rh_{base} = \begin{bmatrix}b\\ c\\ a \\ d\end{bmatrix}$$</p>
+<p>Then, we can achieve $h_{intervened}$ by calculating $Rh_{base}$ and $Rh_{src}$, swapping out the first $k=2$ dimensions, and then rotating back.</p>
+<p>$$ h_{intervened} = R^{-1}(Rh_{base} \leftarrow_{:k} Rh_{src})$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># NOTE: pyvene actually implements it the way we describe in the next section</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># but here&#39;s some pseudocode of how you *would* do this</span>
+</span></span><span style="display:flex;"><span>rotated_h_base[<span style="color:#f92672">...</span>, :interchange_dim] <span style="color:#f92672">=</span> rotated_h_source[<span style="color:#f92672">...</span>, :interchange_dim]
+</span></span></code></pre></div><h3 id="bau-lab-viewpoint" >Bau Lab Viewpoint
+<span>
+    <a href="#bau-lab-viewpoint">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>I&rsquo;ve written this out before <a href="https://sfeucht.github.io/blackboxnlp_abstract_2024.pdf">here</a>. Instead of thinking of this as a rotation matrix, we could think of it as adding the projection of $h_{src}$ onto the relevant subspace to the projection of $h_{base}$ onto everything <em>except</em> for the relevant subspace.</p>
+<p>So here, let&rsquo;s define a matrix $A$, which has columns $e_2$ and $e_3$, which define the ground-truth subspace we want to intervene on. In general, to get a projection matrix onto the space spanned by columns of $A$, you&rsquo;d want $A(A^TA)^{-1}A^T$, but since $A$ is orthogonal, we can simplify: $A^TA=A^{-1}A=I$ and so the projection matrix is just $P=AA^T$.
+$$P = \begin{bmatrix}
+| &amp; |  \\
+e_2 &amp; e_3  \\
+| &amp; |
+\end{bmatrix}
+\begin{bmatrix}
+\text{&mdash; } e_2^T \text{&mdash;} \\
+\text{&mdash; } e_3^T \text{&mdash;} \\
+\end{bmatrix} =
+\begin{bmatrix}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+\end{bmatrix}$$</p>
+<p>Now, if I want to project onto everything <em>but</em> the &ldquo;foo&rdquo; subspace, then I just need $I-P$.
+$$I - P = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{bmatrix}$$</p>
+<p>Why does this project onto &ldquo;everything but the &lsquo;foo&rsquo; subspace&rdquo;? If you work it out for a single hidden state $h$, you can see that $(I-P)h + Ph = h$.
+The intervention itself can just be thought of as swapping out one of these terms:
+$$h_{intervened}=(I-P)h_{base} + Ph_{src},$$
+which actually looks very intuitive if you write it out for our concrete example:
+$$\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{bmatrix}\begin{bmatrix}a\\ b\\ c \\ d\end{bmatrix} +
+\begin{bmatrix}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+\end{bmatrix}\begin{bmatrix}e\\ f\\ g \\ h\end{bmatrix}=
+\begin{bmatrix}a\\ 0\\ 0 \\ d\end{bmatrix} + \begin{bmatrix}0\\ f\\ g \\ 0\end{bmatrix}=h_{intervened}$$</p>
+<p>So for DAS, we can talk about it as &ldquo;learning a low-rank projection&rdquo; rather than &ldquo;learning a rotation.&rdquo;</p>
+<h3 id="quick-note" >Quick note
+<span>
+    <a href="#quick-note">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Atticus was talking about Denis loosening the constraint to be able to learn rotations that also have stretching, which suddenly revealed new stuff. I wondered whether this is related to steering where you have to multiply the vector, and/or whether it&rsquo;s possible that you&rsquo;re now not learning an orthogonal projection, but somehow an <em>oblique</em> projection. The intuition is this idea of a shadow stretching at golden hour. An oblique projection is idempotent $P^2=P$ but not symmetric, $P^T\not=P$. I&rsquo;d have to work this out if it ends up being important but maybe &ldquo;DAS with stretching&rdquo; is now using some different scary and strange kind of projection strategy.</p>
+
+        </div>
+        
+
+    
+
+
+
+<div class="post-info">
+    
+
+    <a class="post-hidden-url u-url" href="http://localhost:1313/das/">http://localhost:1313/das/</a>
+    <a href="http://localhost:1313/" class="p-name p-author post-hidden-author h-card" rel="me">Sheridan Feucht</a>
+
+
+    <div class="post-taxonomies">
+        
+        
+        
+    </div>
+</div>
+
+    </article>
+
+    
+        
+        
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Sheridan Feucht, 2026<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>  
+        </div> 
+
+        
+
+    
+
+
+
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto-without-switcher"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+    changeButtonText()
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        changeButtonText()
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+  
+    showContent()
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    } 
+    if (defaultTheme) {
+        return defaultTheme
+    } 
+    if (!window.matchMedia) {
+        return 'light'
+    } 
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return 'light'
+}
+
+function changeButtonText()
+{   
+    if (switchButton) {
+        switchButton.textContent = currentTheme == 'dark' ?  "❂" : "☾"
+    }
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    changeButtonText()
+}
+
+function showContent() {
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+}
+</script>
+
+   
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=http://localhost:1313/ class="p-name u-url url fn" rel="me">Sheridan Feucht</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:feucht.s@northeastern.edu">feucht.s@northeastern.edu</a>
+    
+
+     
+        <img class="u-photo" src="/images/me.png" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

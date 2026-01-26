@@ -35,27 +35,6 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/blog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/blog/</guid>
-      <description>&lt;h1 id=&#34;sheridans-blog&#34; &gt;Sheridan&amp;rsquo;s Blog
-&lt;span&gt;
-    &lt;a href=&#34;#sheridans-blog&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/rerereading&#34;&gt;Is AI Writing Still Nonsense?&lt;/a&gt; &lt;br&gt;
-December 4, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;Or, what exactly are we doing when we read LLM-generated text?&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/syllogisms&#34;&gt;Solving Syllogisms is Not Intelligence&lt;/a&gt; &lt;br&gt;
-April 24, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;I think that we overvalue logical reasoning when it comes to measuring &amp;ldquo;intelligence.&amp;quot;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://sfeucht.github.io/rereading&#34;&gt;Writing That&amp;rsquo;s Not Language (Yet)&lt;/a&gt; &lt;br&gt;
-August 10, 2021 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://localhost:1313/books2024/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -400,6 +379,108 @@ The word problems in this anecdote are clearly reminiscent of how we measure IQ 
     </item>
     
     <item>
+      <title>Circle Math</title>
+      <link>http://localhost:1313/circles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/circles/</guid>
+      <description>&lt;h2 id=&#34;rotations-and-complex-eigenvalues&#34; &gt;Rotations and Complex Eigenvalues
+&lt;span&gt;
+    &lt;a href=&#34;#rotations-and-complex-eigenvalues&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Whenever a matrix performs a rotation (other than an angle of $0$ or $\pi$), it has complex eigenvalues. This is because you can&amp;rsquo;t ever find any (real) vector that will stay in the same place after a rotation by some non-nice angle. Let&amp;rsquo;s think about a 2D rotation matrix, which looks like&lt;/p&gt;
+&lt;p&gt;$$R(\theta) = \begin{bmatrix}
+\cos\theta &amp;amp; -\sin\theta \\
+\sin\theta &amp;amp; \cos\theta
+\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;where its eigenvalues solving the characteristic polynomial are $\lambda=\cos\theta \pm i\sin\theta$. If the matrix itself is real, these imaginary eigenvalues will always come in conjugate pairs. When you allow yourself to use complex numbers, it becomes possible to get $\lambda$ and $v$ such that $Rv = \lambda v$ even though this is a rotation. Try working out $\lambda=\cos\theta + i\sin\theta$ and $v=[1, -i]^T$ to convince yourself of the fact that this works.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;(If you don&#39;t actually want to work this out for yourself)&lt;/summary&gt;
+$$\begin{bmatrix}
+\cos\theta &amp; -\sin\theta \\
+\sin\theta &amp; \cos\theta
+\end{bmatrix}\begin{bmatrix}
+1 \\
+-i
+\end{bmatrix} = (\cos\theta + i\sin\theta)\begin{bmatrix}1 \\ -i\end{bmatrix} $$
+$$\begin{bmatrix}
+\cos\theta + i\sin\theta \\
+\sin\theta - i\cos\theta
+\end{bmatrix} = \begin{bmatrix}\cos\theta + i\sin\theta \\ -i\cos\theta + \sin\theta\end{bmatrix} $$
+&lt;/details&gt;
+&lt;p&gt;I never really realized this, but rotations are deeply two-dimensional, tied up with the dualness of complex numbers. If you have a rotation in higher dimensions, it&amp;rsquo;s actually constrained to a 2D plane, or multiple 2D planes if we&amp;rsquo;re more than three dimensions. For now, if you think of any rotation in 3D, it&amp;rsquo;s actually always a rotation in a 2D subspace, with an extra axis orthogonal to the plane that the vector is rotated on. Literally imagine any rotation in 3D and there&amp;rsquo;s always an &amp;ldquo;axle&amp;rdquo; that&amp;rsquo;s being rotated around. Concretely, if we have vectors $[x,y,z]$, then a rotation by an angle of $\theta$ around the x-axis (on the yz plane) would look like:&lt;/p&gt;
+&lt;p&gt;$$R(\theta)= \begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; \cos\theta &amp;amp; -\sin\theta \\
+0 &amp;amp; \sin\theta &amp;amp; \cos\theta
+\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;where one eigenvector $\lambda=1,v=[1, 0, 0]^T$ would correspond to anything that&amp;rsquo;s on the x-axis (which stays put) and the other two eigenvectors are $\lambda=\cos\theta\pm i\sin\theta,v=[0,1,\pm i]^T$. Now, here&amp;rsquo;s a fact: the real and imaginary parts of these eigenvectors precisely show that the rotation is on the yz-plane. In general, if you have a pair of two complex eigenvectors describing a rotation, then the plane that&amp;rsquo;s being rotated on is always going to be the span of $\text{Re}(v), \text{Im}(v)$. We can see that clearly here:&lt;/p&gt;
+&lt;p&gt;$$v=\begin{bmatrix}0 \\ 1 \\ -i \end{bmatrix}=\begin{bmatrix}0 \\ 1 \\ 0 \end{bmatrix}+i\begin{bmatrix}0 \\ 0 \\ -1 \end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;where the real part of $v$ is the y-axis, and the imaginary part is the z-axis, matching up with the fact that we defined this rotation to be on the yz-plane. The reason why this is true in general: let&amp;rsquo;s say you have complex eigenvector $u + iw$ and eigenvalue $\alpha + i\beta$. If you expand out the multiplication in terms of the real and imaginary parts of these eigenvectors/values&amp;hellip;&lt;/p&gt;
+&lt;p&gt;$$R(u + iw) = (\alpha + i\beta)(u + iw) $$
+$$Ru + iRw = \alpha u + i\alpha w + i\beta u + i^2\beta w$$
+$$Ru + iRw = (\alpha u - \beta w) + i(\alpha w + \beta u)$$
+$$Ru  = (\alpha u - \beta w) $$
+$$Rw = (\alpha w + \beta u)$$&lt;/p&gt;
+&lt;p&gt;you get these two equations, which tell you that applying our rotation to the real part of the eigenvector $u$ will always give some linear combination of $u,w$, and applying our rotation to the imaginary part of the eigenvector $w$ will also give some linear combination of $u,w$. This is another way of saying that the rotation matrix $R$ will never move the vectors $u$ or $w$ off that $u,w$ plane; it&amp;rsquo;s always rotating them inside the $u,w$ plane. Therefore, if we have a conjugate pair of eigenvectors for a given transformation, then we can read out the exact 2D plane within which that transformation rotates just by looking at the pair&amp;rsquo;s real and imaginary components.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;Bonus: reading off the angle/scaling by looking at eigenvalue&lt;/summary&gt;
+The angle that $R$ rotates by is given by $\theta=\arctan(\beta/\alpha)$. In other words, this is crazily telling us that you can just plot the eigenvalue on the complex plane and look at what angle it is, and that tells you by what angle $R$ is rotating in the corresponding subspace. Plus, if you calculate $|\lambda|=\sqrt{\alpha^2+\beta^2}$, that is actually the radius $r$ of the eigenvalue on the complex plane, and is also the amount by which the transformation scales the vector it rotates.
+&lt;/details&gt;
+&lt;p&gt;I was able to get away with not thinking about complex eigenvalues for a long time probably because I was mostly looking at covariance matrices and stuff, which are symmetric and are guaranteed to have real eigenvalues. But actually, just like how if you randomly sampled a matrix it would almost surely be full-rank, it would also almost surely be some kind of stretch + rotation, giving it complex eigenvalues.&lt;/p&gt;
+&lt;h2 id=&#34;rotations-in-4d&#34; &gt;Rotations in 4D+
+&lt;span&gt;
+    &lt;a href=&#34;#rotations-in-4d&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If a rotation in 3D is within a 2D plane with a third-dimension &amp;ldquo;spoke&amp;rdquo; that&amp;rsquo;s orthogonal to that plane, then what is rotation in four dimensions? Thinking in terms of eigenvectors, you can always decompose a rotation in four dimensions into two rotations in two orthogonal 2D planes (two pairs of conjugate eigenvalues).&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Because it&amp;rsquo;s impossible to imagine a four-dimensional space, I&amp;rsquo;ll think of it as some kind of control panel with two dials that can be twisted independently of each other.&lt;/p&gt;
+&lt;p&gt;In this &amp;ldquo;dial&amp;rdquo; analogy, each dial is a 2D subspace that&amp;rsquo;s orthogonal to the other dials. Any given vector can be projected onto each of these subspaces to see where those dials are &amp;ldquo;currently&amp;rdquo; pointing, specifying that vector. Then, if you multiply that vector by a rotation matrix (the one whose eigendecomposition gave you those dial planes in the first place), then it will rotate each of those dials by a different $\theta$, where that $\theta$ is exactly specified by the complex eigenvalue for that plane like we talked about above.&lt;/p&gt;
+&lt;p&gt;By the way, you could of course always &lt;em&gt;compose&lt;/em&gt; rotations in two non-orthogonal planes that are not orthogonal to each other, even in 3D, which is a really messy thing. I&amp;rsquo;m still not sure if we need to consider that for our work. But at least when we are decomposing, there&amp;rsquo;s always a way to have a bunch of orthogonal 2D planes.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;When I asked Claude to give me feedback on these notes, it said that actually any real orthogonal matrix in even dimensions can be block-diagonalized into 2x2 rotation blocks, which it called the Schur decomposition. In the case of orthogonal matrices, which are normal, the Schur decomposition is the eigendecomposition, so I think this can be safely ignored for now.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Easy way to calculate PCA</title>
+      <link>http://localhost:1313/pca-svd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/pca-svd/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s say you have a matrix $A$ of dimension (model_dim, n_samples), i.e. the columns correspond to points in a dataset. If we want to calculate PCA, we first center by subtracting the mean of the columns of $A$.&lt;/p&gt;
+&lt;p&gt;The classic PCA approach is to then get the covariance matrix $AA^T$ and take its eigendecomposition. From &lt;a href=&#34;http://localhost:1313/Covariance_and_Whitening_Self_Explanation.pdf&#34;&gt;other notes&lt;/a&gt; we know that since the covariance matrix is symmetric, the eigendecomposition is equivalent to the SVD. So we have $U_{AA^T}\Sigma U_{AA^T}^T$ where my ugly subscripts are to be very clear that these are the singular vectors/eigenvectors of the covariance matrix; we can use the same matrix on both sides because it&amp;rsquo;s symmetric and it&amp;rsquo;s also an eigendecomposition.&lt;/p&gt;
+&lt;p&gt;We don&amp;rsquo;t actually have to calculate $AA^T$. We can directly take the SVD of $A$ instead as $U_A\Sigma V_A^T$. Then, we know that $AA^T=(U_A\Sigma V_A^T)(V_A\Sigma U_A^T)=U_A\Sigma^2U_A^T$ and that the left singular vectors of the data matrix $A$ are the same as the eigenvectors of $A$&amp;rsquo;s covariance matrix.&lt;/p&gt;
+&lt;p&gt;If you ever get confused about rows and columns, remember that you&amp;rsquo;d always want to take the singular vectors that are the model dimension; in this case they are the left singular vectors, since $A$ is (model_dim, n_samples). Also, the covariance matrix has to be (model_dim, model_dim).&lt;/p&gt;
+&lt;h1 id=&#34;two-ways-to-project-onto-subspace&#34; &gt;Two ways to &amp;ldquo;project onto subspace&amp;rdquo;
+&lt;span&gt;
+    &lt;a href=&#34;#two-ways-to-project-onto-subspace&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;If the columns of $A\in\mathbb{R}^{(d,n)}$ are all orthogonal vectors, then $AA^T$ is also the matrix that projects activations onto the $n$-dimensional subspace spanned by columns of $A$. (If they were not orthogonal vectors, the projection matrix would be $A(A^TA)^{-1}A^T$.) I can&amp;rsquo;t believe I never noticed this until now, need to think about deeper connections here.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s two ways to &amp;ldquo;project onto a subspace.&amp;rdquo; There&amp;rsquo;s the linear algebra 101 thing, where a matrix multiplication is a change of basis: so if I have a vector $v\in\mathbb{R}^d$ and multiply $A^Tv$, then that takes dot product of $v$ with each column of $A$, telling me &amp;ldquo;how much&amp;rdquo; that vector is in the direction of each of those columns (e.g. [0.2, 3.1]). We can reconstruct $v$ by just multiplying those coefficients by the columns of $A$ again: $A(A^Tv)$. But wait, we&amp;rsquo;ve actually lost information now about anything that &lt;em&gt;can&amp;rsquo;t&lt;/em&gt; be spanned by the columns of $A$. That&amp;rsquo;s why $AA^T$ works as a projection matrix, if you want to &lt;em&gt;only&lt;/em&gt; get the information in $v$ that&amp;rsquo;s in the subspace spanned by $A$&amp;rsquo;s columns, but keep that information in $d$ dimensions.&lt;/p&gt;
+&lt;h1 id=&#34;interpreting-the-svd-of-a-data-matrix-x&#34; &gt;Interpreting the SVD of a Data Matrix X
+&lt;span&gt;
+    &lt;a href=&#34;#interpreting-the-svd-of-a-data-matrix-x&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;This is restating half of the stuff above, but looking at the other set of singular vectors. Say you have a data matrix $X\in\mathbb{R}^{n\times d}$, where each of the $n$ rows is a data point (e.g. a hidden state) of $d$ dimensions (e.g., model dimension). Assuming that $X$ is centered, then if you take the SVD $X=U\Sigma V^T$, its $d$-dimensional singular vectors $V^T$ are also the principal components of the data, as we talked about above.&lt;/p&gt;
+&lt;p&gt;But then, how to interpret the $n$-dimensional singular vectors $U$? Well, since the rows of $X$ are all data points, each row of $U\Sigma$ corresponds to a data point in $X$. Specifically, each of those rows gives you that data point expressed in the principal component basis given by $V^T$ (i.e., the coefficients on $V^T$&amp;rsquo;s rows you need to construct that data point). So if you want to take the PCA-reduced version of the data in $X$, all you have to do is take the top-$k$ columns of $U\Sigma$, which automatically gives you a $n\times k$ matrix of $k$-dimensional vectors for every data point. This is super useful in practice; it&amp;rsquo;s an extremely quick way to project data onto the first $k$ principal dimensions.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/pca-svd/notebook.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Is AI Writing Still Nonsense?</title>
       <link>http://localhost:1313/rerereading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -515,6 +596,23 @@ to refer to Peano. --&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>List of All My Notes</title>
+      <link>http://localhost:1313/notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/</guid>
+      <description>&lt;p&gt;This page is super-secret and for my own reference, but if you&amp;rsquo;ve somehow found this page and notice a flaw in my notes, please let me know and I won&amp;rsquo;t be mad.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/pca-svd&#34;&gt;Easy way to calculate PCA&lt;/a&gt; (Jan 2026)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/das&#34;&gt;What is DAS Doing?&lt;/a&gt; (Jan 2026)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/geometry&#34;&gt;Notes on Geometry Papers&lt;/a&gt; (Dec 2026)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/Covariance_and_Whitening_Self_Explanation.pdf&#34;&gt;Covariance Self-Explainer&lt;/a&gt; (Jan 2025)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/blackboxnlp_abstract_2024.pdf&#34;&gt;BlackboxNLP 2024 Abstract&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -688,6 +786,119 @@ therefore $U$, the left singular vectors of $X$, are the same as the principal c
 &lt;p&gt;&amp;ldquo;The top 3 principal components of all the 150 logistic regression vectors&amp;rdquo; is actually the same as &amp;ldquo;the top 3 input space singular vectors&amp;rdquo;. This means that if we had the probe they had, and took the SVD, the singular values would drop off really quickly, I think.&lt;/p&gt;
 &lt;p&gt;Also, if we wanted to get the same plots as them after taking the SVD, the key thing to do would be to project all of the rows of the original probe $P$ onto the first three singular vectors on the right side of the SVD of $P$. This is quite intuitive, because if the probe has found a bunch of vectors in the residual stream that have a high dot product with a particular character count, then they should probably make sense projected onto the most important singular vectors for probing out that character count. But it&amp;rsquo;s also weird and circular.&lt;/p&gt;
 &lt;p&gt;I think that the &amp;ldquo;taking the PCA of all of these logistic probes&amp;rdquo; framing is quite nice and maybe more intuitive than what I&amp;rsquo;ve written here.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sheridan&#39;s Blog</title>
+      <link>http://localhost:1313/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/rerereading&#34;&gt;Is AI Writing Still Nonsense?&lt;/a&gt; &lt;br&gt;
+December 4, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;Or, what exactly are we doing when we read LLM-generated text?&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/syllogisms&#34;&gt;Solving Syllogisms is Not Intelligence&lt;/a&gt; &lt;br&gt;
+April 24, 2025 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;I think that we overvalue logical reasoning when it comes to measuring &amp;ldquo;intelligence.&amp;quot;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sfeucht.github.io/rereading&#34;&gt;Writing That&amp;rsquo;s Not Language (Yet)&lt;/a&gt; &lt;br&gt;
+August 10, 2021 • &lt;span style=&#34;color:gray&#34;&gt;&lt;i&gt;An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What is DAS doing?</title>
+      <link>http://localhost:1313/das/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/das/</guid>
+      <description>&lt;p&gt;Here&amp;rsquo;s my notes on what DAS is doing when they say &amp;ldquo;learn a rotation matrix&amp;rdquo;, and how that&amp;rsquo;s equivalent to the more Bau lab way of thinking about it, &amp;ldquo;learning a subspace.&amp;rdquo;&lt;/p&gt;
+&lt;h2 id=&#34;trivial-concrete-example&#34; &gt;Trivial concrete example
+&lt;span&gt;
+    &lt;a href=&#34;#trivial-concrete-example&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s say your activations were in $\mathbb{R}^4$, where the standard basis is $e_1, e_2, e_3, e_4$. Say the subspace that was causally important for a given &amp;ldquo;foo&amp;rdquo; variable was spanned by $e_2$ and $e_3$, and DAS had perfectly learned that. Now, we want to intervene on a base hidden state $h_{base}$, setting its &amp;ldquo;foo&amp;rdquo; variable to whatever it was in $h_{src}$, where $$h_{base}=\begin{bmatrix}a\\ b\\ c \\ d\end{bmatrix}; h_{src}=\begin{bmatrix}e\\ f\\ g \\ h\end{bmatrix}$$
+and then the desired intervened hidden state would be
+$$h_{intervened}=\begin{bmatrix}a\\ f\\ g \\ d\end{bmatrix}.$$&lt;/p&gt;
+&lt;h3 id=&#34;das-viewpoint&#34; &gt;DAS Viewpoint
+&lt;span&gt;
+    &lt;a href=&#34;#das-viewpoint&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;DAS thinks about this in conceptually terms of an orthogonal rotation. To do an intervention, they apply the learned rotation $R$ to both $h_{src}$ and $h_{base}$ and then literally swap out the first $k$ entries of those hidden states (where $k$ is the dimension of the subspace learned). So the rotation matrix DAS would have learned in this case would be one that moves the relevant dimensions to the beginning of the vector:
+$$R=\begin{bmatrix}
+0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \\
+1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\
+\end{bmatrix} =
+\begin{bmatrix}
+\text{&amp;mdash; } e_2^T \text{&amp;mdash;} \\
+\text{&amp;mdash; } e_3^T \text{&amp;mdash;} \\
+\text{&amp;mdash; } e_1^T \text{&amp;mdash;} \\
+\text{&amp;mdash; } e_4^T \text{&amp;mdash;}
+\end{bmatrix} \text{ so that } Rh_{base} = \begin{bmatrix}b\\ c\\ a \\ d\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;Then, we can achieve $h_{intervened}$ by calculating $Rh_{base}$ and $Rh_{src}$, swapping out the first $k=2$ dimensions, and then rotating back.&lt;/p&gt;
+&lt;p&gt;$$ h_{intervened} = R^{-1}(Rh_{base} \leftarrow_{:k} Rh_{src})$$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# NOTE: pyvene actually implements it the way we describe in the next section&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# but here&amp;#39;s some pseudocode of how you *would* do this&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rotated_h_base[&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;, :interchange_dim] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rotated_h_source[&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;, :interchange_dim]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bau-lab-viewpoint&#34; &gt;Bau Lab Viewpoint
+&lt;span&gt;
+    &lt;a href=&#34;#bau-lab-viewpoint&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;ve written this out before &lt;a href=&#34;https://sfeucht.github.io/blackboxnlp_abstract_2024.pdf&#34;&gt;here&lt;/a&gt;. Instead of thinking of this as a rotation matrix, we could think of it as adding the projection of $h_{src}$ onto the relevant subspace to the projection of $h_{base}$ onto everything &lt;em&gt;except&lt;/em&gt; for the relevant subspace.&lt;/p&gt;
+&lt;p&gt;So here, let&amp;rsquo;s define a matrix $A$, which has columns $e_2$ and $e_3$, which define the ground-truth subspace we want to intervene on. In general, to get a projection matrix onto the space spanned by columns of $A$, you&amp;rsquo;d want $A(A^TA)^{-1}A^T$, but since $A$ is orthogonal, we can simplify: $A^TA=A^{-1}A=I$ and so the projection matrix is just $P=AA^T$.
+$$P = \begin{bmatrix}
+| &amp;amp; |  \\
+e_2 &amp;amp; e_3  \\
+| &amp;amp; |
+\end{bmatrix}
+\begin{bmatrix}
+\text{&amp;mdash; } e_2^T \text{&amp;mdash;} \\
+\text{&amp;mdash; } e_3^T \text{&amp;mdash;} \\
+\end{bmatrix} =
+\begin{bmatrix}
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;Now, if I want to project onto everything &lt;em&gt;but&lt;/em&gt; the &amp;ldquo;foo&amp;rdquo; subspace, then I just need $I-P$.
+$$I - P = \begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\
+\end{bmatrix}$$&lt;/p&gt;
+&lt;p&gt;Why does this project onto &amp;ldquo;everything but the &amp;lsquo;foo&amp;rsquo; subspace&amp;rdquo;? If you work it out for a single hidden state $h$, you can see that $(I-P)h + Ph = h$.
+The intervention itself can just be thought of as swapping out one of these terms:
+$$h_{intervened}=(I-P)h_{base} + Ph_{src},$$
+which actually looks very intuitive if you write it out for our concrete example:
+$$\begin{bmatrix}
+1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\
+\end{bmatrix}\begin{bmatrix}a\\ b\\ c \\ d\end{bmatrix} +
+\begin{bmatrix}
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+\end{bmatrix}\begin{bmatrix}e\\ f\\ g \\ h\end{bmatrix}=
+\begin{bmatrix}a\\ 0\\ 0 \\ d\end{bmatrix} + \begin{bmatrix}0\\ f\\ g \\ 0\end{bmatrix}=h_{intervened}$$&lt;/p&gt;
+&lt;p&gt;So for DAS, we can talk about it as &amp;ldquo;learning a low-rank projection&amp;rdquo; rather than &amp;ldquo;learning a rotation.&amp;rdquo;&lt;/p&gt;
+&lt;h3 id=&#34;quick-note&#34; &gt;Quick note
+&lt;span&gt;
+    &lt;a href=&#34;#quick-note&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Atticus was talking about Denis loosening the constraint to be able to learn rotations that also have stretching, which suddenly revealed new stuff. I wondered whether this is related to steering where you have to multiply the vector, and/or whether it&amp;rsquo;s possible that you&amp;rsquo;re now not learning an orthogonal projection, but somehow an &lt;em&gt;oblique&lt;/em&gt; projection. The intuition is this idea of a shadow stretching at golden hour. An oblique projection is idempotent $P^2=P$ but not symmetric, $P^T\not=P$. I&amp;rsquo;d have to work this out if it ends up being important but maybe &amp;ldquo;DAS with stretching&amp;rdquo; is now using some different scary and strange kind of projection strategy.&lt;/p&gt;
 </description>
     </item>
     

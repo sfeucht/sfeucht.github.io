@@ -10,14 +10,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Sheridan&rsquo;s Blog - Sheridan Feucht</title>
+<title>Circle Math - Sheridan Feucht</title>
 
-<meta name="description" content="Is AI Writing Still Nonsense? 
-December 4, 2025 • Or, what exactly are we doing when we read LLM-generated text?
-Solving Syllogisms is Not Intelligence 
-April 24, 2025 • I think that we overvalue logical reasoning when it comes to measuring &ldquo;intelligence.&quot;
-Writing That&rsquo;s Not Language (Yet) 
-August 10, 2021 • An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.">
+<meta name="description" content="Rotations and Complex Eigenvalues
+
+    
+        
+    
+
+Whenever a matrix performs a rotation (other than an angle of $0$ or $\pi$), it has complex eigenvalues. This is because you can&rsquo;t ever find any (real) vector that will stay in the same place after a rotation by some non-nice angle. Let&rsquo;s think about a 2D rotation matrix, which looks like">
 
 
 
@@ -95,21 +96,17 @@ August 10, 2021 • An interactive essay I wrote for an undergraduate seminar on
 
 
 
-<meta property="og:url" content="http://localhost:1313/blog/">
+<meta property="og:url" content="http://localhost:1313/can-circles/">
   <meta property="og:site_name" content="Sheridan Feucht">
-  <meta property="og:title" content="Sheridan&#39;s Blog">
-  <meta property="og:description" content="Is AI Writing Still Nonsense? December 4, 2025 • Or, what exactly are we doing when we read LLM-generated text?
-Solving Syllogisms is Not Intelligence April 24, 2025 • I think that we overvalue logical reasoning when it comes to measuring “intelligence.&#34;
-Writing That’s Not Language (Yet) August 10, 2021 • An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.">
+  <meta property="og:title" content="Circle Math">
+  <meta property="og:description" content="Rotations and Complex Eigenvalues Whenever a matrix performs a rotation (other than an angle of $0$ or $\pi$), it has complex eigenvalues. This is because you can’t ever find any (real) vector that will stay in the same place after a rotation by some non-nice angle. Let’s think about a 2D rotation matrix, which looks like">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Sheridan&#39;s Blog">
-  <meta name="twitter:description" content="Is AI Writing Still Nonsense? December 4, 2025 • Or, what exactly are we doing when we read LLM-generated text?
-Solving Syllogisms is Not Intelligence April 24, 2025 • I think that we overvalue logical reasoning when it comes to measuring “intelligence.&#34;
-Writing That’s Not Language (Yet) August 10, 2021 • An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.">
+  <meta name="twitter:title" content="Circle Math">
+  <meta name="twitter:description" content="Rotations and Complex Eigenvalues Whenever a matrix performs a rotation (other than an angle of $0$ or $\pi$), it has complex eigenvalues. This is because you can’t ever find any (real) vector that will stay in the same place after a rotation by some non-nice angle. Let’s think about a 2D rotation matrix, which looks like">
 
 
 
@@ -263,7 +260,7 @@ Writing That’s Not Language (Yet) August 10, 2021 • An interactive essay I w
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">Sheridan&rsquo;s Blog</h1>
+                <h1 class="p-name post-title">Circle Math</h1>
 
                 
             </header>
@@ -276,12 +273,52 @@ Writing That’s Not Language (Yet) August 10, 2021 • An interactive essay I w
 
 
         <div class="content e-content">
-            <p><a href="/rerereading">Is AI Writing Still Nonsense?</a> <br>
-December 4, 2025 • <span style="color:gray"><i>Or, what exactly are we doing when we read LLM-generated text?</i></span></p>
-<p><a href="/syllogisms">Solving Syllogisms is Not Intelligence</a> <br>
-April 24, 2025 • <span style="color:gray"><i>I think that we overvalue logical reasoning when it comes to measuring &ldquo;intelligence.&quot;</i></span></p>
-<p><a href="https://sfeucht.github.io/rereading">Writing That&rsquo;s Not Language (Yet)</a> <br>
-August 10, 2021 • <span style="color:gray"><i>An interactive essay I wrote for an undergraduate seminar on the theory and practice of writing.</i></span></p>
+            <h2 id="rotations-and-complex-eigenvalues" >Rotations and Complex Eigenvalues
+<span>
+    <a href="#rotations-and-complex-eigenvalues">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Whenever a matrix performs a rotation (other than an angle of $0$ or $\pi$), it has complex eigenvalues. This is because you can&rsquo;t ever find any (real) vector that will stay in the same place after a rotation by some non-nice angle. Let&rsquo;s think about a 2D rotation matrix, which looks like</p>
+<p>$$R(\theta) = \begin{bmatrix}
+\cos\theta &amp; -\sin\theta \\
+\sin\theta &amp; \cos\theta
+\end{bmatrix}$$</p>
+<p>where its eigenvalues solving the characteristic polynomial are $\lambda=\cos\theta \pm i\sin\theta$. If the matrix itself is real, these imaginary eigenvalues will always come in conjugate pairs. When you allow yourself to use complex numbers, it becomes possible to get $\lambda$ and $v$ such that $Rv = \lambda v$ even though this is a rotation. Try working out $\lambda=\cos\theta + i\sin\theta$ and $v=[1, -i]^T$ to convince yourself of the fact that this works.</p>
+<details>
+<summary>(If you don't actually want to work this out for yourself)</summary>
+$$\begin{bmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{bmatrix}\begin{bmatrix}
+1 \\
+-i
+\end{bmatrix} = (\cos\theta + i\sin\theta)\begin{bmatrix}1 \\ -i\end{bmatrix} $$
+$$\begin{bmatrix}
+\cos\theta + i\sin\theta \\
+\sin\theta - i\cos\theta
+\end{bmatrix} = \begin{bmatrix}\cos\theta + i\sin\theta \\ -i\cos\theta + \sin\theta\end{bmatrix} $$
+</details>
+<p>I never really realized this, but rotations are deeply two-dimensional, tied up with the dualness of complex numbers. If you have a rotation in higher dimensions, it&rsquo;s actually constrained to a 2D plane, or multiple 2D planes if we&rsquo;re more than three dimensions. For now, if you think of any rotation in 3D, it&rsquo;s actually always a rotation in a 2D subspace, with an extra axis orthogonal to the plane that the vector is rotated on. Literally imagine any rotation in 3D and there&rsquo;s always a &ldquo;spoke&rdquo; that&rsquo;s being rotated around. Concretely, if we have vectors $[x,y,z]$, then a rotation by an angle of $\theta$ around the x-axis (on the yz plane) would look like:</p>
+<p>$$R(\theta)= \begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; \cos\theta &amp; -\sin\theta \\
+0 &amp; \sin\theta &amp; \cos\theta
+\end{bmatrix}$$</p>
+<p>where one eigenvector $\lambda=1,v=[1, 0, 0]^T$ would correspond to anything that&rsquo;s on the x-axis (which stays put) and the other two eigenvectors are $\lambda=\cos\theta\pm i\sin\theta,v=[0,1,\pm i]^T$. Now, here&rsquo;s a fact: the real and imaginary parts of these eigenvectors precisely show that the rotation is on the yz-plane. In general, if you have a pair of two complex eigenvectors describing a rotation, then the plane that&rsquo;s being rotated on is always going to be the span of $\text{Re}(v), \text{Im}(v)$. We can see that clearly here:</p>
+<p>$$v=\begin{bmatrix}0 \\ 1 \\ -i \end{bmatrix}=\begin{bmatrix}0 \\ 1 \\ 0 \end{bmatrix}+i\begin{bmatrix}0 \\ 0 \\ -1 \end{bmatrix}$$</p>
+<p>where the real part of $v$ is the y-axis, and the imaginary part is the z-axis, matching up with the fact that we defined this rotation to be on the yz-plane. The reason why this is true in general: let&rsquo;s say you have complex eigenvector $u + iw$ and eigenvalue $\alpha + i\beta$. If you expand out the multiplication in terms of the real and imaginary parts of these eigenvectors/values&hellip;</p>
+<p>$$R(u + iw) = (\alpha + i\beta)(u + iw) $$
+$$Ru + iRw = \alpha u + i\alpha w + i\beta u + i^2\beta w$$
+$$Ru + iRw = (\alpha u - \beta w) + i(\alpha w + \beta u)$$
+$$Ru  = (\alpha u - \beta w) $$
+$$Rw = (\alpha w + \beta u)$$</p>
+<p>you get these two equations, which tell you that applying our rotation to the real part of the eigenvector $u$ will always give some linear combination of $u,w$, and applying our rotation to the imaginary part of the eigenvector $w$ will also give some linear combination of $u,w$. This is another way of saying that the rotation matrix $R$ will never move the vectors $u$ or $w$ off that $u,w$ plane; it&rsquo;s always rotating them inside the $u,w$ plane. Therefore, if we have a conjugate pair of eigenvectors for a given transformation, then we can read out the exact 2D plane within which that transformation rotates just by looking at the pair&rsquo;s real and imaginary components.</p>
+<details>
+<summary>Bonus: reading off the angle/scaling by looking at eigenvalue</summary>
+The angle that $R$ rotates by is given by $\theta=\arctan(\beta/\alpha)$. In other words, this is crazily telling us that you can just plot the eigenvalue on the complex plane and look at what angle it is, and that tells you by what angle $R$ is rotating in the corresponding subspace. Plus, if you calculate $|\lambda|=\sqrt{\alpha^2+\beta^2}$, that is actually the radius $r$ of the eigenvalue on the complex plane, and is also the amount by which the transformation scales the vector it rotates.
+</details>
+<p>I was able to get away with not thinking about complex eigenvalues for a long time probably because I was mostly looking at covariance matrices and stuff, which are symmetric and are guaranteed to have real eigenvalues. But actually, just like how if you randomly sampled a matrix it would almost surely be full-rank, it would also almost surely be some kind of stretch + rotation, giving it complex eigenvalues.</p>
 
         </div>
         
@@ -293,7 +330,7 @@ August 10, 2021 • <span style="color:gray"><i>An interactive essay I wrote for
 <div class="post-info">
     
 
-    <a class="post-hidden-url u-url" href="http://localhost:1313/blog/">http://localhost:1313/blog/</a>
+    <a class="post-hidden-url u-url" href="http://localhost:1313/can-circles/">http://localhost:1313/can-circles/</a>
     <a href="http://localhost:1313/" class="p-name p-author post-hidden-author h-card" rel="me">Sheridan Feucht</a>
 
 
