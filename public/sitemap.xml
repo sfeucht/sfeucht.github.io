@@ -32,6 +32,8 @@
   </url><url>
     <loc>http://localhost:1313/notes/</loc>
   </url><url>
+    <loc>http://localhost:1313/clock/</loc>
+  </url><url>
     <loc>http://localhost:1313/geometry/</loc>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>

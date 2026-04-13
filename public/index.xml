@@ -607,12 +607,43 @@ to refer to Peano. --&gt;
       <guid>http://localhost:1313/notes/</guid>
       <description>&lt;p&gt;This page is super-secret and for my own reference, but if you&amp;rsquo;ve somehow found this page and notice a flaw in my notes, please let me know and I won&amp;rsquo;t be mad.&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/clock&#34;&gt;Neel&amp;rsquo;s Modular Arithmetic Model&lt;/a&gt; (Apr 2026)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/circles&#34;&gt;Circle Math&lt;/a&gt; (Jan 2026)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://localhost:1313/pca-svd&#34;&gt;Easy way to calculate PCA&lt;/a&gt; (Jan 2026)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://localhost:1313/das&#34;&gt;What is DAS Doing?&lt;/a&gt; (Jan 2026)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://localhost:1313/geometry&#34;&gt;Notes on Geometry Papers&lt;/a&gt; (Dec 2026)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://localhost:1313/Covariance_and_Whitening_Self_Explanation.pdf&#34;&gt;Covariance Self-Explainer&lt;/a&gt; (Jan 2025)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://localhost:1313/blackboxnlp_abstract_2024.pdf&#34;&gt;BlackboxNLP 2024 Abstract&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Neel&#39;s Modular Arithmetic Model</title>
+      <link>http://localhost:1313/clock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/clock/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2301.05217&#34;&gt;They&lt;/a&gt; focus on a mod 113 model, finding key frequencies $k\in\{14,35,41,42,52\}$. How do they find these key frequencies?&lt;/p&gt;
+&lt;p&gt;They do a lot of analysis on the &amp;ldquo;neuron-logit map,&amp;rdquo; $W_L\in\mathbb{R}^{|V|\times n}$, which is just the final MLP&amp;rsquo;s $W_{down}$ multiplied with $W_{unembed}$. Here, $|V|=113$ is the vocab size, and $n$ is the number of MLP neurons. This is I think the most relevant place where they find the key frequencies.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They do this by taking the discrete Fourier transform &amp;ldquo;across the logit axis,&amp;rdquo; i.e. from $\mathbb{R}^{|V|\times n}\rightarrow\mathbb{C}^{p\times n}$, where $p$ is the maximum period. This basically means they&amp;rsquo;re looking at how the signal oscillates as the number increases. Actually, $p=|V|$ because you can&amp;rsquo;t differentiate any periods that are greater than the number of numbers we have, but I&amp;rsquo;ll name them differently because they&amp;rsquo;re conceptually different.&lt;/li&gt;
+&lt;li&gt;So now we have $p$ rows, where each row is an $n$-dimensional vector that oscillates at that frequency. Since they are complex numbers, each row actually gives us two vectors: the real part gives the cosine vector in neuron space for this periodicity $u_k\in\mathbb{R}^n$, and the imaginary part gives the sine vector in neuron space $v_k\in\mathbb{R}^n$. See &lt;a href=&#34;http://localhost:1313/circles&#34;&gt;my notes on rotations&lt;/a&gt; for why.&lt;/li&gt;
+&lt;li&gt;Most of the frequencies actually don&amp;rsquo;t matter, so the $n$-dimensional row corresponding to that frequency will have a very small norm. This is exactly what their Figure 3b shows: the only rows with substantial norms are their key frequencies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So what their Figure 3b means is that as you scrub over the logit rows for output number, there&amp;rsquo;s basically just five frequencies that oscillate.
+Then, their claim about how to approximate $W_L$ using trig functions makes sense. As you scan over the output vocabulary (i.e., every possible output number), we can imagine each $u_k,v_k$ vector oscillating back and forth at a different frequency; this is what the DFT found by definition. The exact way that each vector oscillates is given by their $\cos(w_k),\sin(w_k)\in\mathbb{R}^{|V|}$, where the $c$th entry of e.g. $\cos(w_{42})$ is simply $\cos(42c(2\pi/113))$.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; That means that we can approximate this entire matrix as&lt;/p&gt;
+&lt;p&gt;$$W_L = \sum_{k\in\{14,35,41,42,52\}}\cos(w_k)u_k^T+\sin(w_k)v_k^T$$&lt;/p&gt;
+&lt;p&gt;where you can imagine each rank-one matrix term as just $u_k$ or $v_k$ ocillating back and forth across the possible output numbers, according to a sinusoidal function.&lt;/p&gt;
+&lt;p&gt;How does this actually help the model calculate the answer? TODO you were here.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;The reason why you have to divide by 113 is because the DFT is discrete and bounded. In our work, we were thinking in terms of continuous/infinite number ranges, which is why we never had this $/p$ term.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 </description>
     </item>
     
