@@ -52,6 +52,11 @@ disableComments: true
 
 <ol id="papers">
     <li class="paper">
+    <a href="https://www.goodfire.ai/research/a-geometric-calculator#"><h5>Arithmetic in the Wild: Llama uses Base-10 Addition to Reason About Cyclic Concepts</h5></a><br>
+    <span><b>Sheridan Feucht*</b>, Tal Haklay*, Usha Bhalla, Daniel Wurgaft, Can Rager, Raphaël Sarfati, Jack Merullo, Thomas McGrath, Owen Lewis, Ekdeep Singh Lubana*, Thomas Fel*, Atticus Geiger*</span><br>
+    <span>Second Conference on Language Modeling (COLM), 2025.</span>
+    </li>
+    <li class="paper">
     <a href="https://dualroute.baulab.info/"><h5>The Dual-Route Model of Induction</h5></a><br>
     <span><b>Sheridan Feucht</b>, Eric Todd, Byron Wallace, David Bau</span><br>
     <span>Second Conference on Language Modeling (COLM), 2025.</span>
