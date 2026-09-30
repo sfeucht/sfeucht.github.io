@@ -122,7 +122,7 @@ disableComments: true
 
 <ol id="papers">
     <li class="paper">
-    <a href="https://ocr.baulab.info/"><h5>Using OCR Heads to Verbalize Image Semantics</h5></a><a class="cd-icon" href="https://www.youtube.com/watch?v=2FUiZYrPZWk" target="_blank" rel="noopener" data-tooltip="This song carried me writing this paper"><img src="/hm_sprite.png" alt="CD"></a><br>
+    <a href="https://ocr.baulab.info/"><h5>Using OCR Heads to Verbalize Image Semantics</h5></a><a class="cd-icon" href="https://www.youtube.com/watch?v=2FUiZYrPZWk" target="_blank" rel="noopener" data-tooltip="Summer 2026"><img src="/hm_sprite.png" alt="CD"></a><br>
     <span><b>Sheridan Feucht</b>, Benno Krojer, Sarah Wang, Henry Abrahamsen, Byron Wallace, David Bau</span><br>
     <span>Preprint, 2026.</span>
     </li>
