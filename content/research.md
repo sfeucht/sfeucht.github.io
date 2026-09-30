@@ -179,12 +179,8 @@ disableComments: true
 <script>
 (function () {
     var trigger = document.getElementById('cd-toggle-trigger');
-    var stored = localStorage.getItem('showCDs') === 'true';
-    document.body.classList.toggle('show-cds', stored);
-
     trigger.addEventListener('click', function () {
-        var showing = document.body.classList.toggle('show-cds');
-        localStorage.setItem('showCDs', showing);
+        document.body.classList.toggle('show-cds');
     });
 })();
 </script>

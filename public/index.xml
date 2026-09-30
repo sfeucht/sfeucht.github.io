@@ -288,7 +288,7 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
 &lt;p&gt;See my &lt;a href=&#34;https://scholar.google.com/citations?user=4EobJQIAAAAJ&amp;hl=en&amp;oi=sra&#34;&gt;Google Scholar&lt;/a&gt; for a full list of publications.&lt;/p&gt;
 &lt;ol id=&#34;papers&#34;&gt;
     &lt;li class=&#34;paper&#34;&gt;
-    &lt;a href=&#34;https://ocr.baulab.info/&#34;&gt;&lt;h5&gt;Using OCR Heads to Verbalize Image Semantics&lt;/h5&gt;&lt;/a&gt;&lt;a class=&#34;cd-icon&#34; href=&#34;https://www.youtube.com/watch?v=2FUiZYrPZWk&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; data-tooltip=&#34;This song sustained me while writing this paper.&#34;&gt;&lt;img src=&#34;http://localhost:1313/hm_sprite.png&#34; alt=&#34;CD&#34;&gt;&lt;/a&gt;&lt;br&gt;
+    &lt;a href=&#34;https://ocr.baulab.info/&#34;&gt;&lt;h5&gt;Using OCR Heads to Verbalize Image Semantics&lt;/h5&gt;&lt;/a&gt;&lt;a class=&#34;cd-icon&#34; href=&#34;https://www.youtube.com/watch?v=2FUiZYrPZWk&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; data-tooltip=&#34;This song carried me writing this paper&#34;&gt;&lt;img src=&#34;http://localhost:1313/hm_sprite.png&#34; alt=&#34;CD&#34;&gt;&lt;/a&gt;&lt;br&gt;
     &lt;span&gt;&lt;b&gt;Sheridan Feucht&lt;/b&gt;, Benno Krojer, Sarah Wang, Henry Abrahamsen, Byron Wallace, David Bau&lt;/span&gt;&lt;br&gt;
     &lt;span&gt;Preprint, 2026.&lt;/span&gt;
     &lt;/li&gt;
@@ -342,12 +342,8 @@ My partner Adrian bought this from a bin in Harvard Square. I found it delightfu
 &lt;script&gt;
 (function () {
     var trigger = document.getElementById(&#39;cd-toggle-trigger&#39;);
-    var stored = localStorage.getItem(&#39;showCDs&#39;) === &#39;true&#39;;
-    document.body.classList.toggle(&#39;show-cds&#39;, stored);
-
     trigger.addEventListener(&#39;click&#39;, function () {
-        var showing = document.body.classList.toggle(&#39;show-cds&#39;);
-        localStorage.setItem(&#39;showCDs&#39;, showing);
+        document.body.classList.toggle(&#39;show-cds&#39;);
     });
 })();
 &lt;/script&gt;
